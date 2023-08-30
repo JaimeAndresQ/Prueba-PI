@@ -20,4 +20,5 @@ export class ProductsPageComponent {
       description: "This is the third product description.",
     },
   ];
+
 }

@@ -8,10 +8,19 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsModule } from './products/products.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
+import { LoginPageComponent } from './pages/login/login-page/login-page.component';
+import { SignupPageComponent } from './pages/registro/signup-page/signup-page.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginPageComponent,
+    SignupPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +29,9 @@ import { ProductsModule } from './products/products.module';
     NoopAnimationsModule,
     MatIconModule,
     HttpClientModule,
-    ProductsModule
+    ProductsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [MatIconModule],
   providers: [],
