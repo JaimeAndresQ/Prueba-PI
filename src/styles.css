@@ -1,1 +1,110 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@layer base {
+/* Use the imported font family in your styles */
+body {
+  font-family: 'Irish Grover';
+
+}
+}
+
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@layer components {
+
+
+/* Menu Navegacion */
+
+.icono-carrito {
+  color: rgb(255, 255, 255);
+
+}
+
+#carrito-boton {
+  transition: background-color 0.3s ease;
+}
+
+#carrito-boton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+#logoNexusBattle {
+
+  width: 8%;
+  height: 9%;
+  z-index: -1;
+}
+
+#topbar-search {
+  background-color: rgba(180, 81, 0, 0.507);
+  /* background-image: url('./assets/images/patron_madera3.png'); */
+  background-blend-mode: screen;
+
+}
+
+
+#header {
+  background-image: url('./assets/images/header.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  position: relative;
+  z-index: 2;
+}
+
+#nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav a {
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+}
+
+#nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Main */
+
+#contenedor-vitrina {
+  background-image: url('./assets/images/fondo-inicio.jpg');
+
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+}
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+@layer utilities {
+
+}
