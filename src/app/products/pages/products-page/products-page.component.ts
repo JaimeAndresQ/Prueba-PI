@@ -27,7 +27,20 @@ export class ProductsPageComponent  implements OnInit{
   totalPages = 7;
   totalPagesArray: number[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+    )  {
+
+    this.matIconRegistry.addSvgIcon(
+      'carrito',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/shopping_cart.svg'),
+    )
+  this.matIconRegistry.addSvgIcon(
+    'cartas',
+    this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/cartaBorde.svg')
+  )
+  }
 
   ngOnInit(): void {
     this.generateTotalPagesArray();
