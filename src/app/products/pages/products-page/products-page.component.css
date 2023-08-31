@@ -10,3 +10,33 @@
 .pagination a {
   cursor: pointer;
 }
+
+#pagination {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  bottom: -85%;
+  right: 13.3%;
+  z-index: 20;
+}
+
+button {
+  color: black;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #cccccc5d;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+button.active {
+  background-color: #fff;
+  color: black;
+}

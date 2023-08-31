@@ -7,24 +7,51 @@
   <section
     class="grid 2xl:grid-rows-2 xl:md:grid-rows-1 2xl:grid-cols-3 xl:md:grid-cols-2 py-20 px-40"
   >
-  <card-products></card-products>
+  <card-products ></card-products>
 
-  <!--Metan este ciclo en la parte de cartas-->
-  <div *ngFor="let carta of cartas" class="pl-3 pt-1 bg-amber-700 w-full h-1/2 rounded-b-md">
-    <img [src]="carta.urlImagen" alt="Imagen de la carta" class="w-full h-1/2 rounded-t-md"> 
-    <h3 class="text-2xl text-white">Nombre de la carta: {{ carta.nombre_carta }}</h3>
-    <p class="text-lg text-white">Precio: {{ carta.price }}</p>
+  <div
+  id="bordeCarta"
+  class="flex py-36 px-20 items-center justify-center relative"
+>
+  <!-- Bordeado Exotico Carta -->
+  <mat-icon
+    class="absolute -z-10"
+    aria-hidden="false"
+    aria-label="Carrito Compras"
+    svgIcon="cartas"
+    style="width: 420px; height: 579px"
+    >Carrito</mat-icon
+  >
+
+  <!-- Contenedor Carta -->
+  <div *ngFor="let carta of cartas"  class="container bg-slate-200 w-[277px] h-[477px] rounded-md relative">
+    <!-- Imagen Superior -->
+    <img
+      [src]= carta.urlImagen
+      [alt]= carta.nombre_carta
+      class="w-full h-1/2 rounded-t-md"
+    />
+
+    <!-- Atributos -->
+    <div class="pl-3 pt-1 bg-amber-700 w-full h-1/2 rounded-b-md">
+      <ul class="list-none">
+        <li class="text-2xl text-white">Nombre: {{carta.nombre_carta}}</li>
+        <li class="text-lg text-white">Precio: {{carta.price}}</li>
+      </ul>
+    </div>
   </div>
+</div>
 
   </section>
 
 </main>
 
-<!--Paginacion OJO ARREGLAR ESO QUE CUANDO ESTAN DENTRO DEL MAIN LOS BOTONES NO FUNCIONAN NI DEJAN HACER CLICK-->
-<div class="pagination">
-  <button *ngFor="let pageNumber of totalPagesArray"
+<!-- Paginacion -->
+<div class="pagination flex justify-between w-6 h-6 p-6" id="pagination">
+  <button class="bg- border-2 border-solid " *ngFor="let pageNumber of totalPagesArray"
           [class.active]="pageNumber === currentPage"
           (click)="changePageTo(pageNumber)">
     {{ pageNumber }}
   </button>
 </div>
+
