@@ -8,11 +8,14 @@
     class="grid 2xl:grid-rows-2 xl:md:grid-rows-1 2xl:grid-cols-3 xl:md:grid-cols-2 py-20 px-40"
   >
   <card-products ></card-products>
+  <card-products ></card-products>
+  <card-products ></card-products>
+  <card-products ></card-products>
+  <card-products ></card-products>
 
   <div
   id="bordeCarta"
-  class="flex py-36 px-20 items-center justify-center relative"
->
+  class="flex py-36 px-20 items-center justify-center relative">
   <!-- Bordeado Exotico Carta -->
   <mat-icon
     class="absolute -z-10"
@@ -20,8 +23,7 @@
     aria-label="Carrito Compras"
     svgIcon="cartas"
     style="width: 420px; height: 579px"
-    >Carrito</mat-icon
-  >
+    >Carrito</mat-icon>
 
   <!-- Contenedor Carta -->
   <div *ngFor="let carta of cartas"  class="container bg-slate-200 w-[277px] h-[477px] rounded-md relative">
@@ -42,7 +44,8 @@
   </div>
 </div>
 
-  </section>
+</section>
+
 
 </main>
 
@@ -54,4 +57,7 @@
     {{ pageNumber }}
   </button>
 </div>
+
+
+
 
