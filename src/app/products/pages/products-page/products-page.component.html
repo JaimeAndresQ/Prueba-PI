@@ -7,48 +7,58 @@
   <section
     class="grid 2xl:grid-rows-2 xl:md:grid-rows-1 2xl:grid-cols-3 xl:md:grid-cols-2 py-20 px-40"
   >
-  <card-products ></card-products>
 
+    <div
+    *ngFor="let carta of cartas"
+      id="bordeCarta"
+      class="flex py-36 px-20 items-center justify-center relative"
+    >
+      <!-- Bordeado Exotico Carta -->
+      <mat-icon
+        class="absolute -z-10"
+        aria-hidden="false"
+        aria-label="Carrito Compras"
+        svgIcon="cartas"
+        style="width: 420px; height: 579px"
+        >Carrito</mat-icon
+      >
 
-  <div
-  id="bordeCarta"
-  class="flex py-36 px-20 items-center justify-center relative">
-  <!-- Bordeado Exotico Carta -->
-  <mat-icon
-    class="absolute -z-10"
-    aria-hidden="false"
-    aria-label="Carrito Compras"
-    svgIcon="cartas"
-    style="width: 420px; height: 579px"
-    >Carrito</mat-icon>
+      <!-- Contenedor Carta -->
+      <div
+        
+        class="container bg-slate-200 w-[277px] h-[477px] rounded-md relative"
+      >
+        <!-- Imagen Superior -->
+        <img
+          [src]="carta.urlImagen"
+          [alt]="carta.nombre_carta"
+          class="w-full h-1/2 rounded-t-md"
+        />
 
-  <!-- Contenedor Carta -->
-  <div *ngFor="let carta of cartas"  class="container bg-slate-200 w-[277px] h-[477px] rounded-md relative">
-    <!-- Imagen Superior -->
-    <img
-      [src]= carta.urlImagen
-      [alt]= carta.nombre_carta
-      class="w-full h-1/2 rounded-t-md"
-    />
-
-    <!-- Atributos -->
-    <div class="pl-3 pt-1 bg-amber-700 w-full h-1/2 rounded-b-md">
-      <ul class="list-none">
-        <li class="text-2xl text-white">Nombre: {{carta.nombre_carta}}</li>
-        <li class="text-lg text-white">Precio: {{carta.price}}</li>
-      </ul>
+        <!-- Atributos -->
+        <div class="pl-3 pt-1 bg-amber-700 w-full h-1/2 rounded-b-md">
+          <ul class="list-none">
+            <li class="text-2xl text-white">
+              Nombre: {{ carta.nombre_carta }}
+            </li>
+            <li class="text-lg text-white">Precio: {{ carta.price }}</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-</section>
+    
+  </section>
 </main>
 
 <!-- Paginacion -->
 <div class="pagination flex justify-between w-6 h-6 p-6" id="pagination">
-  <button class="bg- border-2 border-solid " *ngFor="let pageNumber of totalPagesArray"
-          [class.active]="pageNumber === currentPage"
-          (click)="changePageTo(pageNumber)">
+  <button
+    class="bg- border-2 border-solid"
+    *ngFor="let pageNumber of totalPagesArray"
+    [class.active]="pageNumber === currentPage"
+    (click)="changePageTo(pageNumber)"
+  >
     {{ pageNumber }}
   </button>
 </div>
