@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'signup-component',
   templateUrl: './signup-page.component.html',
+  styleUrls: ['./signup-page.component.css']
 })
 export class SignupPageComponent implements OnInit {
   registerForm: FormGroup;
