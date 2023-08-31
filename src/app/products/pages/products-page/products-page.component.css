@@ -6,3 +6,7 @@
 #contenedor-vitrina {
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
 }
+
+.pagination a {
+  cursor: pointer;
+}

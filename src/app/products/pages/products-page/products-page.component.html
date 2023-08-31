@@ -9,6 +9,22 @@
   >
   <card-products></card-products>
 
+  <!--Metan este ciclo en la parte de cartas-->
+  <div *ngFor="let carta of cartas" class="pl-3 pt-1 bg-amber-700 w-full h-1/2 rounded-b-md">
+    <img [src]="carta.urlImagen" alt="Imagen de la carta" class="w-full h-1/2 rounded-t-md"> 
+    <h3 class="text-2xl text-white">Nombre de la carta: {{ carta.nombre_carta }}</h3>
+    <p class="text-lg text-white">Precio: {{ carta.price }}</p>
+  </div>
+
   </section>
 
 </main>
+
+<!--Paginacion OJO ARREGLAR ESO QUE CUANDO ESTAN DENTRO DEL MAIN LOS BOTONES NO FUNCIONAN NI DEJAN HACER CLICK-->
+<div class="pagination">
+  <button *ngFor="let pageNumber of totalPagesArray"
+          [class.active]="pageNumber === currentPage"
+          (click)="changePageTo(pageNumber)">
+    {{ pageNumber }}
+  </button>
+</div>
