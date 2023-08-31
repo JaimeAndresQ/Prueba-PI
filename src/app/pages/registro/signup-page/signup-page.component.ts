@@ -47,10 +47,9 @@ export class SignupPageComponent implements OnInit {
         'Content-Type': 'application/json'
       });
 
-      this.http.post('http://127.0.0.1:8000/api/create/', registerData, { headers }).subscribe(
+      this.http.post('http://login.thenexusbattles2.com:8001/api/create/', registerData, { headers }).subscribe(
         (response: any) => {
           console.log('Registro exitoso:', response);
-          // Realizar cualquier acción adicional que sea necesaria después del registro exitoso
         },
         (error) => {
           console.error('Error al registrar:', error);
