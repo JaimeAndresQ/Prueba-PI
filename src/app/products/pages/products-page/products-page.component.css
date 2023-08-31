@@ -12,14 +12,12 @@
 }
 
 #pagination {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
-  bottom: -85%;
-  right: 13.3%;
+  bottom: 25px;
   z-index: 30;
 }
 
