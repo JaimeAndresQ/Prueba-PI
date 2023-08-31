@@ -5,6 +5,11 @@
     /* Toma el 100% del viewport height y resta la altura del header */
 }
 
+.grid{
+    display: grid;
+    place-items: center;
+}
+
 .container {
     display: flex;
     justify-content: center;
