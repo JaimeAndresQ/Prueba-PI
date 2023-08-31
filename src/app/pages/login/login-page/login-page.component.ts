@@ -53,7 +53,7 @@ export class LoginPageComponent implements OnInit{
                     localStorage.setItem('refresh_token', response.refresh);
 
                     //redirigir al usuario
-                    this.router.navigate(['/products-vitrina']);
+                    this.router.navigate(['/productos-vitrina']);
 
                     //imprimimos los tokens para verificar que funcionen
                     console.log('access_token:', response.access);
