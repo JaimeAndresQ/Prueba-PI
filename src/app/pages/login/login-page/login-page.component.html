@@ -1,8 +1,45 @@
-<form [formGroup]="loginForm"(ngSubmit)="onSubmit()">
-  <label for="username">Username</label>
-  <input type="text" formControlName="username" required>
-  <label for="password">Password</label>
-  <input type="password" formControlName="password" required>
-  <button type="submit">Login</button>
-</form>
+<main class="Fondo">
+  <div class="container">
+      <div class="box">
+          <div class="inner-box">
+              <div class="inc">
+                  <h2>Iniciar Sesión</h2>
+                  <h3>Ingresa tus datos</h3>
+              </div>
+
+              <!--Formulario de Login-->
+              <form [formGroup]="loginForm"(ngSubmit)="onSubmit()">
+                <label for="username">Username</label>
+                <input type="text" formControlName="username" required>
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" required>
+                <button type="submit">Login</button>
+              </form>
+
+              <div class="BTN">
+                  <button class="btnenter" type="submit">Iniciar Sesión</button>
+                  <span>
+                      <p>!Sin cuenta aun? Que esperas unete!</p>
+                  </span>
+                  <button class="btnenter" type="submit">Registrarte</button>
+
+              </div>
+
+
+              <div class="image-container">
+
+                  <a href="#"><img class="imglogo" src="../../../../assets/images/Logo.png" alt=""></a>
+                  <img class="imglogo2" src="../../../../assets/images/caballero2.png" alt="">
+
+
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+
+
+
+</main>
 

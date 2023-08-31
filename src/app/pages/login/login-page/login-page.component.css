@@ -1,0 +1,105 @@
+.Fondo {
+    background-image: url('../../../../assets/images/fondo-inicio.jpg');
+    background-size: cover;
+    height: calc(100vh - 100px); /* Toma el 100% del viewport height y resta la altura del header */
+    /* Toma el 100% del viewport height y resta la altura del header */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.box {
+    background-color: rgba(240, 240, 240, 0.8); /* Ajustar el valor alfa aquí */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.inner-box {
+    background-color: #ffffff75;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.inner-box h2 {
+
+    font-size: 50px;
+    margin: 0;
+}
+
+.inc{
+
+    font-size: 2;
+}
+
+p{
+    font-size: 20px;
+    text-align: start;
+    font-family: 'Alegreya', serif;
+}
+ /* Alinea los elementos label y los campos de entrada uno debajo del otro */
+
+.BTN{
+
+    text-align: center;
+    margin-right: 50px;
+    
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+    align-self: start;
+    font-size: 30px;
+    margin-right: 300px;
+    margin-top: 40px;
+
+}
+#username{
+    width: 400px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: none;
+
+}
+#password{
+    width: 400px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: none;
+}
+
+.btnenter:hover{
+
+    transform: scale(1.2);
+}
+
+
+.imglogo{
+
+    position:absolute;top:2px;right:0px;bottom:0;left:540px;
+    width: 240px;
+    transition: transform.5s;
+    cursor: pointer;
+}
+.imglogo:hover{
+
+    transform: scale(1.03);
+}
+
+.imglogo2{
+
+    position:absolute;top:320px;right:0px;bottom:0px;left:570px;
+    width: 240px;
+    opacity: 0.4;
+}
