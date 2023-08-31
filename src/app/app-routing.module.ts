@@ -18,7 +18,7 @@ const routes: Routes = [
     loadChildren: () => import('./products/products.module').then(module => module.ProductsModule)
   },
   {
-    path: '**',
+    path: 'productos-vitrina',
     component: ProductsPageComponent
   }
 ];
