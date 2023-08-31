@@ -17,10 +17,6 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./products/products.module').then(module => module.ProductsModule)
   },
-  {
-    path: 'productos-vitrina',
-    component: ProductsPageComponent
-  }
 ];
 
 @NgModule({
