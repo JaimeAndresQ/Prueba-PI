@@ -21,6 +21,7 @@ export class SignupPageComponent implements OnInit {
       name: ['', Validators.required],
       last_name: ['', Validators.required],
       email: ['', Validators.required],
+      avatar: ['', Validators.required],
       password: ['', Validators.required],
       question: [null, Validators.required],
       answer: ['', Validators.required]
@@ -38,6 +39,7 @@ export class SignupPageComponent implements OnInit {
         name: formData.name,
         last_name: formData.last_name,
         email: formData.email,
+        avatar: formData.avatar,
         password: formData.password,
         question: formData.question,
         answer: formData.answer
