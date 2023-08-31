@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 //componentes que se utilizaran como templates y estilos
@@ -17,7 +18,7 @@ export class LoginPageComponent implements OnInit{
     public loginForm: FormGroup;
 
     //este constructor define los metodos a usar
-    constructor(private fb: FormBuilder, private http: HttpClient){
+    constructor(private fb: FormBuilder, private http: HttpClient, private router: Router){
         //inicializamos el formulario
         this.loginForm = this.fb.group({
             username: ['', Validators.required],
@@ -50,6 +51,9 @@ export class LoginPageComponent implements OnInit{
                     //almacenamos los tokens de access y refresh
                     localStorage.setItem('access_token', response.access);
                     localStorage.setItem('refresh_token', response.refresh);
+
+                    //redirigir al usuario
+                    this.router.navigate(['/products']);
 
                     //imprimimos los tokens para verificar que funcionen
                     console.log('access_token:', response.access);
