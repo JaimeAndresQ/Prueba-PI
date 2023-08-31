@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 
 #contenedor-vitrina {
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
