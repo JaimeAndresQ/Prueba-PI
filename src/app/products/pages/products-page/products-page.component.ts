@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -56,7 +56,8 @@ export class ProductsPageComponent  implements OnInit{
 
   //obtener las cartas de la API
   getCartasByPage(pageNumber: number): void {
-    const apiUrl = `http://api-cartas-gama.thenexusbattles2.com:8002/api/cards/?page_number=${pageNumber}`;
+    //const apiUrl = `http://api-cartas-gama.thenexusbattles2.com:8002/api/cards/?page_number=${pageNumber}`;
+    const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
       this.cartas = data;
@@ -70,4 +71,32 @@ export class ProductsPageComponent  implements OnInit{
       this.getCartasByPage(this.currentPage);
     }
   }
+
+  //boton para agregar al carrito de compras
+  addToCart(id_carta: string, price: number) {
+    // Realizar una solicitud HTTP para agregar la carta al carrito
+    const accessToken = localStorage.getItem('access_token');
+
+    if (!accessToken) {
+      console.error('No se ha encontrado el token de acceso.');
+      return;
+    }
+
+    const cartEndpoint = 'http://localhost:3000/enviar-token';
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+    });
+    const requestData = { id_carta: id_carta, price: price };
+
+    this.http.post(cartEndpoint, requestData, { headers }).subscribe(
+        (response: any) => {
+            // Manejar la respuesta del servicio de carrito si es necesario
+            console.log('Cart response:', response);
+        },
+        (error) => {
+            console.error('Error adding to cart:', error);
+        }
+    );
+}
 }
