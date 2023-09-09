@@ -1,0 +1,47 @@
+body{
+    background: #CCBEA3;
+}
+.padre{
+    display: flex;
+    margin: 30px;
+    padding: 30px;
+}
+
+.tabla{
+    width: 80%;
+}
+
+th{
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: start;
+}
+
+table{
+    width: 90%;
+}
+
+.pagar{
+    text-align: start;
+    padding: 20px;
+    width: 20%;
+    background: #968664;
+    border-radius: 30px;
+    height: 400px;
+    font-size: 20px;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .padre{
+        display: inline-block;
+    }
+    .tabla{
+        width: 100%;
+    }
+    .pagar{
+        width: 30%;
+        height: 200px;
+    }
+}
