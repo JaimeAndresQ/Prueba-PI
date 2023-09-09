@@ -33,9 +33,21 @@ export class CartPageComponent implements OnInit {
   
     // Obtener las cartas del carrito del usuario
     getCartas(): void { 
-      const usuario = 'Administrador'; // Usuario para la solicitud GET de prueba
+      // Realizar una solicitud HTTP para agregar la carta al carrito
+      const accessToken = localStorage.getItem('access_token');
+
+      if (!accessToken) {
+        console.error('No se ha encontrado el token de acceso.');
+        return;
+      }
+
+      const cartEndpoint = 'http://localhost:3000/obtener-carrito';
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      });
   
-      this.http.get<Carta[]>(`http://127.0.0.1:8000/api/cart/${usuario}`).subscribe(
+      this.http.get<Carta[]>(cartEndpoint,{ headers }).subscribe(
         (data: Carta[]) => {
           this.cartas = data;
           console.log('Respuesta de la API:', data); // Imprimir la respuesta por consola
