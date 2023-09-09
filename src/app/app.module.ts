@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsModule } from './products/products.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-
+import { CartPageComponent } from './pages/cart/cart-page.component';
 import { LoginPageComponent } from './pages/login/login-page/login-page.component';
 import { SignupPageComponent } from './pages/registro/signup-page/signup-page.component';
 
@@ -21,6 +21,7 @@ import { SignupPageComponent } from './pages/registro/signup-page/signup-page.co
     AppComponent,
     LoginPageComponent,
     SignupPageComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
