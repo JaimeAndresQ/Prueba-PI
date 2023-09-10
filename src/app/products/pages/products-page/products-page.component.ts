@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef, AfterViewChecked   } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import VanillaTilt from 'vanilla-tilt';
 
 //interface de la carta
 interface Carta {
@@ -24,7 +25,7 @@ interface Carta {
   styleUrls: ['./products-page.component.css']
 })
 
-export class ProductsPageComponent  implements OnInit{
+export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   //guardar cartas
   cartas: Carta[] = [];
@@ -52,6 +53,23 @@ export class ProductsPageComponent  implements OnInit{
   ngOnInit(): void {
     this.generateTotalPagesArray();
     this.getCartasByPage(this.currentPage);
+  }
+
+  ngAfterViewChecked(){
+    const elementosCarta = document.querySelectorAll('[data-tilt]');
+    if (elementosCarta.length > 0) {
+      elementosCarta.forEach((elemento: any) => {
+        // Aplicar VanillaTilt a cada elemento
+        VanillaTilt.init(elemento, {
+          max: 15,
+          speed: 500,
+          perspective: 1000,
+          scale: 1.1,
+          transition: true,
+          gyroscope: true,
+        });
+      });
+    }
   }
 
   //generar los numeros
@@ -104,5 +122,34 @@ export class ProductsPageComponent  implements OnInit{
             console.error('Error adding to cart:', error);
         }
     );
+}
+
+getCardBackgroundClass(id_carta: string): string {
+  // Lógica para asignar una clase CSS en función del ID de la carta
+  switch (id_carta) {
+    case '64e5830109a1f203598f17f9':
+    case '64e5830109a1f203598f17fa':
+    case '64e5830109a1f203598f17fb':
+    case '64e5830109a1f203598f17fc':
+    case '64e5830109a1f203598f17fd':
+    case '64e5830109a1f203598f17fe':
+      return 'color-1';
+    case '64e582f509a1f203598f17ed':
+    case '64e582f509a1f203598f17ef':
+      return 'color-2';
+    case '64e582f509a1f203598f17ee':
+      return 'color-3'
+    case '64e582f509a1f203598f17f0':
+      return 'color-4'
+    case '64e582f509a1f203598f17f1':
+      return 'color-5'
+    case '64e582f509a1f203598f17f2':
+      return 'color-6'
+    case '64e582f509a1f203598f17f6':
+      return 'color-7'
+    // Agrega más casos para otros IDs de cartas si es necesario
+    default:
+      return ''; // Clase por defecto o vacía si no se encuentra ninguna coincidencia
+  }
 }
 }

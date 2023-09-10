@@ -5,39 +5,19 @@
 <br>
 <div class="padre">
   <div class="contenedor">
-    <div *ngFor="let carta of cartas" id="bordeCarta" class="carta">
-      <div>
-        <!-- Imagen Superior -->
-        <img [src]="carta.urlImagen" [alt]="carta.nombre_carta" class="w-full h-1/2 rounded-t-md"/>
-        <div class="informacion">
-          <ul class="list-none">
-            <li class="text-2xl nombre">
-              {{ carta.nombre_carta }}
-            </li>
-            <li class="datos">
-              Poder: {{ carta.poder }}
-            </li>
-            <li class="datos">
-              Vida: {{ carta.vida }}
-            </li>
-            <li class="datos">
-              Defensa: {{ carta.defensa }}
-            </li>
-            <li class="datos">
-              Ataque: {{ carta.ataqueBase }}
-            </li>
-            <li class="datos">
-              Dano: {{ carta.danoMax }}
-            </li>
-            <li class="datos">Precio: {{ carta.price }}</li>
-          </ul>
-          <hr>
-          <div class="botones"> 
-            <button class="deseo">Lista de deseo</button>
-            <button (click)="addToCart(carta.id_carta,carta.price)" class="carrito">Añadir al carrito</button>
-          </div>
-        </div>
-      </div>
+    <div *ngFor="let carta of cartas" id="bordeCarta" class="carta2" [class]="getCardBackgroundClass(carta.id_carta)" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
+      <!-- Bordeado Exotico Carta -->
+      <!-- Imagen Superior -->
+        <img src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
+        <h1>{{ carta.nombre_carta }}</h1>
+        <p>Poder: {{ carta.poder }}</p>
+        <p>Vida: {{ carta.vida }}</p>
+        <p>Defensa: {{ carta.defensa }}</p>
+        <p>Ataque: {{ carta.ataqueBase }}</p>
+        <p>Dano: {{ carta.danoMax }}</p>
+        <hr>
+          <button class="deseo">Lista de deseo</button>
+          <button (click)="addToCart(carta.id_carta,carta.price)" class="carrito">Añadir al carrito</button>
     </div>
   </div>
 </div>

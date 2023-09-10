@@ -20,36 +20,43 @@
   justify-items: center;
 }
 
-.carta{
-  position: relative;
+.carta2{
   margin: 10px;
   width: 300px;
   height: 450px;
-  background: rgb(255, 255, 255);
-  color: black;
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-hr{
-  width: 280px;
+.carta2 img{
+  height: 150px;
 }
 
-.informacion{
-  position: absolute;
-  bottom: 0;
-  padding: 5px;
+.carta2 .botones button{
+  transform: translateZ(50px);
 }
 
-.nombre{
-  font-weight: bold;
+.carta2 h1{
+  transform: translateZ(50px);
 }
 
-.botones{
-  display: flex;
-  justify-content: end;
-  margin: 5px;
+.carta2 hr{
+  transform: translateZ(20px);
+  width: 260px;
 }
 
-.botones button{
+.carta2 img{
+  transform: translateZ(50px);
+}
+
+.carta2 p{
+  transform: translateZ(20px);
+}
+
+[data-tilt] button{
+  transform: translateZ(20px);
   width: 80px;
   height: 50px;
   font-size: 15px;
@@ -59,6 +66,15 @@ hr{
   color: white;
   border-radius: 10px;
 }
+
+.carta2 .deseo:hover{
+  background: rgb(53, 182, 53);
+}
+
+.carta2 .carrito:hover{
+  background: rgb(150, 5, 5);
+}
+
 
 .deseo{
   background: rgb(95, 240, 95);
@@ -99,4 +115,37 @@ hr{
 .btnpaginacion.active {
   background-color: #fff;
   color: black;
+}
+
+
+/*colores de las cartas*/
+.color-1{
+  background: rgb(124, 243, 243);
+}
+
+.color-2{
+  background: #aca9ab;
+}
+
+.color-3{
+  background-image: url('https://img.freepik.com/fotos-premium/fondo-piel-dragon-rojo-oscuro_536047-297.jpg');
+  color: white;
+}
+
+.color-4{
+  background: #8b8c7a;
+}
+
+.color-5{
+  background: #bfddea;
+}
+
+.color-6{
+  background: linear-gradient(to bottom, #ffffd5, #f3f408, #f7ae5b, #ff0000);
+}
+
+.color-7{
+  background-image: url('https://p4.wallpaperbetter.com/wallpaper/465/723/641/triangle-triangle-illuminati-masons-wallpaper-preview.jpg');
+  background-position:center;
+  color: yellow;
 }

@@ -9,6 +9,7 @@ import { ProductsPageComponent } from './pages/products-page/products-page.compo
 import { MatIconModule } from '@angular/material/icon';
 
 
+
 @NgModule({
   declarations: [
     CardProductsComponent,

@@ -28,7 +28,7 @@
               "src/styles.css",
               "src/normalize.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"]
           },
           "configurations": {
             "production": {
@@ -90,7 +90,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           }
         }
       }
