@@ -97,7 +97,7 @@ export class GunsPageComponent  implements OnInit, AfterViewChecked {
   }
 
   //boton para agregar al carrito de compras
-  addToCart(id_carta: string, price: number) {
+  addToCart(id_carta: string, price: number,nombre_carta: string) {
     // Realizar una solicitud HTTP para agregar la carta al carrito
     const accessToken = localStorage.getItem('access_token');
 
@@ -111,7 +111,7 @@ export class GunsPageComponent  implements OnInit, AfterViewChecked {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
     });
-    const requestData = { id_carta: id_carta, price: price };
+    const requestData = { id_carta: id_carta, price: price,nombre_carta: nombre_carta };
 
     this.http.post(cartEndpoint, requestData, { headers }).subscribe(
         (response: any) => {

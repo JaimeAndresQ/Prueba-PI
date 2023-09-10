@@ -9,7 +9,7 @@ interface Carta {
     activo: boolean;
     urlImagen: string;
     price: number;
-    stock: number;
+    quantity: number;
     nombre_carta: string;
 }
 
@@ -24,13 +24,16 @@ interface Carta {
 export class CartPageComponent implements OnInit {
     // Guardar cartas
     cartas: Carta[] = [];
+    subtotal: number = 0;
+    iva: number = 0;
+    total: number = 0;
   
     constructor(private http: HttpClient) {}
   
     ngOnInit(): void {
       this.getCartas();
     }
-  
+
     // Obtener las cartas del carrito del usuario
     getCartas(): void { 
       // Realizar una solicitud HTTP para agregar la carta al carrito
@@ -50,11 +53,18 @@ export class CartPageComponent implements OnInit {
       this.http.get<Carta[]>(cartEndpoint,{ headers }).subscribe(
         (data: Carta[]) => {
           this.cartas = data;
+          this.calcular();
           console.log('Respuesta de la API:', data); // Imprimir la respuesta por consola
         },
         (error) => {
           console.error('Error al obtener el carrito de compras:', error);
         }
       );
+    }
+
+    calcular(): void{
+      this.subtotal = this.cartas.reduce((acc,carta) => acc + carta.price, 0);
+      this.iva = this.subtotal*0.19;
+      this.total = this.iva+this.subtotal;
     }
   }

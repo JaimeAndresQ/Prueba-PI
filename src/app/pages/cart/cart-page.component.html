@@ -1,4 +1,5 @@
-<div class="padre">
+<main>
+    <div class="padre">
     <div class="tabla">
         <table>
             <thead>
@@ -10,17 +11,29 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>imagen</td>
-                    <td>desc</td>
-                    <td>1</td>
-                    <td>100000</td>
+                <tr *ngFor="let carta of cartas">
+                    <td><img src="https://overplay.com.br/wp-content/uploads/2022/03/overplay-elden-armadura.jpg" alt="" style="height: 250px;"></td>
+                    <td>{{ carta.nombre_carta }}</td>
+                    <td>{{ carta.quantity }}</td>
+                    <td>{{ carta.price }}</td>
                 </tr>
             </tbody>
         </table>
     </div>
     <br>
     <div class="pagar">
-        hola
+        <h2 style="font-size: 30px;">Valor a pagar</h2>
+        <br>
+        <p>Subtotal: {{subtotal}}</p>
+        <br>
+        <p>iva: {{iva}}</p>
+        <br>
+        <p>total: {{total}}</p>
+        <div class="botones">
+            <p><a href="/vitrina-productos">Quieres anadir mas productos?</a></p>
+            <br>
+            <button>Realizar pedido</button>
+        </div>
     </div>
 </div>
+</main>
