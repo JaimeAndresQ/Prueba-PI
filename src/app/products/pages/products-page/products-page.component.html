@@ -1,8 +1,12 @@
 
 <main id="contenedor-vitrina" class="relative bg-center">
 <br>
-<br>
-<br>
+<div class="categorias">
+  <button class="categoria"><a href="personajes">personajes</a></button>
+  <button class="categoria"><a href="items">items</a></button>
+  <button class="categoria"><a href="armas">armas</a></button>
+  <button class="categoria"><a href="armaduras">armaduras</a></button>
+</div>
 <div class="padre">
   <div class="contenedor">
     <div *ngFor="let carta of cartas" id="bordeCarta" class="carta2" [class]="getCardBackgroundClass(carta.id_carta)" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
