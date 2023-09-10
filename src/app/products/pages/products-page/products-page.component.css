@@ -1,6 +1,71 @@
-
 #contenedor-vitrina {
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
+}
+
+.padre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contenedor{
+  z-index: 2;
+  background: #CCBEA3;
+  width: 1360px;
+  height: 1000px;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.carta{
+  position: relative;
+  margin: 10px;
+  width: 300px;
+  height: 450px;
+  background: rgb(255, 255, 255);
+  color: black;
+}
+
+hr{
+  width: 280px;
+}
+
+.informacion{
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+}
+
+.nombre{
+  font-weight: bold;
+}
+
+.botones{
+  display: flex;
+  justify-content: end;
+  margin: 5px;
+}
+
+.botones button{
+  width: 80px;
+  height: 50px;
+  font-size: 15px;
+  text-align: start;
+  margin: 5px;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+.deseo{
+  background: rgb(95, 240, 95);
+}
+
+.carrito{
+  background: red;
 }
 
 .pagination a {
@@ -17,20 +82,21 @@
   z-index: 30;
 }
 
-button {
+.btnpaginacion {
   color: black;
   font-size: 16px;
   padding: 10px 20px;
   border-radius: 5px;
   background-color: #cccccc5d;
   text-decoration: none;
+  margin: 10px;
 }
 
-button:hover {
+.btnpaginacion:hover {
   background-color: #ccc;
 }
 
-button.active {
+.btnpaginacion.active {
   background-color: #fff;
   color: black;
 }

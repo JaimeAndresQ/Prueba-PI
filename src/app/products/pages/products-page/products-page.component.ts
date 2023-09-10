@@ -11,6 +11,11 @@ interface Carta {
   price: number;
   stock: number;
   nombre_carta: string;
+  poder: string,
+  vida:number,
+  defensa:number,
+  ataqueBase: number,
+  danoMax: number
 }
 
 @Component({
@@ -62,6 +67,7 @@ export class ProductsPageComponent  implements OnInit{
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
       this.cartas = data;
     });
+    console.log(this.cartas)
   }
 
   //camiar de pagina

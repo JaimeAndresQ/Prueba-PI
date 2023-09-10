@@ -1,75 +1,55 @@
-<main id="contenedor-vitrina" class="relative bg-center -z-30">
-  <div
-    class="absolute inset-x-24 inset-y-24 bg-[#97a380] opacity-75 -z-20 rounded-[30px]"
-  ></div>
-  <!-- Grid -->
 
-  <section
-    class="grid 2xl:grid-rows-2 xl:md:grid-rows-1 2xl:grid-cols-3 xl:md:grid-cols-2 py-20 px-40"
-  >
-
-    
-
-    
-  </section>
-</main>
-<div
-    *ngFor="let carta of cartas"
-      id="bordeCarta"
-      class="flex py-36 px-20 items-center justify-center relative"
-    >
-      <!-- Bordeado Exotico Carta -->
-      <mat-icon
-        class="absolute -z-10"
-        aria-hidden="false"
-        aria-label="Carrito Compras"
-        svgIcon="cartas"
-        style="width: 420px; height: 579px"
-        >Carrito</mat-icon
-      >
-
-      <!-- Contenedor Carta -->
-      <div
-        
-        class="container bg-slate-200 w-[277px] h-[477px] rounded-md relative"
-      >
+<main id="contenedor-vitrina" class="relative bg-center">
+<br>
+<br>
+<br>
+<div class="padre">
+  <div class="contenedor">
+    <div *ngFor="let carta of cartas" id="bordeCarta" class="carta">
+      <div>
         <!-- Imagen Superior -->
-        <img
-          [src]="carta.urlImagen"
-          [alt]="carta.nombre_carta"
-          class="w-full h-1/2 rounded-t-md"
-        />
-
-        <!-- Atributos -->
-        <div class="pl-3 pt-1 bg-amber-700 w-full h-1/2 rounded-b-md">
+        <img [src]="carta.urlImagen" [alt]="carta.nombre_carta" class="w-full h-1/2 rounded-t-md"/>
+        <div class="informacion">
           <ul class="list-none">
-            <li class="text-2xl text-white">
-              Nombre: {{ carta.nombre_carta }}
+            <li class="text-2xl nombre">
+              {{ carta.nombre_carta }}
             </li>
-            <li class="text-2xl text-white">
-              ID: {{ carta.id_carta }}
+            <li class="datos">
+              Poder: {{ carta.poder }}
             </li>
-            <li class="text-lg text-white">Precio: {{ carta.price }}</li>
+            <li class="datos">
+              Vida: {{ carta.vida }}
+            </li>
+            <li class="datos">
+              Defensa: {{ carta.defensa }}
+            </li>
+            <li class="datos">
+              Ataque: {{ carta.ataqueBase }}
+            </li>
+            <li class="datos">
+              Dano: {{ carta.danoMax }}
+            </li>
+            <li class="datos">Precio: {{ carta.price }}</li>
           </ul>
-          <button (click)="addToCart(carta.id_carta,carta.price)">Añadir al carrito</button>
+          <hr>
+          <div class="botones"> 
+            <button class="deseo">Lista de deseo</button>
+            <button (click)="addToCart(carta.id_carta,carta.price)" class="carrito">Añadir al carrito</button>
+          </div>
         </div>
       </div>
     </div>
-
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
 <!-- Paginacion -->
 <div class="pagination flex justify-between w-6 h-6 p-6" id="pagination">
-  <button
-    class="bg- border-2 border-solid"
-    *ngFor="let pageNumber of totalPagesArray"
-    [class.active]="pageNumber === currentPage"
-    (click)="changePageTo(pageNumber)"
-  >
+  <button class="bg- border-2 border-solid btnpaginacion" *ngFor="let pageNumber of totalPagesArray" [class.active]="pageNumber === currentPage" (click)="changePageTo(pageNumber)">
     {{ pageNumber }}
   </button>
 </div>
-
-
-
-
-
+</main>
 
