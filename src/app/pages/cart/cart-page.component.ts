@@ -62,6 +62,87 @@ export class CartPageComponent implements OnInit {
       );
     }
 
+    addToCart(id_carta: string, price: number, nombre_carta: string) {
+      // Realizar una solicitud HTTP para agregar la carta al carrito
+      const accessToken = localStorage.getItem('access_token');
+  
+      if (!accessToken) {
+        console.error('No se ha encontrado el token de acceso.');
+        return;
+      }
+  
+      const cartEndpoint = 'http://localhost:3000/enviar-token';
+      const headers = new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
+      });
+      const requestData = { id_carta: id_carta, price: price, nombre_carta:nombre_carta };
+  
+      this.http.post(cartEndpoint, requestData, { headers }).subscribe(
+          (response: any) => {
+              // Manejar la respuesta del servicio de carrito si es necesario
+              console.log('Cart response:', response);
+          },
+          (error) => {
+              console.error('Error adding to cart:', error);
+          }
+      );
+  }
+
+  removeToCart(id_carta: string) {
+    // Realizar una solicitud HTTP para agregar la carta al carrito
+    const accessToken = localStorage.getItem('access_token');
+
+    if (!accessToken) {
+      console.error('No se ha encontrado el token de acceso.');
+      return;
+    }
+
+    const cartEndpoint = 'http://localhost:3000/remover-carta';
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+    });
+    const requestData = { id_carta: id_carta};
+
+    this.http.post(cartEndpoint, requestData, { headers }).subscribe(
+        (response: any) => {
+            // Manejar la respuesta del servicio de carrito si es necesario
+            console.log('Cart response:', response);
+        },
+        (error) => {
+            console.error('Error adding to cart:', error);
+        }
+    );
+}
+
+  deleteToCart(id_carta: string) {
+    // Realizar una solicitud HTTP para agregar la carta al carrito
+    const accessToken = localStorage.getItem('access_token');
+
+    if (!accessToken) {
+      console.error('No se ha encontrado el token de acceso.');
+      return;
+    }
+
+    const cartEndpoint = 'http://localhost:3000/borrar-carta';
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+    });
+    const requestData = { id_carta: id_carta};
+
+    this.http.post(cartEndpoint, requestData, { headers }).subscribe(
+        (response: any) => {
+            // Manejar la respuesta del servicio de carrito si es necesario
+            console.log('Cart response:', response);
+        },
+        (error) => {
+            console.error('Error adding to cart:', error);
+        }
+    );
+}
+
     calcular(): void{
       this.subtotal = this.cartas.reduce((acc,carta) => acc + carta.price, 0);
       this.iva = this.subtotal*0.19;
