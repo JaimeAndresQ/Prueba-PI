@@ -8,14 +8,16 @@
                     <th>Descripcion</th>
                     <th>Cantidad</th>
                     <th>Valor</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let carta of cartas">
                     <td><img src="https://overplay.com.br/wp-content/uploads/2022/03/overplay-elden-armadura.jpg" alt="" style="height: 250px;"></td>
                     <td>{{ carta.nombre_carta }}</td>
-                    <td>{{ carta.quantity }}</td>
+                    <td><button (click)="removeToCart(carta.id_carta)">-</button> {{ carta.quantity }} <button (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)">+</button></td>
                     <td>{{ carta.price }}</td>
+                    <td><button (click)="deleteToCart(carta.id_carta)">Eliminar</button></td>
                 </tr>
             </tbody>
         </table>
