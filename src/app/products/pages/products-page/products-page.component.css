@@ -1,5 +1,6 @@
 #contenedor-vitrina {
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
+  height: 91vh;
 }
 
 .caja{
@@ -11,14 +12,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 .contenedor{
   z-index: 2;
   background: #CCBEA3;
   width: 1360px;
-  height: 1000px;
+  height: 768px;
   border-radius: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -26,12 +27,12 @@
 }
 
 .carta2{
-  margin: 10px;
-  width: 300px;
-  height: 450px;
+  margin: 5px;
+  width: 250px;
+  height: 350px;
   transform: perspective(1000px);
   transform-style: preserve-3d;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
 }
 
@@ -43,13 +44,15 @@
   transform: translateZ(50px);
 }
 
-.carta2 h1{
+.carta2 .titulo{
   transform: translateZ(50px);
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .carta2 hr{
   transform: translateZ(20px);
-  width: 260px;
+  width: 200px;
 }
 
 .carta2 img{
@@ -62,12 +65,12 @@
 
 [data-tilt] button{
   transform: translateZ(20px);
-  width: 80px;
-  height: 50px;
-  font-size: 15px;
+  width: 50px;
+  height: 35px;
+  font-size: 10px;
   text-align: start;
   margin: 5px;
-  padding: 5px;
+  padding: 2px;
   color: white;
   border-radius: 10px;
 }
