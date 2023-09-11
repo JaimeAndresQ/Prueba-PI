@@ -17,9 +17,10 @@
 
 .contenedor{
   z-index: 2;
+  padding: 20px;
   background: #CCBEA3;
-  width: 1360px;
-  height: 768px;
+  max-width: 1360px;
+  max-height: 850px;
   border-radius: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -27,7 +28,7 @@
 }
 
 .carta2{
-  margin: 5px;
+  margin: 20px;
   width: 250px;
   height: 350px;
   transform: perspective(1000px);
@@ -181,4 +182,123 @@
   background-image: url('https://p4.wallpaperbetter.com/wallpaper/465/723/641/triangle-triangle-illuminati-masons-wallpaper-preview.jpg');
   background-position:center;
   color: yellow;
+}
+
+/*responsive*/
+
+@media (max-width: 1360px){
+  .contenedor{
+    z-index: 2;
+    padding: 15px;
+    background: #CCBEA3;
+    max-width: 1000px;
+    max-height: 600px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+
+  .carta2{
+    margin: 10px;
+    width: 200px;
+    height: 270px;
+    transform: perspective(1000px);
+    transform-style: preserve-3d;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .carta2 img{
+    height: 120px;
+  }
+  
+  .carta2 .botones button{
+    transform: translateZ(50px);
+  }
+  
+  .carta2 .titulo{
+    transform: translateZ(20px);
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  .carta2 hr{
+    width: 150px;
+  }
+
+  .carta2 p{
+    font-size: 15px;
+  }
+
+  [data-tilt] button{
+    transform: translateZ(20px);
+    width: 30px;
+    height: 20px;
+    font-size: 10px;
+    text-align: start;
+    margin: 5px;
+    padding: 2px;
+    color: white;
+    border-radius: 10px;
+  }
+
+}
+
+@media (max-width: 900px){
+
+  #contenedor-vitrina{
+    height: 100%;
+  }
+  
+  .caja{
+    display: inline;
+    justify-content: center;
+  }
+
+  .padre {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .contenedor{
+    z-index: 2;
+    background: #CCBEA3;
+    width: 600px;
+    max-height: 2000px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+
+@media (max-width: 500px){
+
+  #contenedor-vitrina{
+    height: 100%;
+  }
+  
+  .caja{
+    display: inline;
+    justify-content: center;
+  }
+
+  .padre {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .contenedor{
+    z-index: 2;
+    background: #CCBEA3;
+    width: 300px;
+    max-height: 3000px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
 }
