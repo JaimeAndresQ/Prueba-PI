@@ -17,10 +17,10 @@
 
 .contenedor{
   z-index: 2;
-  padding: 20px;
+  padding: 10px;
   background: #CCBEA3;
-  max-width: 1360px;
-  max-height: 850px;
+  max-width: 1200px;
+  max-height: 770px;
   border-radius: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -28,7 +28,9 @@
 }
 
 .carta2{
-  margin: 20px;
+  margin: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
   width: 250px;
   height: 350px;
   transform: perspective(1000px);
