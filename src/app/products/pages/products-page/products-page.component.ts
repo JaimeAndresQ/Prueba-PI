@@ -147,9 +147,8 @@ getCardBackgroundClass(id_carta: string): string {
       return 'color-6'
     case '64e582f509a1f203598f17f6':
       return 'color-7'
-    // Agrega más casos para otros IDs de cartas si es necesario
     default:
-      return ''; // Clase por defecto o vacía si no se encuentra ninguna coincidencia
+      return '';
   }
 }
 }

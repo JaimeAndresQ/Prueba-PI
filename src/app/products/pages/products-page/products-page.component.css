@@ -2,6 +2,11 @@
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
 }
 
+.caja{
+  display: flex;
+  justify-content: center;
+}
+
 .padre {
   display: flex;
   justify-content: center;
@@ -121,17 +126,11 @@
 .categorias{
   margin: 30px;
   padding: 20px;
+  background:#CCBEA3;
+  border-radius: 30px;
+  margin-right: 50px;
 }
 
-.categoria{
-  margin: 10px;
-  padding: 10px;
-  background-image: url('../../../../assets/images/madera.png');
-  background-size: 100% 100%;
-  font-weight: bold;
-  font-size: 20px;
-  color: white;
-}
 
 /*colores de las cartas*/
 .color-1{
