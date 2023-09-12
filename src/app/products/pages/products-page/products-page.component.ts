@@ -44,10 +44,18 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       'carrito',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/shopping_cart.svg'),
     )
-  this.matIconRegistry.addSvgIcon(
-    'cartas',
-    this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/cartaBorde.svg')
-  )
+    this.matIconRegistry.addSvgIcon(
+      'cartas',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/cartaBorde.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'favorito',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/favorite.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'añadir_carrito',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/add_shop.svg')
+    )
   }
 
   ngOnInit(): void {

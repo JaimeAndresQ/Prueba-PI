@@ -1,6 +1,6 @@
 #contenedor-vitrina {
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
-  height: 91vh;
+  height: 110vh;
 }
 
 .caja{
@@ -12,15 +12,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
 }
 
 .contenedor{
   z-index: 2;
-  padding: 10px;
-  background: #CCBEA3;
-  max-width: 1200px;
-  max-height: 770px;
+  background: #ccbea3c4;
   border-radius: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -28,20 +24,13 @@
 }
 
 .carta2{
-  margin: 10px;
-  margin-right: 20px;
-  margin-left: 20px;
-  width: 250px;
-  height: 350px;
+  margin: 3.5%;
   transform: perspective(1000px);
   transform-style: preserve-3d;
   padding: 15px;
   border-radius: 10px;
 }
 
-.carta2 img{
-  height: 150px;
-}
 
 .carta2 .botones button{
   transform: translateZ(50px);
@@ -49,13 +38,11 @@
 
 .carta2 .titulo{
   transform: translateZ(20px);
-  font-size: 20px;
   font-weight: bold;
 }
 
 .carta2 hr{
   transform: translateZ(20px);
-  width: 200px;
 }
 
 .carta2 img{
@@ -68,31 +55,24 @@
 
 [data-tilt] button{
   transform: translateZ(20px);
-  width: 50px;
-  height: 35px;
-  font-size: 10px;
-  text-align: start;
+  text-align: center;
   margin: 5px;
   padding: 2px;
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 10px;
 }
 
+[data-tilt] mat-icon{
+  width: 30px;
+  height: 30px;
+}
+
 .carta2 .deseo:hover{
-  background: rgb(53, 182, 53);
+  color: rgb(53, 182, 53);
 }
 
 .carta2 .carrito:hover{
-  background: rgb(150, 5, 5);
-}
-
-
-.deseo{
-  background: rgb(95, 240, 95);
-}
-
-.carrito{
-  background: red;
+  color: rgb(150, 5, 5);
 }
 
 .pagination a {
@@ -130,9 +110,8 @@
 
 /*categorias*/
 .categorias{
-  margin: 30px;
   padding: 20px;
-  background:#CCBEA3;
+  background:#ccbea3c4;
   border-radius: 30px;
   margin-right: 50px;
 }
@@ -188,71 +167,39 @@
 
 /*responsive*/
 
-@media (max-width: 1360px){
-  .contenedor{
-    z-index: 2;
-    padding: 15px;
-    background: #CCBEA3;
-    max-width: 1000px;
-    max-height: 600px;
-    border-radius: 30px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-  }
+@media (max-width: 1525px){
 
   .carta2{
-    margin: 10px;
-    width: 200px;
-    height: 270px;
-    transform: perspective(1000px);
     transform-style: preserve-3d;
-    padding: 15px;
-    border-radius: 10px;
+    margin: 3%;
   }
 
-  .carta2 img{
-    height: 120px;
-  }
-  
   .carta2 .botones button{
     transform: translateZ(50px);
   }
-  
   .carta2 .titulo{
     transform: translateZ(20px);
-    font-size: 15px;
     font-weight: bold;
-  }
-  
-  .carta2 hr{
-    width: 150px;
-  }
-
-  .carta2 p{
-    font-size: 15px;
   }
 
   [data-tilt] button{
     transform: translateZ(20px);
-    width: 30px;
-    height: 20px;
-    font-size: 10px;
-    text-align: start;
     margin: 5px;
     padding: 2px;
-    color: white;
-    border-radius: 10px;
+  }
+  [data-tilt] mat-icon{
+    width: 20px;
+    height: 20px;
   }
 
 }
 
 @media (max-width: 900px){
 
-  #contenedor-vitrina{
+  #contenedor-vitrina {
     height: 100%;
   }
-  
+
   .caja{
     display: inline;
     justify-content: center;
@@ -264,24 +211,20 @@
     height: 100%;
   }
 
-  .contenedor{
-    z-index: 2;
-    background: #CCBEA3;
-    width: 600px;
-    max-height: 2000px;
-    border-radius: 30px;
-    display: grid;
+  .contenedor {
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
+    width: 1000px;
+    height: 1020px;
   }
+
 }
 
 @media (max-width: 500px){
 
-  #contenedor-vitrina{
+  #contenedor-vitrina {
     height: 100%;
   }
-  
+
   .caja{
     display: inline;
     justify-content: center;
@@ -290,17 +233,11 @@
   .padre {
     justify-content: center;
     align-items: center;
-    height: 100%;
   }
 
-  .contenedor{
-    z-index: 2;
-    background: #CCBEA3;
-    width: 300px;
-    max-height: 3000px;
-    border-radius: 30px;
-    display: grid;
+  .contenedor {
     grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
+    width: 1000px;
+    height: 3020px;
   }
 }
