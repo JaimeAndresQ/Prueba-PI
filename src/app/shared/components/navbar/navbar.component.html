@@ -25,6 +25,9 @@
 
     <div class="flex flex-wrap items-center">
 
+      <ng-container *ngIf="usuarioHaIniciadoSesion">
+        <h1 class="" style="color: white; padding-right: 20px;">{{ nombreUsuario }}</h1>
+      </ng-container>
       <!-- Barra Navegacion -->
       <form action="#" method="GET" class="hidden lg:block ">
         <!-- Conteneder de busqueda -->
@@ -42,10 +45,12 @@
 
       <div class="">
         <!-- Icono Carrito -->
+        <a href="/cart">
           <button type="button" data-dropdown-toggle="notification-dropdown" id="carrito-boton" class="flex flex-wrap items-center py-2.5 pr-3.5 pl-5">
             <mat-icon class="icono-carrito" aria-hidden="false" aria-label="Carrito Compras" svgIcon="carrito" style="width: 30px; height: 30px">Carrito</mat-icon>
             <p class="text-white px-2.5">Carrito</p>
           </button>
+        </a>
       </div>
 
     </div>

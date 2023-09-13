@@ -52,6 +52,7 @@ export class LoginPageComponent implements OnInit{
                     //almacenamos los tokens de access y refresh
                     localStorage.setItem('access_token', response.access);
                     localStorage.setItem('refresh_token', response.refresh);
+                    localStorage.setItem('username',formData.username);
 
                     //redirigir al usuario
                     this.router.navigate(['/productos-vitrina']);
