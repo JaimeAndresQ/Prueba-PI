@@ -32,7 +32,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   ///paginacion
   currentPage:number = 1;
-  totalPages:number = 5;
+  totalPages:number = 7;
   totalPagesArray: number[] = [];
 
   constructor(private http: HttpClient,
