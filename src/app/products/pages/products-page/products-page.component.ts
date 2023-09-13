@@ -31,8 +31,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   cartas: Carta[] = [];
 
   ///paginacion
-  currentPage = 1;
-  totalPages = 7;
+  currentPage:number = 1;
+  totalPages:number = 5;
   totalPagesArray: number[] = [];
 
   constructor(private http: HttpClient,
@@ -56,6 +56,27 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       'añadir_carrito',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/add_shop.svg')
     )
+    this.matIconRegistry.addSvgIcon(
+      'add',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/add.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'remove',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/remove.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'trash',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/trash.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'flecha_derecha',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/nav_right.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'flecha_izquierda',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/nav_left.svg')
+    )
+
   }
 
   ngOnInit(): void {
@@ -83,6 +104,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   //generar los numeros
   generateTotalPagesArray(): void {
     this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+
   }
 
   //obtener las cartas de la API
@@ -132,6 +154,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
     );
 }
 
+
+
 getCardBackgroundClass(id_carta: string): string {
   // Lógica para asignar una clase CSS en función del ID de la carta
   switch (id_carta) {
@@ -159,4 +183,8 @@ getCardBackgroundClass(id_carta: string): string {
       return '';
   }
 }
+
+
 }
+
+
