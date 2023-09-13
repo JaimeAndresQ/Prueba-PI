@@ -21,132 +21,24 @@
 <div class="padre my-12">
   <div class="contenedor 2xl:w-[1360px] 2xl:h-[768px] md:w-[1000px] md:h-[620px]">
 
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:sm:w-[200px] md:sm:h-[290px] " style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
+    <div *ngFor="let carta of cartas" id="bordeCarta" [class]="getCardBackgroundClass(carta.id_carta)" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
       <!-- Bordeado Exotico Carta -->
       <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:sm:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
+        <img src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="" class="2xl:h-[150px] md:sm:h-[120px]">
+        <p class="titulo 2xl:text-[20px] md:text-[15px]">{{ carta.nombre_carta }}</p>
+        <p class="2xl:text-[16px] md:text-[15px]">Poder: {{ carta.poder }}</p>
+        <p class="2xl:text-[16px] md:text-[15px]">Vida: {{ carta.vida }}</p>
+        <p class="2xl:text-[16px] md:text-[15px]">Defensa: {{ carta.defensa }}</p>
+        <p class="2xl:text-[16px] md:text-[15px]">Ataque: {{ carta.ataqueBase }}</p>
+        <p class="2xl:text-[16px] md:text-[15px]">Dano: {{ carta.danoMax }}</p>
         <hr class="2xl:w-[220px] mt-2 border-black">
           <button class="deseo">
             <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
           </button>
-          <button class="carrito">
+          <button class="carrito" (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)">
             <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
           </button>
     </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-
-
-
-
-    <!-- <div *ngFor="let carta of cartas" id="bordeCarta" class="carta2" [class]="getCardBackgroundClass(carta.id_carta)" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000"> -->
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <!-- <img src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo">{{ carta.nombre_carta }}</p>
-        <p>Poder: {{ carta.poder }}</p>
-        <p>Vida: {{ carta.vida }}</p>
-        <p>Defensa: {{ carta.defensa }}</p>
-        <p>Ataque: {{ carta.ataqueBase }}</p>
-        <p>Dano: {{ carta.danoMax }}</p>
-        <hr>
-          <button class="deseo">3</button>
-          <button (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)" class="carrito">C</button>
-    </div> -->
 
   </div>
 </div>
