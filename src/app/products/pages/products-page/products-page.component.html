@@ -1,25 +1,86 @@
 
 <main id="contenedor-vitrina" class="relative bg-center">
+
 <div class="caja md:mx-12">
+
   <div class="categorias my-12">
-  <h3>Categorias</h3>
-  <ul>
-    <li><a href="personajes">personajes</a></li>
-    <li><a href="items">items</a></li>
-    <li><a href="armas">armas</a></li>
-    <li><a href="armaduras">armaduras</a></li>
-  </ul>
 
-  <hr>
-  <h3>Precio</h3>
+    <h3>Categorias</h3>
+    <ul>
+      <div class="flex items-center">
+        <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+        <li><a href="personajes">Personajes</a></li>
+      </div>
+      <div class="flex items-center">
+        <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+        <li><a href="items">Items</a></li>
+      </div>
+      <div class="flex items-center">
+        <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+        <li><a href="armas">Armas</a></li>
+      </div>
+      <div class="flex items-center">
+        <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+        <li><a href="armaduras">Armaduras</a></li>
+      </div>
+      <div class="flex items-center">
+        <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+        <li><a href="descuento">Descuento</a></li>
+      </div>
+    </ul>
 
-  <hr>
-  <h3>Tipo de carta</h3>
-  <hr>
-  <h3>Promocion</h3>
+    <hr class="my-2">
+
+    <h3>Tipo de carta</h3>
+
+      <h4>Guerrero</h4>
+      <ul class="ml-4">
+        <div class="flex items-center">
+          <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+          <li><a href="tanque">Tanque</a></li>
+        </div>
+        <div class="flex items-center">
+          <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+          <li><a href="armas">Armas</a></li>
+        </div>
+      </ul>
+
+      <h4>Mago</h4>
+      <ul class="ml-4">
+
+        <div class="flex items-center">
+          <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+          <li><a href="fuego">Fuego</a></li>
+        </div>
+
+        <div class="flex items-center">
+          <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+          <li><a href="hielo">Hielo</a></li>
+        </div>
+
+      </ul>
+
+      <h4>Pícaro</h4>
+      <ul class="ml-4">
+
+        <div class="flex items-center">
+          <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+          <li><a href="veneno">Veneno</a></li>
+        </div>
+
+        <div class="flex items-center">
+          <mat-icon class="-mr-2" aria-hidden="false" aria-label="..." svgIcon="add" style="width: 25px; height: 25px;"></mat-icon>
+          <li><a href="machete">Machete</a></li>
+        </div>
+      </ul>
+
   </div>
+
+
 <div class="padre my-12">
+
   <div class="contenedor 2xl:w-[1360px] 2xl:h-[768px] md:w-[1000px] md:h-[620px]">
+
 
     <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:sm:w-[200px] md:sm:h-[290px] " style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
       <!-- Bordeado Exotico Carta -->
@@ -36,97 +97,7 @@
             <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
           </button>
           <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
-    </div>
-    <div id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" style="background-color: rgb(124, 243, 243);" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-        <img class="2xl:h-[150px] md:h-[120px]" src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="">
-        <p class="titulo 2xl:text-[20px] md:text-[15px]">Armadura pesada</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Poder:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Vida:</p>
-        <p class="2xl:text-[16px] md:text-[15px]">Defensa:</p>
-        <p>Ataque:</p>
-        <p>Dano:</p>
-        <hr class="2xl:w-[220px] mt-2 border-black">
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
+            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito</mat-icon>
           </button>
     </div>
 
