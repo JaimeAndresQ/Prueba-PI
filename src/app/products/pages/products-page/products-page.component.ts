@@ -68,6 +68,14 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       'trash',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/trash.svg')
     )
+    this.matIconRegistry.addSvgIcon(
+      'flecha_derecha',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/nav_right.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'flecha_izquierda',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/nav_left.svg')
+    )
 
   }
 
