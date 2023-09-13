@@ -15,9 +15,9 @@
                 <tr *ngFor="let carta of cartas">
                     <td><img src="https://overplay.com.br/wp-content/uploads/2022/03/overplay-elden-armadura.jpg" alt="" style="height: 250px;"></td>
                     <td>{{ carta.nombre_carta }}</td>
-                    <td><button (click)="removeToCart(carta.id_carta)">-</button> {{ carta.quantity }} <button (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)">+</button></td>
+                    <td><button (click)="removeToCart(carta.id_carta)"><img src="../../../assets/icons/remove.svg" alt=""></button> {{ carta.quantity }} <button (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)"><img src="../../../assets/icons/add.svg" alt=""></button></td>
                     <td>{{ carta.price }}</td>
-                    <td><button (click)="deleteToCart(carta.id_carta)">Eliminar</button></td>
+                    <td><button (click)="deleteToCart(carta.id_carta)"><img src="../../../assets/icons/trash.svg" alt=""></button></td>
                 </tr>
             </tbody>
         </table>

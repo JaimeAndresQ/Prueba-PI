@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { WebsocketService } from './websocket.service';
 
 //interface de la carta
 interface Carta {
@@ -28,10 +29,20 @@ export class CartPageComponent implements OnInit {
     iva: number = 0;
     total: number = 0;
   
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private websocketService: WebsocketService) {
+      this.cartas = []
+    }
   
     ngOnInit(): void {
       this.getCartas();
+      this.websocketService.listen('cartUpdated').subscribe((data: Carta[] | Carta) => {
+        if (Array.isArray(data)) {
+          this.cartas = data;
+        } else {
+          this.cartas = [data]
+        }
+        this.calcular();
+      });
     }
 
     // Obtener las cartas del carrito del usuario
@@ -51,8 +62,12 @@ export class CartPageComponent implements OnInit {
       });
   
       this.http.get<Carta[]>(cartEndpoint,{ headers }).subscribe(
-        (data: Carta[]) => {
-          this.cartas = data;
+        (data: Carta[] | Carta) => {
+          if (Array.isArray(data)){
+            this.cartas = data;
+          }else{
+            this.cartas = [data]
+          }
           this.calcular();
           console.log('Respuesta de la API:', data); // Imprimir la respuesta por consola
         },
