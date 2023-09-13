@@ -34,6 +34,9 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
   currentPage = 1;
   totalPages = 7;
   totalPagesArray: number[] = [];
+  maxVisiblePages: number = 2;
+  pagesToShow: number = 5;
+
 
   constructor(private http: HttpClient,
     private matIconRegistry: MatIconRegistry,
@@ -73,8 +76,25 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
 
   //generar los numeros
   generateTotalPagesArray(): void {
-    this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+    // Calcula la página central en función del número total de páginas
+    const middlePage = Math.ceil(this.pagesToShow / 2);
+
+    // Calcula el inicio y el fin del rango de páginas visibles
+    let start = this.currentPage - middlePage + 1;
+    let end = this.currentPage + middlePage - 1;
+
+    // Ajusta los valores de inicio y fin según los límites
+    if (start < 1) {
+      start = 1;
+      end = Math.min(this.totalPages, this.pagesToShow);
+    } else if (end > this.totalPages) {
+      end = this.totalPages;
+      start = Math.max(1, this.totalPages - this.pagesToShow + 1);
+    }
+
+    this.totalPagesArray = Array.from({ length: end - start + 1 }, (_, i) => start + i);
   }
+
 
   //obtener las cartas de la API
   getCartasByPage(pageNumber: number): void {
@@ -91,9 +111,12 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
   changePageTo(pageNumber: number): void {
     if (pageNumber >= 1 && pageNumber <= this.totalPages) {
       this.currentPage = pageNumber;
+      this.generateTotalPagesArray(); // Actualiza las páginas visibles
       this.getCartasByPage(this.currentPage);
     }
   }
+
+
 
   //boton para agregar al carrito de compras
   addToCart(id_carta: string, price: number,nombre_carta: string) {
@@ -121,6 +144,27 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
             console.error('Error adding to cart:', error);
         }
     );
+}
+
+get visiblePages(): number[] {
+  const start = Math.max(1, this.currentPage - this.maxVisiblePages);
+  const end = Math.min(this.totalPages, this.currentPage + this.maxVisiblePages);
+
+  const visiblePages = [];
+  for (let i = start; i <= end; i++) {
+    visiblePages.push(i);
+  }
+
+  return visiblePages;
+}
+
+// Cambia de página hacia adelante o hacia atrás
+public changePage(direction: number): void {
+  const newPage = this.currentPage + direction;
+  if (newPage >= 1 && newPage <= this.totalPages) {
+    this.currentPage = newPage;
+    this.getCartasByPage(this.currentPage);
+  }
 }
 
 getCardBackgroundClass(id_carta: string): string {

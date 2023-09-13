@@ -106,7 +106,7 @@
 <br>
 <br>
 <!-- Paginacion -->
-<div *ngIf="totalPagesArray.length <= 5; else pagination" class="pagination flex justify-between w-6 h-6 p-6" id="pagination">
+<div *ngIf="totalPages <= 5; else pagination" class="pagination flex justify-between w-6 h-6 p-6" id="pagination">
   <button class="bg- border-2 border-solid btnpaginacion" *ngFor="let pageNumber of totalPagesArray" [class.active]="pageNumber === currentPage" (click)="changePageTo(pageNumber)">
     {{ pageNumber }}
   </button>
@@ -114,8 +114,8 @@
 
 <ng-template #pagination>
 
-   <div class="pagination flex items-center justify-between w-6 h-6 p-6" id="pagination">
-    <button class="btn_izq flex items-center">
+  <div class="pagination flex items-center justify-between w-6 h-6 p-6" id="pagination">
+    <button (click)="changePageTo(currentPage - 1)" class="btn_izq flex items-center">
       <mat-icon class="" aria-hidden="false" aria-label="Flecha Izquierda" svgIcon="flecha_izquierda">Flecha_Izquierda</mat-icon>
     </button>
 
@@ -123,10 +123,12 @@
       {{ pageNumber }}
     </button>
 
-    <button class="btn_der flex items-center">
+    <button (click)="changePageTo(currentPage + 1)" class="btn_der flex items-center">
       <mat-icon class="" aria-hidden="false" aria-label="Flecha Derecha" svgIcon="flecha_derecha">Flecha_Derecha</mat-icon>
     </button>
   </div>
+
+
 
 </ng-template>
 
