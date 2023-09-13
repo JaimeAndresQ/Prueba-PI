@@ -10,7 +10,8 @@ export class WebsocketService {
     private socket;
 
     constructor() {
-        this.socket = io('http://localhost:3000');
+        this.socket = io('https://store.thenexusbattles2.com/websocket')
+        //this.socket = io('http://localhost:3000');
         console.log('WebSocket connected');
     }
 
