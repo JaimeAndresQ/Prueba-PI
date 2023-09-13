@@ -75,6 +75,8 @@
   color: rgb(150, 5, 5);
 }
 
+/* Paginacion */
+
 .pagination a {
   cursor: pointer;
 }
@@ -106,6 +108,16 @@
 .btnpaginacion.active {
   background-color: #fff;
   color: black;
+}
+
+.pagination mat-icon{
+  color: #ccc;
+  width: 35px;
+  height: 40px;
+}
+
+.pagination mat-icon:hover{
+  color: #fff;
 }
 
 /*categorias*/
@@ -181,6 +193,10 @@
   background-position:center;
   color: yellow;
 }
+
+
+
+
 
 /*responsive*/
 
