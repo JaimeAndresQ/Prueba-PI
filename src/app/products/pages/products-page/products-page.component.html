@@ -106,10 +106,15 @@
 <br>
 <br>
 <!-- Paginacion -->
-<div class="pagination flex justify-between w-6 h-6 p-6" id="pagination">
+<div *ngIf="totalPagesArray.length <= 5; else pagination" class="pagination flex justify-between w-6 h-6 p-6" id="pagination">
   <button class="bg- border-2 border-solid btnpaginacion" *ngFor="let pageNumber of totalPagesArray" [class.active]="pageNumber === currentPage" (click)="changePageTo(pageNumber)">
     {{ pageNumber }}
   </button>
 </div>
+
+<ng-template #pagination>
+  
+</ng-template>
+
 </main>
 

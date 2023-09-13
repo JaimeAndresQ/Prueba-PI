@@ -31,8 +31,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   cartas: Carta[] = [];
 
   ///paginacion
-  currentPage = 1;
-  totalPages = 7;
+  currentPage:number = 1;
+  totalPages:number = 5;
   totalPagesArray: number[] = [];
 
   constructor(private http: HttpClient,
@@ -104,6 +104,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   //generar los numeros
   generateTotalPagesArray(): void {
     this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+
   }
 
   //obtener las cartas de la API
@@ -153,6 +154,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
     );
 }
 
+
+
 getCardBackgroundClass(id_carta: string): string {
   // Lógica para asignar una clase CSS en función del ID de la carta
   switch (id_carta) {
@@ -180,4 +183,8 @@ getCardBackgroundClass(id_carta: string): string {
       return '';
   }
 }
+
+
 }
+
+
