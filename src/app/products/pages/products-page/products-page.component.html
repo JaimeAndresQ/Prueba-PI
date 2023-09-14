@@ -1,9 +1,9 @@
 
 <main id="contenedor-vitrina" class="relative bg-center">
 
-<div class="caja md:mx-12">
+<div class="caja md:mx-12 2xl:items-stretch md:sm:sms:items-start">
 
-  <div class="categorias my-12">
+  <div class="categorias my-12 md:sm:sms:my-8">
 
     <h3>Categorias</h3>
     <ul>
@@ -77,41 +77,42 @@
   </div>
 
 
-<div class="padre my-12">
+  <div class="padre my-12 md:sm:sms:my-8">
 
-  <div class="contenedor 2xl:w-[1360px] md:w-[1000px]">
+    <div class="contenedor 2xl:w-[1360px] 2xl:h-[968px] md:w-[1000px] md:h-[720px]">
 
-    <div *ngFor="let carta of cartas" id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[450px] md:w-[200px] md:h-[290px]" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
-      <!-- Bordeado Exotico Carta -->
-      <!-- Imagen Superior -->
-      <div class="titulo">
-        <p class="2xl:text-[18px] md:text-[15px]">{{ carta.nombre_carta }}</p>
-      </div>
-      <div class="img">
-        <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[250px] md:sm:h-[110px]">
-        <div class="overlay"></div>
-      </div>
-      
-      <div class="contenido">
-        <div>
-          <p class="2xl:text-[16px] md:text-[15px]">Poder: {{ carta.poder }}</p>
-          <p class="2xl:text-[16px] md:text-[15px]">Vida: {{ carta.vida }}</p>
-          <p class="2xl:text-[16px] md:text-[15px]">Defensa: {{ carta.defensa }}</p>
+      <div *ngFor="let carta of cartas" id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[450px] md:w-[200px] md:h-[300px]" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+        <!-- Bordeado Exotico Carta -->
+        <!-- Imagen Superior -->
+        <div class="titulo">
+          <p class="2xl:text-[18px] md:text-[14px]">{{ carta.nombre_carta }}</p>
         </div>
-        <div>
-          <p class="2xl:text-[16px] md:text-[15px]">Ataque: {{ carta.ataqueBase }}</p>
-          <p class="2xl:text-[16px] md:text-[15px]">Dano: {{ carta.danoMax }}</p>
+        <div class="img">
+          <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
+          <div class="overlay"></div>
         </div>
+
+        <div class="contenido 2xl:w-[220px] 2xl:h-[75px] md:sm:w-[165px] md:sm:h-[50px]">
+          <div class="2xl:text-[16px] md:text-[11px]">
+            <p class="">Poder: {{ carta.poder }}</p>
+            <p class="">Vida: {{ carta.vida }}</p>
+            <p class="">Defensa: {{ carta.defensa }}</p>
+          </div>
+          <div class="2xl:text-[16px] md:text-[11px]">
+            <p class="">Ataque: {{ carta.ataqueBase }}</p>
+            <p class="">Dano: {{ carta.danoMax }}</p>
+          </div>
+        </div>
+            <button class="deseo">
+              <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
+            </button>
+            <button class="carrito" (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)">
+              <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
+            </button>
       </div>
-          <button class="deseo">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-          </button>
-          <button class="carrito" (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)">
-            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-          </button>
     </div>
   </div>
-</div>
+
 </div>
 <br>
 <br>

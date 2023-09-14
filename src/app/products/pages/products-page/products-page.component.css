@@ -1,11 +1,13 @@
 #contenedor-vitrina {
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
-  height: 110vh;
+  height: 100%;
 }
 
 .caja{
   display: flex;
   justify-content: center;
+
+
 }
 
 .padre {
@@ -21,7 +23,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  max-height: 2000px;
 }
 
 .carta2{
@@ -40,18 +41,18 @@
 .carta2 .titulo{
   transform: translateZ(20px);
   font-weight: bold;
-  padding:5px; 
+  padding:5px;
   background:rgba(57,57,15,1);
-  opacity:1; 
-  border:1px solid rgba(255,244,0,1); 
-  border-radius:5px; 
+  opacity:1;
+  border:1px solid rgba(255,244,0,1);
+  border-radius:5px;
   margin-bottom:10px;
   text-align: center;
 }
 
 .carta2 img{
-  border:1px solid rgba(255,244,0,1); 
-  border-radius:5px; 
+  border:1px solid rgba(255,244,0,1);
+  border-radius:5px;
   display: block;
   transition: transform 0.3s, filter 0.3s;
 }
@@ -74,10 +75,9 @@
 .carta2 .contenido{
   display: flex;
   justify-content: space-between;
-  border:1px solid rgba(255,244,0,1); 
-  width:220px; 
-  border-radius:5px; 
-  background:rgba(57,57,15,1); 
+  border:1px solid rgba(255,244,0,1);
+  border-radius:5px;
+  background:rgba(57,57,15,1);
   transform: translateZ(20px);
   padding: 10px;
 }
@@ -98,11 +98,11 @@
 }
 
 .carta2 .deseo:hover{
-  color: rgb(53, 182, 53);
+  color: rgb(150, 5, 5);
 }
 
 .carta2 .carrito:hover{
-  color: rgb(150, 5, 5);
+  color: rgb(53, 182, 53);
 }
 
 /* Paginacion */
@@ -234,7 +234,7 @@
 
   .carta2{
     transform-style: preserve-3d;
-    margin: 3%;
+    margin: 8%;
   }
 
   .carta2 .botones button{
@@ -265,7 +265,8 @@
 
   .caja{
     display: inline;
-    justify-content: center;
+    
+
   }
 
   .padre {
@@ -277,8 +278,25 @@
   .contenedor {
     grid-template-columns: repeat(2, 1fr);
     width: 1000px;
-    height: 1020px;
+    height: 1120px;
   }
+
+  .categorias{
+    margin: 0.1px;
+
+  }
+
+}
+
+
+@media (max-width: 800px){
+
+  .contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    width: 1000px;
+    height: 2120px;
+  }
+
 
 }
 
@@ -301,6 +319,13 @@
   .contenedor {
     grid-template-columns: repeat(1, 1fr);
     width: 1000px;
-    height: 3020px;
+    height: 5020px;
   }
+
+  .categorias{
+    margin: 0.1px;
+  }
+
+
+
 }
