@@ -68,6 +68,12 @@ body {
   z-index: 2;
 }
 
+#fondo_menu {
+  /* background-image: url('./assets/images/header.jpeg');
+  background-repeat: repeat-y; */
+  background-color: aliceblue;
+}
+
 #nav {
   display: flex;
   list-style: none;
@@ -87,6 +93,9 @@ body {
   /* #CEB25D */
 }
 
+#boton_menu_nav:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 /* Main */
 
