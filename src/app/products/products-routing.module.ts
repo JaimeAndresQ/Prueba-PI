@@ -5,6 +5,7 @@ import { CharactersPageComponent } from './pages/products-page/categorias/person
 import { ItemsPageComponent } from './pages/products-page/categorias/items/items-page.component';
 import { ArmorsPageComponent } from './pages/products-page/categorias/armaduras/armaduras-page.components';
 import { GunsPageComponent } from './pages/products-page/categorias/armas/armas-page.component';
+import { ProductDetailComponent } from './pages/products-page/cardDetail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'items',
     component: ItemsPageComponent
+  },
+  {
+    path:'carta/id_carta',
+    component: ProductDetailComponent
   },
   {
     path: '**',
