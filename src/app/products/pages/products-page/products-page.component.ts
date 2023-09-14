@@ -93,7 +93,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       elementosCarta.forEach((elemento: any) => {
         // Aplicar VanillaTilt a cada elemento
         VanillaTilt.init(elemento, {
-          max: 15,
+          max: 10,
           speed: 500,
           perspective: 1000,
           scale: 1.1,
