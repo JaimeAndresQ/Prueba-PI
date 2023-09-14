@@ -1,0 +1,26 @@
+<div *ngFor="let carta of cartas" id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[350px] md:w-[200px] md:h-[290px]" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
+      <!-- Bordeado Exotico Carta -->
+      <!-- Imagen Superior -->
+	<p class="titulo 2xl:text-[18px] md:text-[15px]" style="position:relative; padding:5px; background:rgba(57,57,15,1); opacity:1; border:1px solid rgba(255,244,0,1); border-radius:5px; margin-bottom:8px;">{{ carta.nombre_carta }}</p>
+        <img src="https://okdiario.com/img/2017/01/04/caballeros-edad-media-curiosidades-655x368.jpg" alt="" class="2xl:h-[150px] md:sm:h-[110px]" style="border:1px solid rgba(255,244,0,1); border-radius:5px; margin-bottom:10px;">
+	<table style="border:1px solid rgba(255,244,0,1); width:220px; border-radius:5px; background:rgba(57,57,15,1);">
+		<tr style="text-align:start;">
+			<td style="padding:10px;">
+				<p class="2xl:text-[16px] md:text-[15px]">Poder: {{ carta.poder }}</p>
+        			<p class="2xl:text-[16px] md:text-[15px]">Vida: {{ carta.vida }}</p>
+        			<p class="2xl:text-[16px] md:text-[15px]">Defensa: {{ carta.defensa }}</p>
+			</td>
+			<td></td>
+			<td>
+				 <p class="2xl:text-[16px] md:text-[15px]">Ataque: {{ carta.ataqueBase }}</p>
+        			<p class="2xl:text-[16px] md:text-[15px]">Dano: {{ carta.danoMax }}</p>
+			</td>
+		</tr>
+	</table>
+          <button class="deseo" style="color:white;">
+            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
+          </button>
+          <button class="carrito" (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)">
+            <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito" style="color:white;">Carrito </mat-icon>
+          </button>
+    </div>

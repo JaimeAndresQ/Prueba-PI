@@ -31,9 +31,12 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   cartas: Carta[] = [];
 
   ///paginacion
-  currentPage:number = 1;
-  totalPages:number = 7;
-  totalPagesArray: number[] = [];
+  public currentPage:number = 1;
+  public totalPages:number = 7;
+  public totalPagesArray: number[] = [];
+  public pagesToShow: number = 5;
+
+
 
   constructor(private http: HttpClient,
     private matIconRegistry: MatIconRegistry,
@@ -90,7 +93,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       elementosCarta.forEach((elemento: any) => {
         // Aplicar VanillaTilt a cada elemento
         VanillaTilt.init(elemento, {
-          max: 15,
+          max: 10,
           speed: 500,
           perspective: 1000,
           scale: 1.1,
@@ -103,13 +106,28 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   //generar los numeros
   generateTotalPagesArray(): void {
-    this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
+    // Calcula la página central en función del número total de páginas
+    const middlePage = Math.ceil(this.pagesToShow / 2);
 
+    // Calcula el inicio y el fin del rango de páginas visibles
+    let start = this.currentPage - middlePage + 1;
+    let end = this.currentPage + middlePage - 1;
+
+    // Ajusta los valores de inicio y fin según los límites
+    if (start < 1) {
+      start = 1;
+      end = Math.min(this.totalPages, this.pagesToShow);
+    } else if (end > this.totalPages) {
+      end = this.totalPages;
+      start = Math.max(1, this.totalPages - this.pagesToShow + 1);
+    } 
+
+    this.totalPagesArray = Array.from({ length: end - start + 1 }, (_, i) => start + i);
   }
 
   //obtener las cartas de la API
   getCartasByPage(pageNumber: number): void {
-    const apiUrl = `http://store.thenexusbattles2.com/api/cards/?page_number=${pageNumber}`;
+    const apiUrl = `http://104.40.5.117:8000/api/cards/?page_number=${pageNumber}`;
     //const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
@@ -122,6 +140,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   changePageTo(pageNumber: number): void {
     if (pageNumber >= 1 && pageNumber <= this.totalPages) {
       this.currentPage = pageNumber;
+      this.generateTotalPagesArray(); // Actualiza las páginas visibles
       this.getCartasByPage(this.currentPage);
     }
   }
@@ -136,7 +155,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       return;
     }
 
-    const cartEndpoint = 'http://localhost:3000/enviar-token';
+    const cartEndpoint ='https://store.thenexusbattles2.com/websocket/enviar-token'
+    //const cartEndpoint = 'http://localhost:3000/enviar-token';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
@@ -152,7 +172,10 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
             console.error('Error adding to cart:', error);
         }
     );
-}
+
+  }
+
+
 
 
 
