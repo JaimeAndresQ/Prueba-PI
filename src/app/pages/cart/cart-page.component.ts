@@ -162,8 +162,35 @@ export class CartPageComponent implements OnInit {
     );
 }
 
+  CreateOrder(){
+    // Realizar una solicitud HTTP para crear la orden
+    const accessToken = localStorage.getItem('access_token');
+
+    if (!accessToken) {
+      console.error('No se ha encontrado el token de acceso.');
+      return;
+    }
+
+    //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/borrar-carta'
+    const cartEndpoint = 'http://localhost:3000/crear-orden';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${accessToken}`
+    });
+
+    this.http.post(cartEndpoint,{}, { headers }).subscribe(
+      (response: any) => {
+          // Manejar la respuesta del servicio de carrito si es necesario
+          console.log('Cart response:', response);
+      },
+      (error) => {
+          console.error('Error adding to cart:', error);
+      }
+  );
+}
+
     calcular(): void{
-      this.subtotal = this.cartas.reduce((acc,carta) => acc + carta.price, 0);
+      this.subtotal = this.cartas.reduce((acc,carta) => acc + (carta.price * carta.quantity), 0);
       this.iva = this.subtotal*0.19;
       this.total = this.iva+this.subtotal;
     }
