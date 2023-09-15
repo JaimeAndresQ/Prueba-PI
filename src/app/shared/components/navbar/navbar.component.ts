@@ -8,6 +8,7 @@ import { WebsocketService } from 'src/app/pages/cart/websocket.service';
 //interface de la carta
 interface Carta {
   id_carta: string;
+  nombre_carta: string;
   urlImagen: string;
   price: number;
   quantity: number;
@@ -34,12 +35,16 @@ export class NavbarComponent implements OnInit {
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private http: HttpClient, 
+    private http: HttpClient,
     private websocketService: WebsocketService
   ) {
     this.matIconRegistry.addSvgIcon(
       'carrito',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/shopping_cart.svg'),
+    )
+    this.matIconRegistry.addSvgIcon(
+      'trash',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/trash.svg'),
     );
     this.cartas = []
   }
@@ -53,7 +58,7 @@ export class NavbarComponent implements OnInit {
       this.nombreUsuario = username || '';
       this.usuarioHaIniciadoSesion = true;
     };
-    
+
     this.getCartas();
 
     this.websocketService.listen('cartUpdated').subscribe((data: Carta[] | Carta) => {
@@ -67,7 +72,7 @@ export class NavbarComponent implements OnInit {
   }
 
   // Obtener las cartas del carrito del usuario
-  getCartas(): void { 
+  getCartas(): void {
     // Realizar una solicitud HTTP para agregar la carta al carrito
     const accessToken = localStorage.getItem('access_token');
 
