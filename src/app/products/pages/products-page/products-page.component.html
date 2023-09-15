@@ -88,8 +88,10 @@
           <p class="2xl:text-[18px] md:text-[14px]">{{ carta.nombre_carta }}</p>
         </div>
         <div class="img">
-          <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
+          <a [routerLink]="['/carta', carta.id_carta]">
+            <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
           <div class="overlay"></div>
+          </a>
         </div>
 
         <div class="contenido 2xl:w-[220px] 2xl:h-[75px] md:sm:w-[165px] md:sm:h-[50px]">

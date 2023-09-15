@@ -29,7 +29,7 @@ const routes: Routes = [
     component: ItemsPageComponent
   },
   {
-    path:'carta/id_carta',
+    path:'carta/:id_carta',
     component: ProductDetailComponent
   },
   {

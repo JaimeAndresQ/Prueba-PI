@@ -32,14 +32,14 @@ export class ProductDetailComponent  implements OnInit{
         this.route.paramMap.subscribe((params)=>{
             const id_carta = params.get('id_carta');
 
-            const apiUrl = `http://104.40.5.117:8000/api/cardDetail/${id_carta}`;
-            //const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
+            //const apiUrl = `http://104.40.5.117:8000/api/cardDetail/${id_carta}`;
+            const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
 
             this.http.get(apiUrl).subscribe(data => {
-              this.carta = data;
+                this.carta = data;
             });
             console.log(this.carta)
         })
-      }
+    }
 
 }
