@@ -1,0 +1,35 @@
+main{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.hijo1{
+    display: flex;
+}
+
+.hijo1 .img{
+    background: red;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img img{
+    border-radius: 20px;
+}
+
+.hijo1 .informacion{
+    padding: 10px;
+    background: blue;
+    width: 800px;
+    height: 600px;
+}
+
+.hijo2{
+    width: 1200px;
+    min-height: 200px;
+    background: yellow;
+}
