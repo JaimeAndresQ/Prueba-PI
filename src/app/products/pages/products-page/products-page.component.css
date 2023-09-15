@@ -17,7 +17,7 @@
 }
 
 .contenedor{
-  z-index: 2;
+  z-index: 1;
   background: #ccbea3c4;
   border-radius: 30px;
   display: grid;
@@ -265,7 +265,7 @@
 
   .caja{
     display: inline;
-    
+
 
   }
 
