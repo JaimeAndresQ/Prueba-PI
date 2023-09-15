@@ -2,3 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.menu-vertical{
+    margin-top: 10px;
+	position: absolute;
+	display: none;
+	list-style: none;
+	width: 400px;
+    background: #ccbea3c4;
+	z-index: 10;
+	margin-right: 10px;
+}
+
+.carritocompras li:hover .menu-vertical{
+    display: block;
+}
+
+.menu-vertical li{
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 15px 15px 15px 20px;
+}
+

@@ -100,14 +100,29 @@
 
       </form>
 
-      <div class="">
+      <div class="carritocompras">
         <!-- Icono Carrito -->
-        <a href="/cart">
-          <button type="button" data-dropdown-toggle="notification-dropdown" id="carrito-boton" class="flex flex-wrap items-center py-2.5 pr-3.5 pl-5">
-            <mat-icon class="icono-carrito" aria-hidden="false" aria-label="Carrito Compras" svgIcon="carrito" style="width: 30px; height: 30px">Carrito</mat-icon>
-            <p class="text-white px-2.5">Carrito</p>
-          </button>
-        </a>
+          <a href="/cart">
+            <button type="button" data-dropdown-toggle="notification-dropdown" id="carrito-boton" class="flex flex-wrap items-center py-2.5 pr-3.5 pl-5">
+              <mat-icon class="icono-carrito" aria-hidden="false" aria-label="Carrito Compras" svgIcon="carrito" style="width: 30px; height: 30px">Carrito</mat-icon>
+              <p class="text-white px-2.5">Carrito</p>
+            </button>
+          </a>
+      </div>
+      <div class="menu-vertical">
+        <div style="display: flex;">
+          <p style="margin-left: 10px;">Carta</p>
+          <p style="margin-left: 10px;">UND</p>
+          <p style="margin-left: 10px;">Precio</p>
+        </div>
+        <div *ngFor="let carta of cartas" style="display: flex;">
+          <img src="https://overplay.com.br/wp-content/uploads/2022/03/overplay-elden-armadura.jpg" alt="" style="height: 50px;">
+          <p style="margin-left: 10px;">{{ carta.quantity }}</p>
+          <p style="margin-left: 10px;">${{ carta.price }}</p>
+        </div>
+      </div>
+      <div style="margin-left: 10px;">
+
       </div>
 
     </div>
