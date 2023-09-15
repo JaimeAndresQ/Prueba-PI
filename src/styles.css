@@ -26,19 +26,50 @@ body {
 
 /* Menu Navegacion */
 
-.icono-carrito {
+#carrito-boton p, mat-icon {
   color: rgb(255, 255, 255);
-
-}
-
-#carrito-boton {
   transition: background-color 0.3s ease;
 }
 
-#carrito-boton:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+#carrito-boton:hover p, mat-icon{
+  color: #dbaf29
+
 }
 
+#btnIrCarro{
+  background-color: #dbaf29;
+  transition: background-color 0.3s ease;
+}
+
+#btnIrCarro:hover{
+  background-color: #b88f15;
+
+}
+
+.icon-trash-resum{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+
+}
+
+.icon-trash-resum:hover {
+  transform: scale(1.1); /* Agranda el icono al 110% del tamaño original */
+  color: #ff0000;
+}
+.icon-trash-resum mat-icon:hover{
+  color: #ff0000;
+}
+
+
+#btnComprar{
+  background-color: #db5b29;
+  transition: background-color 0.3s ease;
+}
+#btnComprar:hover{
+  background-color: #bb400f;
+}
 
 #logoNexusBattle {
   z-index: -30;
@@ -86,7 +117,8 @@ body {
 }
 
 #nav a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  color: #dbaf29
   /* #CEB25D */
 }
 

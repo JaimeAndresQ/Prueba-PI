@@ -22,6 +22,10 @@ export class NavbarComponent implements OnInit {
       'carrito',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/shopping_cart.svg'),
     )
+    this.matIconRegistry.addSvgIcon(
+      'trash',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/trash.svg'),
+    )
   }
 
   ngOnInit() {
