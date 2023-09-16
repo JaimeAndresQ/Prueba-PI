@@ -18,7 +18,15 @@
                   <input class="text-sm" type="text" id="inputfield" formControlName="username" required>
 
                   <label for="img">Elije tu Avatar</label>
-                  <input type="text" id="inputfield" formControlName="img" required>
+                  <select name="select" class="avatar" id="inputfield" formControlName="img" required>
+                    <option value="Hombre 1" data-image="../../../../assets/images/avatar-1-hombre.png">
+                      Hombre 1
+                    </option>
+                    <option value="Hombre 2" data-image="../../../../assets/images/avatar-2-hombre_1.png">
+                      Hombre 2
+                    </option>
+
+                  </select>
 
                   <label for="name" >Nombre</label>
                   <input type="text" id="inputfield" formControlName="password" required>

@@ -79,6 +79,50 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       'flecha_izquierda',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/nav_left.svg')
     )
+    this.matIconRegistry.addSvgIcon(
+      'personaje',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/personaje.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'items',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/items.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'sword',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/sword.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'armor',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/armor2.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'descuento',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/descuento.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'tanque',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/tanque.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'axe',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/axe.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'magofuego',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/magofuego.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'magohielo',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/magohielo.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'picaroveneno',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/picaroveneno.svg')
+    )
+    this.matIconRegistry.addSvgIcon(
+      'picaromachete',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/picaromachete.svg')
+    )
 
   }
 
@@ -120,7 +164,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
     } else if (end > this.totalPages) {
       end = this.totalPages;
       start = Math.max(1, this.totalPages - this.pagesToShow + 1);
-    } 
+    }
 
     this.totalPagesArray = Array.from({ length: end - start + 1 }, (_, i) => start + i);
   }

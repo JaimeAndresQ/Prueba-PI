@@ -43,6 +43,29 @@ export class NavbarComponent implements OnInit {
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/shopping_cart.svg'),
     )
     this.matIconRegistry.addSvgIcon(
+      'jugar',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/game.svg'),
+    )
+    this.matIconRegistry.addSvgIcon(
+      'banco',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/bank.svg'),
+    )
+    this.matIconRegistry.addSvgIcon(
+      'torneo',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/torneo.svg'),
+    )
+    this.matIconRegistry.addSvgIcon(
+      'subasta',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/subasta.svg'),
+    )
+    this.matIconRegistry.addSvgIcon(
+      'micuenta',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/cuenta.svg'),
+    )
+
+
+
+    this.matIconRegistry.addSvgIcon(
       'trash',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/trash.svg'),
     );

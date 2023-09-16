@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+// Importa jQuery y Select2
+declare var $: any;
+
 @Component({
   selector: 'signup-component',
   templateUrl: './signup-page.component.html',
@@ -29,6 +32,7 @@ export class SignupPageComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
 
   onSubmit() {
     if (this.registerForm.valid) {

@@ -99,9 +99,9 @@ body {
 }
 
 #fondo_menu {
-  /* background-image: url('./assets/images/header.jpeg');
-  background-repeat: repeat-y; */
-  background-color: aliceblue;
+  background-image: url('./assets/images/fondo-inicio.jpg');
+  background-repeat: repeat-y;
+
 }
 
 #nav {

@@ -95,14 +95,21 @@ form{
 
 }
 
+form select{
+  font-size: 15px; /* Ajusta el tamaño de fuente según tus necesidades */
+  margin-bottom: 20px;
+
+}
+
 #inputfield{
   width: 300px;
-  height: 25px;
+  height: 35px;
   border-radius: 10px;
   border-color: none;
   margin-bottom: 10px;
   font-size: 15px;
 }
+
 
 
 .btnenter{
