@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { CartPageComponent } from './pages/cart/cart-page.component';
 import { LoginPageComponent } from './pages/login/login-page/login-page.component';
 import { SignupPageComponent } from './pages/registro/signup-page/signup-page.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { PaymentPageComponent } from './pages/pagos/pagos-page.component';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { SignupPageComponent } from './pages/registro/signup-page/signup-page.co
     AppComponent,
     LoginPageComponent,
     SignupPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    PaymentPageComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { SignupPageComponent } from './pages/registro/signup-page/signup-page.co
     HttpClientModule,
     ProductsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxPayPalModule
   ],
   exports: [MatIconModule],
   providers: [],
