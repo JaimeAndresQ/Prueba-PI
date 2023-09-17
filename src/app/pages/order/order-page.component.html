@@ -1,0 +1,10 @@
+<div>
+    <p>Orden: {{order.order_id}}</p>
+    <p>Total: {{order.order_total}}</p>
+</div>
+<div *ngFor="let carta of Items">
+    <p>ID de la Carta: {{ carta.id_carta }}</p>
+    <p>Cantidad: {{ carta.quantity }}</p>
+    <p>Precio: {{ carta.price }}</p>
+</div>
+<ngx-paypal [config]="payPalConfig"></ngx-paypal>

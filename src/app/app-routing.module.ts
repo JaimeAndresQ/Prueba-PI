@@ -5,6 +5,7 @@ import { SignupPageComponent } from './pages/registro/signup-page/signup-page.co
 import { ProductsPageComponent } from './products/pages/products-page/products-page.component';
 import { CartPageComponent } from './pages/cart/cart-page.component';
 import { PaymentPageComponent } from './pages/pagos/pagos-page.component';
+import { OrderPageComponent } from './pages/order/order-page.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartPageComponent
+  },
+  {
+    path: 'order',
+    component: OrderPageComponent
   },
   {
     path: 'payment',

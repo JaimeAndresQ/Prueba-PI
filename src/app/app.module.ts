@@ -14,6 +14,7 @@ import { LoginPageComponent } from './pages/login/login-page/login-page.componen
 import { SignupPageComponent } from './pages/registro/signup-page/signup-page.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { PaymentPageComponent } from './pages/pagos/pagos-page.component';
+import { OrderPageComponent } from './pages/order/order-page.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PaymentPageComponent } from './pages/pagos/pagos-page.component';
     LoginPageComponent,
     SignupPageComponent,
     CartPageComponent,
-    PaymentPageComponent
+    PaymentPageComponent,
+    OrderPageComponent
   ],
   imports: [
     BrowserModule,

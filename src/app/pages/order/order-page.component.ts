@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal/public_api';
+
+let paypal;
 
 //interface de la carta
 interface Carta {
@@ -11,6 +14,8 @@ interface Carta {
     price: number;
     quantity: number;
     nombre_carta: string;
+    order_id: number;
+    order_total: number;
 }
 
 @Component({
@@ -20,17 +25,81 @@ interface Carta {
 })
 
 export class OrderPageComponent implements OnInit {
+    public payPalConfig?: IPayPalConfig;
 
-    cartas: Carta[] = [];
+    order: any = {};
+    Items: Carta[] = [];
     subtotal: number = 0;
     iva: number = 0;
     total: number = 0;
 
     constructor(private http: HttpClient) {
-        this.cartas = []
+        this.order= {}
     }
     
     ngOnInit(): void {
-        
+        this.getOrder();
+    }
+
+    getOrder(): void { 
+
+        //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
+        const cartEndpoint = 'http://127.0.0.1:8004/api/order/21';
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+        });
+    
+        this.http.get<Carta[]>(cartEndpoint,{ headers }).subscribe(
+            (data: any) => {
+                this.order = data.order_id;
+                this.Items = data.Items;
+                console.log('Respuesta de la API:', data);
+                const cop = this.order.order_total;
+                const usd = cop * 0.00026
+                this.initConfig(usd);
+            },
+            (error) => {
+                console.error('Error al obtener el carrito de compras:', error);
+            }
+        );
+    }
+    
+    private initConfig(orderTotal: number): void{
+        this.payPalConfig = {
+            currency: 'USD',
+            clientId: 'AaaPkQgLFmbMCIMMcBBZ0WO1BxyV36rRZA7rmEse6xsN5ZyDdu-bl8RzyDN4meLXICCgccPkHiSWE3S3',
+            createOrderOnClient: (data) => <ICreateOrderRequest> {
+                intent: 'CAPTURE',
+                purchase_units: [{
+                    amount: {
+                        currency_code: 'USD',
+                        value: orderTotal.toFixed(2),
+                    },
+                }]
+            },
+            advanced: {
+                commit: 'true'
+            },
+            style: {
+                label: 'paypal',
+                layout: 'vertical'
+            },
+            onApprove: (data, actions) => {
+                console.log('onApprove - transaction was approved, but not authorized', data, actions);
+            },
+            onClientAuthorization: (data) => {
+                console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+            },
+            onCancel: (data, actions) => {
+                console.log('OnCancel', data, actions);
+
+            },
+            onError: err => {
+                console.log('OnError', err);
+            },
+            onClick: (data, actions) => {
+                console.log('onClick', data, actions);
+            }
+        }
     }
 }
