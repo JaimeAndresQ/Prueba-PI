@@ -6,76 +6,76 @@ import VanillaTilt from 'vanilla-tilt';
 
 //interface de la carta
 interface Carta {
-  id_carta: string;
-  activo: boolean;
-  urlImagen: string;
-  price: number;
-  stock: number;
-  nombre_carta: string;
-  poder: string,
-  vida:number,
-  defensa:number,
-  ataqueBase: number,
-  danoMax: number
+    id_carta: string;
+    activo: boolean;
+    urlImagen: string;
+    price: number;
+    stock: number;
+    nombre_carta: string;
+    poder: string,
+    vida:number,
+    defensa:number,
+    ataqueBase: number,
+    danoMax: number
 }
 
 @Component({
-  selector: 'app-personajes-page',
-  templateUrl: '../../products-page.component.html',
-  styleUrls: ['../../products-page.component.css']
+    selector: 'app-tipoA-page',
+    templateUrl: '../../products-page.component.html',
+    styleUrls: ['../../products-page.component.css']
 })
 
-export class CharactersPageComponent  implements OnInit, AfterViewChecked {
+export class MachetePageComponent  implements OnInit, AfterViewChecked {
 
   //guardar cartas
-  cartas: Carta[] = [];
+    cartas: Carta[] = [];
 
   ///paginacion
-  currentPage = 1;
-  totalPages = 7;
-  totalPagesArray: number[] = [];
-  maxVisiblePages: number = 2;
-  pagesToShow: number = 5;
+    currentPage = 1;
+    totalPages = 7;
+    totalPagesArray: number[] = [];
+    maxVisiblePages: number = 2;
+    pagesToShow: number = 5;
 
 
-  constructor(private http: HttpClient,
+    constructor(private http: HttpClient,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
     )  {
 
     this.matIconRegistry.addSvgIcon(
-      'carrito',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/shopping_cart.svg'),
+        'carrito',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/shopping_cart.svg'),
     )
-  this.matIconRegistry.addSvgIcon(
+    this.matIconRegistry.addSvgIcon(
     'cartas',
     this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/cartaBorde.svg')
-  )
-  }
+    )
+    }
 
-  ngOnInit(): void {
-    this.getCartasByPage(this.currentPage);
-  }
+    ngOnInit(): void {
+        this.getTipeByPage(this.currentPage);
+    }
 
-  ngAfterViewChecked(){
+    ngAfterViewChecked(){
     const elementosCarta = document.querySelectorAll('[data-tilt]');
     if (elementosCarta.length > 0) {
-      elementosCarta.forEach((elemento: any) => {
+        elementosCarta.forEach((elemento: any) => {
         // Aplicar VanillaTilt a cada elemento
         VanillaTilt.init(elemento, {
-          max: 15,
-          speed: 500,
-          perspective: 1000,
-          scale: 1.1,
-          transition: true,
-          gyroscope: true,
+            max: 15,
+            speed: 500,
+            perspective: 1000,
+            scale: 1.1,
+            transition: true,
+            gyroscope: true,
         });
-      });
+        });
     }
-  }
+    }
 
-  //generar los numeros
-  generateTotalPagesArray(): void {
+    //generar los numeros
+    generateTotalPagesArray(): void {
     // Calcula la página central en función del número total de páginas
     const middlePage = Math.ceil(this.pagesToShow / 2);
 
@@ -85,47 +85,47 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
 
     // Ajusta los valores de inicio y fin según los límites
     if (start < 1) {
-      start = 1;
-      end = Math.min(this.totalPages, this.pagesToShow);
+        start = 1;
+        end = Math.min(this.totalPages, this.pagesToShow);
     } else if (end > this.totalPages) {
-      end = this.totalPages;
-      start = Math.max(1, this.totalPages - this.pagesToShow + 1);
+        end = this.totalPages;
+        start = Math.max(1, this.totalPages - this.pagesToShow + 1);
     }
 
     this.totalPagesArray = Array.from({ length: end - start + 1 }, (_, i) => start + i);
-  }
+    }
 
 
   //obtener las cartas de la API
-  getCartasByPage(pageNumber: number): void {
+    getTipeByPage(pageNumber: number): void {
     //const apiUrl = `http://api-cartas-gama.thenexusbattles2.com:8002/api/cards/?page_number=${pageNumber}`;
-    const apiUrl = `http://127.0.0.1:8000/api/characters/`;
+    const apiUrl = `http://127.0.0.1:8000/api/Machete/`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
-      this.cartas = data;
+        this.cartas = data;
     });
     console.log(this.cartas)
-  }
+    }
 
   //camiar de pagina
-  changePageTo(pageNumber: number): void {
+    changePageTo(pageNumber: number): void {
     if (pageNumber >= 1 && pageNumber <= this.totalPages) {
-      this.currentPage = pageNumber;
-      this.generateTotalPagesArray(); // Actualiza las páginas visibles
-      this.getCartasByPage(this.currentPage);
+        this.currentPage = pageNumber;
+        this.generateTotalPagesArray(); // Actualiza las páginas visibles
+        this.getTipeByPage(this.currentPage);
     }
-  }
+}
 
 
 
   //boton para agregar al carrito de compras
-  addToCart(id_carta: string, price: number,nombre_carta: string) {
+    addToCart(id_carta: string, price: number,nombre_carta: string) {
     // Realizar una solicitud HTTP para agregar la carta al carrito
     const accessToken = localStorage.getItem('access_token');
 
     if (!accessToken) {
-      console.error('No se ha encontrado el token de acceso.');
-      return;
+        console.error('No se ha encontrado el token de acceso.');
+        return;
     }
 
     const cartEndpoint = 'http://localhost:3000/enviar-token';
@@ -147,24 +147,24 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
 }
 
 get visiblePages(): number[] {
-  const start = Math.max(1, this.currentPage - this.maxVisiblePages);
-  const end = Math.min(this.totalPages, this.currentPage + this.maxVisiblePages);
+    const start = Math.max(1, this.currentPage - this.maxVisiblePages);
+    const end = Math.min(this.totalPages, this.currentPage + this.maxVisiblePages);
 
-  const visiblePages = [];
-  for (let i = start; i <= end; i++) {
+    const visiblePages = [];
+    for (let i = start; i <= end; i++) {
     visiblePages.push(i);
-  }
+    }
 
-  return visiblePages;
+    return visiblePages;
 }
 
 // Cambia de página hacia adelante o hacia atrás
 public changePage(direction: number): void {
-  const newPage = this.currentPage + direction;
-  if (newPage >= 1 && newPage <= this.totalPages) {
-    this.currentPage = newPage;
-    this.getCartasByPage(this.currentPage);
-  }
+    const newPage = this.currentPage + direction;
+    if (newPage >= 1 && newPage <= this.totalPages) {
+        this.currentPage = newPage;
+        this.getTipeByPage(this.currentPage);
+    }
 }
 
 }

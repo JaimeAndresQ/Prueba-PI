@@ -12,6 +12,12 @@ import { ItemsPageComponent } from './pages/products-page/categorias/items/items
 import { ArmorsPageComponent } from './pages/products-page/categorias/armaduras/armaduras-page.components';
 import { GunsPageComponent } from './pages/products-page/categorias/armas/armas-page.component';
 import { ProductDetailComponent  } from './pages/products-page/cardDetail/product-detail.component';
+import { TankPageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCarta-page.component';
+import { GgunsPageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaArmas-page.component';
+import { FirePageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaFuego-page.component';
+import { IcePageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaHielo-page.component';
+import { VenenoPageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaVeneno-page.component';
+import { MachetePageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaMachete-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,13 @@ import { ProductDetailComponent  } from './pages/products-page/cardDetail/produc
     ItemsPageComponent,
     ArmorsPageComponent,
     GunsPageComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    TankPageComponent,
+    GgunsPageComponent,
+    FirePageComponent,
+    IcePageComponent,
+    VenenoPageComponent,
+    MachetePageComponent
   ],
   imports: [
     CommonModule,
