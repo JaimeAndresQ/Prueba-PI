@@ -1,0 +1,8 @@
+<div *ngFor="let item of inventario">
+    <div *ngIf="item && item.carta"> <!-- Verifica que item.carta no sea nulo antes de mostrar los detalles -->
+        <p>Id: {{ item.id_carta }}</p>
+        <p>Imagen: {{ item.carta.urlImagen }}</p>
+        <p>Nombre: {{ item.carta.nombre_carta }}</p>
+        <p>Precio: {{ item.carta.price }}</p>
+    </div>
+</div>

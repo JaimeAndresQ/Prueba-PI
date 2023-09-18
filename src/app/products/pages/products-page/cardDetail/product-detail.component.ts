@@ -24,9 +24,11 @@ interface Carta {
 })
 
 export class ProductDetailComponent  implements OnInit{
-    carta: any;
+    carta: any = {};
 
-    constructor(private http: HttpClient, private route: ActivatedRoute){}
+    constructor(private http: HttpClient, private route: ActivatedRoute){
+        this.carta = {}
+    }
 
     ngOnInit(): void {
         this.route.paramMap.subscribe((params)=>{
@@ -34,11 +36,15 @@ export class ProductDetailComponent  implements OnInit{
 
             //const apiUrl = `http://104.40.5.117:8000/api/cardDetail/${id_carta}`;
             const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
-
-            this.http.get(apiUrl).subscribe(data => {
-                this.carta = data;
-            });
-            console.log(this.carta)
+            this.http.get<Carta>(apiUrl).subscribe(
+                (data: any) => {
+                    this.carta = data
+                    console.log('Respuesta de la API:', data);
+                },
+                (error) => {
+                    console.error('Error al obtener el carrito de compras:', error);
+                }
+            );
         })
     }
 

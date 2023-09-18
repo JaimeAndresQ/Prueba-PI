@@ -6,6 +6,8 @@ import { ProductsPageComponent } from './products/pages/products-page/products-p
 import { CartPageComponent } from './pages/cart/cart-page.component';
 import { PaymentPageComponent } from './pages/pagos/pagos-page.component';
 import { OrderPageComponent } from './pages/order/order-page.component';
+import { ProfilePageComponent } from './pages/perfil/perfil-page.component';
+import { InventaryPageComponent } from './pages/inventario/inventary-page.component';
 
 const routes: Routes = [
   {
@@ -25,8 +27,16 @@ const routes: Routes = [
     component: OrderPageComponent
   },
   {
+    path: 'profile',
+    component: ProfilePageComponent
+  },
+  {
+    path: 'banco',
+    component: InventaryPageComponent
+  },
+  {
     path: 'payment',
-    component: PaymentPageComponent
+    component: ProfilePageComponent
   },
   {
     path: '',
