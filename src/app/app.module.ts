@@ -17,6 +17,7 @@ import { PaymentPageComponent } from './pages/pagos/pagos-page.component';
 import { OrderPageComponent } from './pages/order/order-page.component';
 import { ProfilePageComponent } from './pages/perfil/perfil-page.component';
 import { InventaryPageComponent } from './pages/inventario/inventary-page.component';
+import { MembershipPageComponent } from './pages/membresias/membresia-page.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { InventaryPageComponent } from './pages/inventario/inventary-page.compon
     PaymentPageComponent,
     OrderPageComponent,
     ProfilePageComponent,
-    InventaryPageComponent
+    InventaryPageComponent,
+    MembershipPageComponent
   ],
   imports: [
     BrowserModule,

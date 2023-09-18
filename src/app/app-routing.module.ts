@@ -8,6 +8,7 @@ import { PaymentPageComponent } from './pages/pagos/pagos-page.component';
 import { OrderPageComponent } from './pages/order/order-page.component';
 import { ProfilePageComponent } from './pages/perfil/perfil-page.component';
 import { InventaryPageComponent } from './pages/inventario/inventary-page.component';
+import { MembershipPageComponent } from './pages/membresias/membresia-page.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartPageComponent
+  },
+  {
+    path: 'membership',
+    component: MembershipPageComponent
   },
   {
     path: 'order/:orderId',
