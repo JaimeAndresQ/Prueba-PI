@@ -20,7 +20,7 @@ interface Carta {
 }
 
 @Component({
-  selector: 'app-personajes-page',
+  selector: 'app-armaduras-page',
   templateUrl: '../../products-page.component.html',
   styleUrls: ['../../products-page.component.css']
 })

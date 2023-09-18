@@ -44,7 +44,7 @@ export class OrderPageComponent implements OnInit {
     getOrder(): void { 
 
         //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
-        const cartEndpoint = 'http://127.0.0.1:8003/api/order/21';
+        const cartEndpoint = 'http://127.0.0.1:8003/api/order/26';
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
         });
@@ -90,19 +90,27 @@ export class OrderPageComponent implements OnInit {
             },
             onClientAuthorization: (data) => {
                 console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+                const accessToken = localStorage.getItem('access_token');
+
+                if (!accessToken) {
+                    console.error('No se ha encontrado el token de acceso.');
+                    return;
+                }
+
                 const paymentID = data.id
                 const status = data.status
 
                 const paymentDetails = {
                     paymentID:paymentID,
                     status:status,
-                    order:21,
-                    user:'Administrador'
+                    order_id:this.order.order_id,
+                    order_total:this.order.order_total
                 }
 
-                const apiUrl = 'http://127.0.0.1:8003/ai/payment/';
+                const apiUrl = 'http://localhost:3000/pagar-orden';
                 const headers = new HttpHeaders({
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken}`
                 });
 
                 this.http.post(apiUrl, paymentDetails, { headers }).subscribe(

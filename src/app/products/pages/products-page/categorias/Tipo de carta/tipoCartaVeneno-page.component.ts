@@ -20,7 +20,7 @@ interface Carta {
 }
 
 @Component({
-    selector: 'app-tipoA-page',
+    selector: 'app-tipoV-page',
     templateUrl: '../../products-page.component.html',
     styleUrls: ['../../products-page.component.css']
 })
