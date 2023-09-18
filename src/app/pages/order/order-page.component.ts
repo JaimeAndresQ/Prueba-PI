@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal/public_api';
+import { ActivatedRoute } from '@angular/router';
 
 let paypal;
 
@@ -33,7 +34,7 @@ export class OrderPageComponent implements OnInit {
     iva: number = 0;
     total: number = 0;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private route: ActivatedRoute) {
         this.order= {}
     }
     
@@ -42,26 +43,30 @@ export class OrderPageComponent implements OnInit {
     }
 
     getOrder(): void { 
+        this.route.params.subscribe(params => {
+            const orderId = params['orderId'];
 
-        //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
-        const cartEndpoint = 'http://127.0.0.1:8003/api/order/26';
-        const headers = new HttpHeaders({
-            'Content-Type': 'application/json',
-        });
-    
-        this.http.get<Carta[]>(cartEndpoint,{ headers }).subscribe(
-            (data: any) => {
-                this.order = data.order_id;
-                this.Items = data.Items;
-                console.log('Respuesta de la API:', data);
-                const cop = this.order.order_total;
-                const usd = cop * 0.00026
-                this.initConfig(usd);
-            },
-            (error) => {
-                console.error('Error al obtener el carrito de compras:', error);
-            }
-        );
+            //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
+            const cartEndpoint = `http://127.0.0.1:8003/api/order/${orderId}`;
+            const headers = new HttpHeaders({
+                'Content-Type': 'application/json',
+            });
+        
+            this.http.get<Carta[]>(cartEndpoint,{ headers }).subscribe(
+                (data: any) => {
+                    this.order = data.order_id;
+                    this.Items = data.Items;
+                    console.log('Respuesta de la API:', data);
+                    const cop = this.order.order_total;
+                    const usd = cop * 0.00026
+                    this.initConfig(usd);
+                },
+                (error) => {
+                    console.error('Error al obtener el carrito de compras:', error);
+                }
+            );
+        })
+        
     }
     
     //configuracion de paypal

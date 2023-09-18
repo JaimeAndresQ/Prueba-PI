@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { WebsocketService } from './websocket.service';
+import { Router  } from '@angular/router';
 
 //interface de la carta
 interface Carta {
@@ -29,7 +30,7 @@ export class CartPageComponent implements OnInit {
     iva: number = 0;
     total: number = 0;
   
-    constructor(private http: HttpClient, private websocketService: WebsocketService) {
+    constructor(private http: HttpClient, private websocketService: WebsocketService, private router: Router ) {
       this.cartas = []
     }
   
@@ -182,6 +183,8 @@ export class CartPageComponent implements OnInit {
       (response: any) => {
           // Manejar la respuesta del servicio de carrito si es necesario
           console.log('Cart response:', response);
+          const orderID = response.order.order_id
+          this.router.navigate(['/order', orderID]);
       },
       (error) => {
           console.error('Error adding to cart:', error);

@@ -9,6 +9,7 @@ import { OrderPageComponent } from './pages/order/order-page.component';
 import { ProfilePageComponent } from './pages/perfil/perfil-page.component';
 import { InventaryPageComponent } from './pages/inventario/inventary-page.component';
 
+
 const routes: Routes = [
   {
     path: 'login',
@@ -23,7 +24,7 @@ const routes: Routes = [
     component: CartPageComponent
   },
   {
-    path: 'order',
+    path: 'order/:orderId',
     component: OrderPageComponent
   },
   {
