@@ -13,6 +13,7 @@ interface Carta {
   stock: number;
   nombre_carta: string;
   poder: string,
+  clase:string,
   vida:number,
   defensa:number,
   ataqueBase: number,
@@ -227,25 +228,7 @@ getCardBackgroundClass(id_carta: string): string {
   // Lógica para asignar una clase CSS en función del ID de la carta
   switch (id_carta) {
     case '64e5830109a1f203598f17f9':
-    case '64e5830109a1f203598f17fa':
-    case '64e5830109a1f203598f17fb':
-    case '64e5830109a1f203598f17fc':
-    case '64e5830109a1f203598f17fd':
-    case '64e5830109a1f203598f17fe':
       return 'color-1';
-    case '64e582f509a1f203598f17ed':
-    case '64e582f509a1f203598f17ef':
-      return 'color-2';
-    case '64e582f509a1f203598f17ee':
-      return 'color-3'
-    case '64e582f509a1f203598f17f0':
-      return 'color-4'
-    case '64e582f509a1f203598f17f1':
-      return 'color-5'
-    case '64e582f509a1f203598f17f2':
-      return 'color-6'
-    case '64e582f509a1f203598f17f6':
-      return 'color-7'
     default:
       return '';
   }
