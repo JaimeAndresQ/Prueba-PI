@@ -24,9 +24,9 @@ export class SignupPageComponent implements OnInit {
       name: ['', Validators.required],
       last_name: ['', Validators.required],
       email: ['', Validators.required],
-      img: ['', Validators.required],
+      img: ['', Validators.required,],
       password: ['', Validators.required],
-      question: [null, Validators.required],
+      question: ['', Validators.required],
       answer: ['', Validators.required]
     });
   }
@@ -52,8 +52,8 @@ export class SignupPageComponent implements OnInit {
       const headers = new HttpHeaders({
         'Content-Type': 'application/json'
       });
-      //http://127.0.0.1:8002/api/create/ || http://login.thenexusbattles2.com:8002/api/create/
-      this.http.post('http://login.thenexusbattles2.com:8002/api/create/', registerData, { headers }).subscribe(
+      //http://127.0.0.1:8002/api/create/ || http://20.25.34.123:8002/api/create/
+      this.http.post('http://127.0.0.1:8002/api/create/', registerData, { headers }).subscribe(
         (response: any) => {
           console.log('Registro exitoso:', response);
         },
