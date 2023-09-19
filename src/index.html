@@ -8,24 +8,54 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Material Icon -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <!-- Irish Grove -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
 
+  <!-- Font Alegreya -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Carrousel Js -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- Js Query -->
+
+  <!-- Js Flowbite Tailwind -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"  rel="stylesheet" />
+
+  <!-- Select2 - No en Uso -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css">
 
-
 </head>
+
 <body>
+
+  <script>
+    $(document).ready(function(){
+      $('.carousel-inner').slick({
+        dots: false, // Muestra los puntos de navegación
+        infinite: true, // Permite desplazamiento infinito
+        speed: 300, // Velocidad de la transición
+        slidesToShow: 2, // Cantidad de imágenes visibles a la vez
+        adaptiveHeight: true // Ajusta la altura según la imagen
+      });
+    });
+  </script>
+
+
+
   <script src="https://www.paypal.com/sdk/js?client-id=AaaPkQgLFmbMCIMMcBBZ0WO1BxyV36rRZA7rmEse6xsN5ZyDdu-bl8RzyDN4meLXICCgccPkHiSWE3S3"></script>
   <app-root></app-root>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,16 @@
+
+#contenedor-vitrina {
+  background-image: url('../../../assets/images/fondo-inicio.jpg');
+  height: 100%;
+}
+
+.contenedor{
+  z-index: 1;
+  background: #ccbea3c4;
+  border-radius: 30px;
+  justify-items: center;
+}
+
+
+
+

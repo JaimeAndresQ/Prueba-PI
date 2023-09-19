@@ -1,13 +1,30 @@
-<div>
+<!-- <div>
     <p>Orden: {{order.order_id}}</p>
     <p>Total: {{order.order_total}}</p>
 </div>
-<hr>
-<div *ngFor="let carta of Items">
+<hr> -->
+<main id="contenedor-vitrina" class="relative bg-center">
+<div class="flex justify-center items-center min-h-screen">
+<div class="contenedor w-[1360px] h-[668px]">
+
+  <!-- <card-products></card-products> -->
+  <div class="flex items-stretch">
+
+    <card-products></card-products>
+
+    <div></div>
+
+  </div>
+
+</div>
+</div>
+
+<!-- <div *ngFor="let carta of Items">
     <p>ID de la Carta: {{ carta.id_carta }}</p>
     <p>Cantidad: {{ carta.quantity }}</p>
     <p>Precio: {{ carta.price }}</p>
     <hr>
-</div>
+</div> -->
 <br>
 <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+</main>
