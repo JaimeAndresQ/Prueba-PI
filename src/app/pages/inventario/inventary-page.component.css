@@ -75,6 +75,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', end
 .carousel-inner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   transition: transform 0.3s ease-in-out;
   position: relative;
 }
@@ -82,6 +84,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', end
 .carousel-item {
   flex: 0 0 100%;
   min-width: 100%;
+  margin: 10px;
   margin: 10px;
 }
 
@@ -174,3 +177,4 @@ mat-icon:hover{
   width: 30px;
   height: 30px;
 }
+
