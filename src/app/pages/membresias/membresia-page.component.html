@@ -1,10 +1,10 @@
 <main id="contenedor-vitrina" class="fondo">
     <div class="subscription-section">
         <div *ngFor="let carta of cartas" class="subscription-card">
-            <img  class="fondomenbre2" src="../img/1.gif" alt="">
+            <img  class="fondomenbre2" src="../../../assets/images/{{carta.id_carta}}.gif" alt="">
             <p>games:{{carta.games}}</p>
             <p>price:{{carta.price}}</p>
+            <ngx-paypal [config]="paypalConfig[carta.id_carta]"></ngx-paypal>
         </div>
-        
     </div>
 </main>
