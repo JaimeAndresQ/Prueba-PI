@@ -35,7 +35,7 @@ export class ProductDetailComponent  implements OnInit{
             const id_carta = params.get('id_carta');
 
             //const apiUrl = `http://104.40.5.117:8000/api/cardDetail/${id_carta}`;
-            const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
+            const apiUrl = `http://20.25.34.123:8000/api/cardDetail/${id_carta}`;
             this.http.get<Carta>(apiUrl).subscribe(
                 (data: any) => {
                     this.carta = data
