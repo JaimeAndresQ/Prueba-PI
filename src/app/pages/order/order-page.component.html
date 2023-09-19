@@ -3,20 +3,40 @@
     <p>Total: {{order.order_total}}</p>
 </div>
 <hr> -->
-<main id="contenedor-vitrina" class="relative bg-center">
+<main id="contenedor-vitrina" class="relative bg-center overflow-hidden">
 <div class="flex justify-center items-center min-h-screen">
 <div class="contenedor w-[1360px] h-[668px]">
 
-  <!-- <card-products></card-products> -->
-  <div class="flex items-stretch">
 
-    <card-products></card-products>
+    <div class="overflow-y-auto h-full" id="Productos-Orden">
+      <card-products></card-products>
+      <card-products></card-products>
+      <card-products></card-products>
+      <card-products></card-products>
+    </div>
 
-    <div></div>
+  <div class="absolute top-[214px] right-[300px]">
+    <div class="contenedor-compra border border-solid border-[#3d3d3b] m-7 w-[360px] h-[468px]">
+      <div class="text-center my-5 space-y-3">
+        <p class="text-[32px]">Orden: 24</p>
+        <div class="overflow-y-auto  h-[200px] space-y-9 pt-5 text-[26px] " id="precio-productos-orden">
+          <p >Producto......... $40.000</p>
+          <p >Producto......... $10.000</p>
+          <p >Producto......... $90.000</p>
+          <p >Producto......... $50.000</p>
+          <p >Producto......... $40.000</p>
+          <p >Producto......... $20.000</p>
+          <p >Producto......... $60.000</p>
+        </div>
+        <p class="text-[26px]">Total........ $230.000</p>
+      </div>
 
+    </div>
   </div>
 
-</div>
+
+
+  </div>
 </div>
 
 <!-- <div *ngFor="let carta of Items">

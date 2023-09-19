@@ -174,9 +174,14 @@ body {
 }
 
 
+#precio-productos-orden::-webkit-scrollbar {
+  display: auto;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
+
 
 }
 
