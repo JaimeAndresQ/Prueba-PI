@@ -18,10 +18,12 @@ import { FirePageComponent } from './pages/products-page/categorias/Tipo de cart
 import { IcePageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaHielo-page.component';
 import { VenenoPageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaVeneno-page.component';
 import { MachetePageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaMachete-page.component';
+import { CardInventarioComponent } from './components/card-inventario/card-inventario.component';
 
 @NgModule({
   declarations: [
     CardProductsComponent,
+    CardInventarioComponent,
     ProductsPageComponent,
     CharactersPageComponent,
     ItemsPageComponent,
@@ -41,7 +43,7 @@ import { MachetePageComponent } from './pages/products-page/categorias/Tipo de c
     ProductsRoutingModule,
     MatIconModule,
   ],
-  exports: [CardProductsComponent, ProductsPageComponent, CharactersPageComponent, ItemsPageComponent,ArmorsPageComponent, GunsPageComponent,ProductDetailComponent],
+  exports: [CardProductsComponent, ProductsPageComponent, CharactersPageComponent, ItemsPageComponent,ArmorsPageComponent, GunsPageComponent,ProductDetailComponent, CardInventarioComponent],
   providers: [],
 })
 export class ProductsModule { }
