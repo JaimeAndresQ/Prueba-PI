@@ -15,6 +15,7 @@ interface Carta {
   poder: string,
   clase:string,
   vida:number,
+  tipo: string,
   defensa:number,
   ataqueBase: number,
   danoMax: number
