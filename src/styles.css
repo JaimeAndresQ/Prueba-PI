@@ -170,24 +170,24 @@ body {
 #contenedor-vitrina {
   background-image: url('./assets/images/fondo-inicio.jpg');
   background-size: cover;
-
+  overflow-x: auto;
 }
+
+#contenedor-vitrina::-webkit-scrollbar{
+  height: 0px;
+}
+
 
 ::-webkit-scrollbar {
   width: 0px;
   scrollbar-width: thin;
   scrollbar-color: rgb(168, 98, 98);
-  scrollbar-darkshadow-color: #dbaf29;
-
+  scrollbar-darkshadow-color: #dbaf2900;
 }
 
-::-webkit-scrollbar-thumb{
-  background-color: #d5eb0c00;
-  border-radius: 30px;
-}
 
 ::-webkit-scrollbar-track{
-  background-color: #b88f15da;
+  background-color: #b88f1500;
   border-radius: 10px;
 }
 

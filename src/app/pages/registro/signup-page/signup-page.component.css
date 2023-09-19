@@ -15,14 +15,14 @@ body {
   background-size: cover;
   height: calc(145vh - 100px); /* Toma el 100% del viewport height y resta la altura del header */
   /* Toma el 100% del viewport height y resta la altura del header */
+  overflow-x: hidden;
 }
 
 
 
 .container {
-  position: absolute;
-  top: 20%;
-  left: 10%;
+  position: relative;
+  top: 9%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,13 +143,15 @@ form select{
 
 .imglogo2{
 
-  position:absolute;top:119px;right:0px;bottom:0px;left:353px;
-  width: 350px;
-  height: 650px;
-  opacity: 0.4;
+  position:absolute;top:89px;right:0px;bottom:0px;left:303px;
+  width: 500px;
+  height: 750px;
+  opacity: 1;
 }
 
 #formulario label {
   font-size: 23px;
   margin-bottom: 10px;
 }
+
+
