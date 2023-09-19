@@ -81,50 +81,11 @@
 
     <div class="contenedor 2xl:w-[1360px] 2xl:h-[968px] md:w-[1000px] md:h-[720px]">
 
-      <div id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[450px] md:w-[200px] md:h-[300px] hover:2xl:h-[470px] hover:md:h-[320px]" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+      <div *ngFor="let carta of cartas" id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[450px] md:w-[200px] md:h-[300px] hover:2xl:h-[470px] hover:md:h-[320px]" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
         <!-- Bordeado Exotico Carta -->
         <!-- Imagen Superior -->
         <div class="titulo">
-          <p class="2xl:text-[18px] md:text-[14px] truncate ">carta.nombre_carta carta.nombre_carta</p>
-        </div>
-
-        <div class="img">
-          <a>
-            <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
-          <div class="overlay"></div>
-          </a>
-        </div>
-
-        <div class="contenido 2xl:w-[220px] 2xl:h-[75px] md:sm:w-[165px] md:sm:h-[50px]">
-          <div class="2xl:text-[16px] md:text-[11px]">
-            <p>Tipo: Pesada</p>
-            <p>Poder: </p>
-            <p>Vida: </p>
-          </div>
-          <div class="2xl:text-[16px] md:text-[11px]">
-            <p >Defensa: </p>
-            <p >Ataque: </p>
-            <p >Dano: </p>
-          </div>
-        </div>
-
-        <button class="deseo">
-          <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
-        </button>
-        <button class="carrito" >
-          <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
-        </button>
-      </div>
-
-
-
-
-
-      <div *ngFor="let carta of cartas" id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[450px] md:w-[200px] md:h-[300px]" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
-        <!-- Bordeado Exotico Carta -->
-        <!-- Imagen Superior -->
-        <div class="titulo">
-          <p class="2xl:text-[18px] md:text-[14px]">{{ carta.nombre_carta }}</p>
+          <p class="2xl:text-[18px] md:text-[14px] truncate ">{{ carta.nombre_carta }}</p>
         </div>
         <div class="img">
           <a [routerLink]="['/carta', carta.id_carta]">
