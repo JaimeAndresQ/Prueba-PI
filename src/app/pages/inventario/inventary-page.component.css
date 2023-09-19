@@ -3,25 +3,6 @@
   height: 100%;
 }
 
-.nav a {
-  text-decoration: none;
-  color: white;
-  padding: 10px 40px;
-  padding-top: 50px;
-  transition: background-color 0.3s ease;
-}
-
-.nav a:hover {
-
-  color: blanchedalmond
-}
-
-.nav {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
 main {
   margin: 0;
@@ -38,35 +19,6 @@ main {
 
 }
 
-.wins{
-  margin: 0;
-}
-.navigation-column li {
-
-  list-style: none;
-  font-size: 25px;
-  padding: 14px;
-
-}
-.navigation-column ul {
-
-  padding: 0;
-  text-align: center;
-
-
-}
-.navigation-column a{
-
-  text-decoration: none;
-  color: black;
-  font-size: x-large;
-  cursor: pointer;
-
-}
-.navigation-column a :hover{
-
-  color: #CEB25D;
-}
 
 .Tuscartas{
 
@@ -94,33 +46,19 @@ main {
   padding: 20px;
   background-color: #cccccc93;
   border-radius: 20px;
-  max-width: 1500px;
   box-shadow: 6px 3px 5px -1px rgba(0,0,0,0.23);
 }
 
-.left-box {
-  flex: 0.5;
-  padding: 0px;
-  margin-right: 0px;
-}
 
-.navigation-column {
-  background-color: #f0f0f0a8;
-  width: 100px;
-  border-radius: 20px;
-  text-align: start;
-}
+
 
 .carousel {
-  flex: 1;
   background-color: #ceb25d85;
   border: 2px solid #575656a4;
   overflow: hidden;
   border-radius: 20px;
-  padding-left: 30px;
   padding-bottom: 30px;
   padding-top: 30px;
-  width: 1300px;
 
   background: rgba(255,175,75,0.47);
 background: -moz-linear-gradient(45deg, rgba(255,175,75,0.47) 0%, rgba(255,175,75,0.42) 21%, rgba(255,146,10,0.26) 80%, rgba(255,146,10,0.21) 100%);
@@ -157,8 +95,8 @@ img {
 
 mat-icon{
   color: #ccc;
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 75px;
 }
 
 mat-icon:hover{

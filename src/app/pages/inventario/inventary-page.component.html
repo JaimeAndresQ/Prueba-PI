@@ -2,7 +2,7 @@
 
 <main id="contenedor-vitrina" class="relative bg-center">
 
-  <div class="caja-inv my-16">
+  <div class="caja-inv 2xl:my-16 md:sm:my-0">
 
 
     <div class="profile-header text-center">
@@ -12,28 +12,29 @@
 
     </div>
 
-  <div class="profile-container">
-    <div class="left-box">
+  <div class="profile-container 2xl:max-w-[1575px] md:sm:max-w-[1375px]">
+    <div class="left-box text-black hover:text-white">
 
-      <div class="carousel">
-        <h3 class="Tuscartas text-black ">Tus cartas</h3>
+      <div class="carousel 2xl:max-w-[1325px] md:sm:max-w-[1125px]">
+        <h3 class="Tuscartas">Tus cartas</h3>
         <div class="flex">
 
           <button class="">
-            <mat-icon class="w-6 h-6" aria-hidden="false" aria-label="Flecha Izquierda" svgIcon="flecha_izquierda">Flecha_Izquierda</mat-icon>
+            <mat-icon class="ml-[30px] mr-[20px]" aria-hidden="false" aria-label="Flecha Izquierda" svgIcon="flecha_izquierda">Flecha_Izquierda</mat-icon>
           </button>
 
-          <div class="carousel-inner pl-[30px]">
-            <div><img src="../../../assets/images/carta.png" alt="Carta 1"></div>
-            <div><img src="../../../assets/images/carta.png" alt="Carta 2"></div>
-            <div><img src=".../../../assets/images/carta.png" alt="Carta 3"></div>
-            <div><img src="../../../assets/images/carta.png" alt="Carta 4"></div>
-            <!-- Agrega más imágenes de cartas aquí -->
+          <div class="carousel-inner space-x-4">
+            <card-inventario></card-inventario>
+            <card-inventario></card-inventario>
+            <card-inventario></card-inventario>
+            <card-inventario></card-inventario>
           </div>
           <button class="">
-            <mat-icon class="mr-[30px]" aria-hidden="false" aria-label="Flecha Derecha" svgIcon="flecha_derecha">Flecha_Derecha</mat-icon>
+            <mat-icon class="ml-[30px] mr-[30px]" aria-hidden="false" aria-label="Flecha Derecha" svgIcon="flecha_derecha">Flecha_Derecha</mat-icon>
           </button>
+
         </div>
+
           </div>
         </div>
       </div>
