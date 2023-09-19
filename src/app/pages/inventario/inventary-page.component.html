@@ -1,76 +1,12 @@
-
-
 <main id="contenedor-vitrina" class="relative bg-center">
 
-  <div class="caja-inv 2xl:my-16 md:sm:my-0">
-
-
-    <div class="profile-header text-center">
-
-      <img class="profile-image ml-[46%]" src="../../../assets/images/avatar-2-hombre_1.png" alt="Imagen de perfil">
-      <h1 class="nameperfil">Nombre de Usuario</h1>
-
+  <div *ngFor="let item of inventario">
+    <div>
+      <img [src]="item.carta.urlImagen" alt="{{ item.carta.nombre_carta }}" />
+      <h2>{{ item.carta.nombre_carta }}</h2>
+      <!-- Mostrar otros detalles de la carta aquí -->
     </div>
-
-  <div class="profile-container 2xl:max-w-[1575px] md:sm:max-w-[1375px]">
-    <div class="left-box text-black hover:text-white">
-
-      <div class="carousel 2xl:max-w-[1325px] md:sm:max-w-[1125px]">
-        <h3 class="Tuscartas">Tus cartas</h3>
-        <div class="flex">
-
-          <button class="">
-            <mat-icon class="ml-[30px] mr-[20px]" aria-hidden="false" aria-label="Flecha Izquierda" svgIcon="flecha_izquierda">Flecha_Izquierda</mat-icon>
-          </button>
-
-          <div class="carousel-inner space-x-4">
-            <div *ngFor="let item of inventario">
-              <div *ngIf="item && item.carta" id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[415px] md:w-[200px] md:h-[285px]">
-                <!-- Bordeado Exotico Carta -->
-                <!-- Imagen Superior -->
-                <div class="titulo">
-                  <p class="2xl:text-[18px] md:text-[14px]">{{ item.carta.nombre_carta }}</p>
-                </div>
-                <div class="img">
-                  <a>
-                    <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
-                  <div class="overlay"></div>
-                  </a>
-                </div>
-                <div class="contenido 2xl:w-[220px] 2xl:h-[75px] md:sm:w-[165px] md:sm:h-[50px]">
-                  <div class="2xl:text-[16px] md:text-[11px]">
-                    <p *ngIf="item.carta.nombre_carta === 'Armadura Pesada'">Tipo: Pesada</p>
-                    <p *ngIf="item.carta.nombre_carta === 'Armadura Mediana'">Tipo: Media</p>
-                    <p *ngIf="item.carta.nombre_carta === 'Armadura de Tela'">Tipo: Tela</p>
-                    <p *ngIf="item.carta.nombre_carta === 'Armadura Media Liviana'">Tipo: Media liviana</p>
-                    <p *ngIf="item.carta.vida >= 3">Poder: {{ item.carta.poder }}</p>
-                    <p *ngIf="item.carta.vida >= 3">Vida: {{ item.carta.vida }}</p>
-                    <p *ngIf="item.carta.vida >= 3">Defensa: {{ item.carta.defensa }}</p>
-                  </div>
-                  <div class="2xl:text-[16px] md:text-[11px]">
-                    <p *ngIf="item.carta.vida >= 3">Ataque: {{ item.carta.ataqueBase }}</p>
-                    <p *ngIf="item.carta.vida >= 3">Dano: {{ item.carta.danoMax }}</p>
-                  </div>
-                </div>
-                <br>
-              </div>
-            </div>
-          </div>
-          <button class="">
-            <mat-icon class="ml-[30px] mr-[30px]" aria-hidden="false" aria-label="Flecha Derecha" svgIcon="flecha_derecha">Flecha_Derecha</mat-icon>
-          </button>
-          
-        </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-
-
+  </div>
 
 </main>
 
