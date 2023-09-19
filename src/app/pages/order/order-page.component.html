@@ -8,22 +8,23 @@
 <div class="contenedor w-[1360px] h-[668px]">
 
   <!-- <card-products></card-products> -->
-  <div class="flex items-stretch" >
-    <div id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 m-7 w-[625px] h-[415px]">
-      <div *ngFor="let carta of Items">
-        <p class="text-[26px]">Precio: {{ carta.price }} </p>
-        <p class="text-[22px]">Cantidad: {{ carta.quantity }}</p>
-        <hr>
-      </div>
-    </div>
+  <div class="flex items-stretch">
 
-    <div class="carta2 m-7 w-[500px] h-[415px]">
-      
-      <ngx-paypal [config]="payPalConfig"></ngx-paypal>
-    </div>
+    <card-products></card-products>
+
+    <div></div>
 
   </div>
 
 </div>
 </div>
+
+<!-- <div *ngFor="let carta of Items">
+    <p>ID de la Carta: {{ carta.id_carta }}</p>
+    <p>Cantidad: {{ carta.quantity }}</p>
+    <p>Precio: {{ carta.price }}</p>
+    <hr>
+</div> -->
+<br>
+<ngx-paypal [config]="payPalConfig"></ngx-paypal>
 </main>
