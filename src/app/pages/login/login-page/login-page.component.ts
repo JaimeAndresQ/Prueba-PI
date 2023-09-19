@@ -46,7 +46,7 @@ export class LoginPageComponent implements OnInit{
 
             //hacer la peticion al servidor para poder mandar los datos del login
             //y recibir los tokens
-            //http://168.61.17.35:8002/api/token/ || http://127.0.0.1:8002/api/token/
+            //http://20.25.34.123:8002/api/token/ || http://127.0.0.1:8002/api/token/
             this.http.post('http://127.0.0.1:8002/api/token/', loginData, { headers }).subscribe(
                 (response: any) => {
                     //almacenamos los tokens de access y refresh
