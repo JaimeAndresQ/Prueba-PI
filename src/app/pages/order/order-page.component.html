@@ -9,42 +9,31 @@
 
 
     <div class="overflow-y-auto h-full" id="Productos-Orden">
-      <card-products></card-products>
-      <card-products></card-products>
-      <card-products></card-products>
-      <card-products></card-products>
+      <div class="flex items-stretch" >
+        <div id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 m-7 w-[625px] h-[415px]">
+          <h1>Resumen de compra</h1>
+          <div *ngFor="let carta of Items">
+            <p>referencia: {{ carta.id_carta }}</p>
+            <p class="text-[26px]">Precio: {{ carta.price }} </p>
+            <p class="text-[22px]">Cantidad: {{ carta.quantity }}</p>
+            <hr>
+          </div>
+        </div>
     </div>
 
   <div class="absolute top-[214px] right-[300px]">
     <div class="contenedor-compra border border-solid border-[#3d3d3b] m-7 w-[360px] h-[468px]">
       <div class="text-center my-5 space-y-3">
-        <p class="text-[32px]">Orden: 24</p>
+        <p class="text-[32px]">Orden: {{order.order_id}}</p>
         <div class="overflow-y-auto  h-[200px] space-y-9 pt-5 text-[26px] " id="precio-productos-orden">
-          <p >Producto......... $40.000</p>
-          <p >Producto......... $10.000</p>
-          <p >Producto......... $90.000</p>
-          <p >Producto......... $50.000</p>
-          <p >Producto......... $40.000</p>
-          <p >Producto......... $20.000</p>
-          <p >Producto......... $60.000</p>
+          <p>Total: {{order.order_total}}</p>
         </div>
-        <p class="text-[26px]">Total........ $230.000</p>
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
       </div>
 
     </div>
   </div>
-
-
-
+  </div>
   </div>
 </div>
-
-<!-- <div *ngFor="let carta of Items">
-    <p>ID de la Carta: {{ carta.id_carta }}</p>
-    <p>Cantidad: {{ carta.quantity }}</p>
-    <p>Precio: {{ carta.price }}</p>
-    <hr>
-</div> -->
-<br>
-<ngx-paypal [config]="payPalConfig"></ngx-paypal>
 </main>
