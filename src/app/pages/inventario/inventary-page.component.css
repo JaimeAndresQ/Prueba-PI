@@ -73,16 +73,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', end
 }
 
 .carousel-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   transition: transform 0.3s ease-in-out;
   position: relative;
-
 }
 
 .carousel-item {
   flex: 0 0 100%;
   min-width: 100%;
-
+  margin: 10px;
 }
 
 img {
@@ -101,4 +101,76 @@ mat-icon{
 
 mat-icon:hover{
   color: #fff;
+}
+
+.carta2{
+  margin: 3.5%;
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+
+.carta2 .botones button{
+  transform: translateZ(50px);
+}
+
+.carta2 .titulo{
+  transform: translateZ(20px);
+  font-weight: bold;
+  padding:5px;
+  background:rgba(57,57,15,1);
+  opacity:1;
+  border:1px solid rgba(255,244,0,1);
+  border-radius:5px;
+  margin-bottom:10px;
+  text-align: center;
+}
+
+.carta2 img{
+  border:1px solid rgba(255,244,0,1);
+  border-radius:5px;
+  display: block;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(50px);
+  margin-bottom:10px;
+}
+
+.carta2:hover img{
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+.carta2 .contenido{
+  display: flex;
+  justify-content: space-between;
+  border:1px solid rgba(255,244,0,1);
+  border-radius:5px;
+  background:rgba(57,57,15,1);
+  transform: translateZ(20px);
+  padding: 10px;
+}
+
+[data-tilt] button{
+  transform: translateZ(20px);
+  text-align: center;
+  margin: 5px;
+  padding: 2px;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  color: white;
+}
+
+[data-tilt] mat-icon{
+  width: 30px;
+  height: 30px;
 }

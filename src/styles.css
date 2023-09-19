@@ -173,13 +173,22 @@ body {
 
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(168, 98, 98);
+  scrollbar-darkshadow-color: #dbaf29;
 
-#precio-productos-orden::-webkit-scrollbar {
-  display: auto;
 }
 
-::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar-thumb{
+  background-color: #d5eb0c00;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #b88f15da;
+  border-radius: 10px;
 }
 
 

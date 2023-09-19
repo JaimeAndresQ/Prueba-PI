@@ -41,6 +41,7 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
       "../../../assets/images/carta.png",
       "../../../assets/images/caballero.png",
       "../../../assets/images/caballero2.png",
+      "../../../assets/images/caballero2.png",
     ];
 
     // Variables Carrusel
@@ -61,6 +62,7 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
         )
 
         this.inventario = [];
+        this.updateDisplayedImages();
     }
 
     ngOnInit(): void {
@@ -84,54 +86,6 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
       }
     }
 
-    getInventary(): void {
-        const accessToken = localStorage.getItem('access_token');
-
-        if (!accessToken) {
-            console.error('No se ha encontrado el token de acceso.');
-            return;
-        }
-
-        //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
-        const cartEndpoint = 'http://localhost:3000/ver-inventario';
-        const headers = new HttpHeaders({
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${accessToken}`
-        });
-
-        this.http.get<Inventary[]>(cartEndpoint,{ headers }).subscribe(
-            (data: Inventary[]) => {
-                this.inventario = data
-                console.log('Respuesta de la API:', data);
-                this.getCards();
-            },
-            (error) => {
-                console.error('Error al obtener el carrito de compras:', error);
-            }
-        );
-    }
-
-    getCards(): void {
-        for (const item of this.inventario){
-            //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
-            const id_carta = item.id_carta
-            const cartEndpoint = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
-            const headers = new HttpHeaders({
-                'Content-Type': 'application/json',
-            });
-
-            this.http.get<Carta>(cartEndpoint,{ headers }).subscribe(
-                (carta: Carta) => {
-                    item.carta = carta
-                    console.log('Respuesta de la API:', carta);
-                },
-                (error) => {
-                    console.error('Error al obtener el carrito de compras:', error);
-                }
-            );
-        }
-
-    }
 
     prevImage(): void {
       this.imagenActualIndex = (this.imagenActualIndex - 1 + this.images.length) % this.images.length;
@@ -157,4 +111,53 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
       }
     }
 
+
+    getInventary(): void {
+      const accessToken = localStorage.getItem('access_token');
+
+      if (!accessToken) {
+          console.error('No se ha encontrado el token de acceso.');
+          return;
+      }
+
+      //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
+      const cartEndpoint = 'http://localhost:3000/ver-inventario';
+      const headers = new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
+      });
+
+      this.http.get<Inventary[]>(cartEndpoint,{ headers }).subscribe(
+          (data: Inventary[]) => {
+              this.inventario = data
+              console.log('Respuesta de la API:', data);
+              this.getCards();
+          },
+          (error) => {
+              console.error('Error al obtener el carrito de compras:', error);
+          }
+      );
+  }
+
+    getCards(): void {
+      for (const item of this.inventario){
+          //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
+          const id_carta = item.id_carta
+          const cartEndpoint = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
+          const headers = new HttpHeaders({
+              'Content-Type': 'application/json',
+          });
+
+          this.http.get<Carta>(cartEndpoint,{ headers }).subscribe(
+              (carta: Carta) => {
+                  item.carta = carta
+                  console.log('Respuesta de la API:', carta);
+              },
+              (error) => {
+                  console.error('Error al obtener el carrito de compras:', error);
+              }
+          );
+      }
+
+  }
 }

@@ -13,7 +13,7 @@ body {
 .Fondo {
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
   background-size: cover;
-  height: calc(100vh - 100px); /* Toma el 100% del viewport height y resta la altura del header */
+  height: calc(105vh - 100px); /* Toma el 100% del viewport height y resta la altura del header */
   /* Toma el 100% del viewport height y resta la altura del header */
 }
 

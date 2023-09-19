@@ -1,4 +1,4 @@
-import { Component, OnInit,ElementRef, AfterViewChecked   } from '@angular/core';
+import { Component, OnInit,ElementRef, AfterViewChecked } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -40,9 +40,11 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
 
 
+
   constructor(private http: HttpClient,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
+
     )  {
 
     this.matIconRegistry.addSvgIcon(
@@ -132,6 +134,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
     this.generateTotalPagesArray();
     this.getCartasByPage(this.currentPage);
   }
+
 
   ngAfterViewChecked(){
     const elementosCarta = document.querySelectorAll('[data-tilt]');

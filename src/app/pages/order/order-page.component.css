@@ -1,7 +1,7 @@
 
 #contenedor-vitrina {
   background-image: url('../../../assets/images/fondo-inicio.jpg');
-  height: calc(101.3vh - 100px);
+  height: calc(115vh - 100px);
 }
 
 .contenedor{
@@ -62,6 +62,20 @@
 }
 
 
+::-webkit-scrollbar {
+  width: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(168, 98, 98);
+  scrollbar-darkshadow-color: #dbaf29;
 
+}
 
+::-webkit-scrollbar-thumb{
+  background-color: #ebe70c;
+  border-radius: 30px;
+}
 
+::-webkit-scrollbar-track{
+  background-color: #b88f15da;
+  border-radius: 10px;
+}

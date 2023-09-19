@@ -3,16 +3,22 @@
     <p>Total: {{order.order_total}}</p>
 </div>
 <hr> -->
-<main id="contenedor-vitrina" class="relative bg-center overflow-hidden">
+<main id="contenedor-vitrina" class="relative bg-center">
 <div class="flex justify-center items-center min-h-screen">
-<div class="contenedor w-[1360px] h-[668px]">
+<div class="contenedor 2xl:w-[1360px] h-[668px] md:sm:w-[1160px]">
 
 
+<div class="flex justify-around items-center my-7">
 
-    <div class="overflow-y-auto h-full" id="Productos-Orden">
-      <div class="flex items-stretch" >
-        <div id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 m-7 w-[625px] h-[415px]">
-          <h1>Resumen de compra</h1>
+  <div class="flex items-stretch" >
+    <div id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 m-7 w-[625px] h-[565px]">
+      <h1 class="text-center">Resumen de compra</h1>
+      <div class="overflow-y-auto h-[85%]" id="Productos-Orden">
+          <card-products></card-products>
+          <card-products></card-products>
+          <card-products></card-products>
+          <card-products></card-products>
+          <card-products></card-products>
           <card-products></card-products>
           <!-- <div *ngFor="let carta of Items">
             <p>referencia: {{ carta.id_carta }}</p>
@@ -22,8 +28,9 @@
           </div> -->
         </div>
     </div>
+  </div>
 
-  <div class="absolute top-[214px] right-[300px]">
+  <div class="relative">
     <div class="contenedor-compra border border-solid border-[#3d3d3b] m-7 w-[360px] h-[468px]">
       <div class="text-center my-5 space-y-3">
         <p class="text-[32px]">Orden: {{order.order_id}}</p>
@@ -35,7 +42,11 @@
 
     </div>
   </div>
-  </div>
-  </div>
 </div>
+
+
+
+  </div>
+  </div>
+
 </main>

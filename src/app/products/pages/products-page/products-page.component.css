@@ -82,6 +82,10 @@
   padding: 10px;
 }
 
+.carta2:hover .titulo p{
+  white-space: normal;
+}
+
 [data-tilt] button{
   transform: translateZ(20px);
   text-align: center;
