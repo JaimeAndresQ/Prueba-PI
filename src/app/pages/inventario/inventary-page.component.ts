@@ -29,21 +29,33 @@ interface Carta {
     selector: 'app-inventary',
     templateUrl: './inventary-page.component.html',
     styleUrls: ['./inventary-page.component.css']
+
 })
 
 export class InventaryPageComponent implements OnInit {
 
     inventario: Inventary[] = [];
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,
+      private matIconRegistry: MatIconRegistry,
+      private domSanitizer: DomSanitizer) {
+        this.matIconRegistry.addSvgIcon(
+          'flecha_derecha',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/nav_right.svg')
+        )
+        this.matIconRegistry.addSvgIcon(
+          'flecha_izquierda',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/nav_left.svg')
+        )
+
         this.inventario = [];
     }
-    
+
     ngOnInit(): void {
         this.getInventary();
     }
 
-    getInventary(): void { 
+    getInventary(): void {
         const accessToken = localStorage.getItem('access_token');
 
         if (!accessToken) {
@@ -57,7 +69,7 @@ export class InventaryPageComponent implements OnInit {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${accessToken}`
         });
-    
+
         this.http.get<Inventary[]>(cartEndpoint,{ headers }).subscribe(
             (data: Inventary[]) => {
                 this.inventario = data
@@ -70,7 +82,7 @@ export class InventaryPageComponent implements OnInit {
         );
     }
 
-    getCards(): void { 
+    getCards(): void {
         for (const item of this.inventario){
             //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
             const id_carta = item.id_carta
@@ -78,7 +90,7 @@ export class InventaryPageComponent implements OnInit {
             const headers = new HttpHeaders({
                 'Content-Type': 'application/json',
             });
-        
+
             this.http.get<Carta>(cartEndpoint,{ headers }).subscribe(
                 (carta: Carta) => {
                     item.carta = carta
@@ -89,7 +101,7 @@ export class InventaryPageComponent implements OnInit {
                 }
             );
         }
-        
+
     }
 
 }
