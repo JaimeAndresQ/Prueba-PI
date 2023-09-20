@@ -60,7 +60,8 @@ main{
 .cuadricula{
   text-align: start;
   padding: 3px;
-  background-color: rgba(250, 235, 215, 0.658);
+  /* background-image: linear-gradient(to right, rgba(250, 235, 215, 0.658) , #e2cd9f); */
+  background: rgba(250, 235, 215, 0.658);
   max-height: fit-content;
   width: 335px;
   border-radius: 4px;
@@ -76,7 +77,7 @@ main{
 }
 
 .container_icon{
-    background-color: #E2CD9F;
+    background-color: #e2cd9f;
     max-height: 3rem;
     margin-right: 0.25rem/* 4px */;
     padding: 1px;
