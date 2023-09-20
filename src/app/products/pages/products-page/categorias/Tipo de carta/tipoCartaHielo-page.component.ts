@@ -99,7 +99,7 @@ export class IcePageComponent  implements OnInit, AfterViewChecked {
   //obtener las cartas de la API
     getTipeByPage(pageNumber: number): void {
     //const apiUrl = `http://api-cartas-gama.thenexusbattles2.com:8002/api/cards/?page_number=${pageNumber}`;
-    const apiUrl = `http://127.0.0.1:8000/api/Hielo/`;
+    const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/Hielo/`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
         this.cartas = data;
