@@ -46,8 +46,8 @@ export class OrderPageComponent implements OnInit {
         this.route.params.subscribe(params => {
             const orderId = params['orderId'];
 
-            //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
-            const cartEndpoint = `http://127.0.0.1:8003/api/order/${orderId}`;
+            const cartEndpoint =`https://store.thenexusbattles2.cloud/pagos-api/api/order/${orderId}`
+            //const cartEndpoint = `http://127.0.0.1:8003/api/order/${orderId}`;
             const headers = new HttpHeaders({
                 'Content-Type': 'application/json',
             });
@@ -112,7 +112,7 @@ export class OrderPageComponent implements OnInit {
                     order_total:this.order.order_total
                 }
 
-                const apiUrl = 'http://localhost:3000/pagar-orden';
+                const apiUrl = 'https://store.thenexusbattles2.cloud/webserver/pagar-orden';
                 const headers = new HttpHeaders({
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${accessToken}`

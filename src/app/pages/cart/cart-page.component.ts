@@ -165,8 +165,8 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    //const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/borrar-carta'
-    const cartEndpoint = 'http://localhost:3000/crear-orden';
+    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/crear-orden'
+    //const cartEndpoint = 'http://localhost:3000/crear-orden';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${accessToken}`
