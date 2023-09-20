@@ -1,22 +1,23 @@
 
 <main class="Fondo">
-  <div class="container">
+  
+  <div class="container 2xl:left-[10%] md:sms:left-[6%]">
     <div class="box">
       <div class="inner-box">
           <div class="image-container">
 
               <a href="#"><img class="imglogo" src="../img/Logo.png" alt=""></a>
-              <img class="imglogo2" src="../../../../assets/images/caballero2.png" alt="">
+              <img class="imglogo2" src="../../../../assets/images/caballero3.png" alt="">
               <form class="" id="formulario" [formGroup]="registerForm" (ngSubmit)="onSubmit()" method="post">
 
                 <div class="inc mb-8">
                     <h2>Registro</h2>
-      
+
                 </div>
-      
+
                     <label for="username" >Nickname</label>
                     <input class="text-sm" type="text" id="inputfield" formControlName="username" required>
-      
+
                     <label for="img">Elije tu Avatar</label>
                     <select name="select" class="avatar" id="inputfield" formControlName="img" required>
                       <option value="http://4.246.161.219:3000/img/Avatar_Hombre_1.webp" data-image="../../../../assets/images/avatar-1-hombre.png">
@@ -31,35 +32,35 @@
                       <option value="http://4.246.161.219:3000/img/Avatar_Mujer_2.webp" data-image="../../../../assets/images/avatar-2-hombre_1.png">
                         Mujer 2
                       </option>
-      
+
                     </select>
-      
+
                     <label for="name" >Nombre</label>
                     <input type="text" id="inputfield" formControlName="name" required>
-      
+
                     <label for="last_name" >Apellido</label>
                     <input type="text" id="inputfield" formControlName="last_name" required>
-      
+
                     <label for="email">Correo</label>
                     <input type="email" id="inputfield" formControlName="email" required>
-      
+
                     <label for="password">Contraseña</label>
                     <input type="password" id="inputfield" formControlName="password" required>
-      
+
                     <label for="question">Pregunta Seguridad</label>
                     <select formControlName="question" id="inputfield">
                       <option *ngFor="let question of securityQuestions" [value]="question.value">{{ question.label }}</option>
                     </select>
-      
+
                     <label for="answer">Respuesta</label>
                     <input type="text" id="inputfield" formControlName="answer" required>
-      
+
                     <div class="BTN">
-      
+
                       <button class="btnenter" type="submit">Registrarte</button>
-      
+
                     </div>
-      
+
                     <br>
                   </form>
           </div>
