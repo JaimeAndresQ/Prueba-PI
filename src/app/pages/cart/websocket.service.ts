@@ -7,14 +7,15 @@ import { Observable } from 'rxjs';
 })
 
 export class WebsocketService {
-    private socket;
+    //private socket;
 
     constructor() {
         //this.socket = io('https://store.thenexusbattles2.com/websocket')
-        this.socket = io('http://localhost:3000');
+        //this.socket = io('http://localhost:3000');
         console.log('WebSocket connected');
     }
 
+    /*
     //escuchar eventos de websocket
     listen(eventName: string): Observable<any> {
         return new Observable((subscriber) => {
@@ -27,5 +28,5 @@ export class WebsocketService {
     //emitir los eventos
     emit(eventName: string, data: any): void {
         this.socket.emit(eventName, data);
-    }
+    }*/
 }

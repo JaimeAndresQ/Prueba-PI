@@ -36,14 +36,7 @@ export class CartPageComponent implements OnInit {
   
     ngOnInit(): void {
       this.getCartas();
-      this.websocketService.listen('cartUpdated').subscribe((data: Carta[] | Carta) => {
-        if (Array.isArray(data)) {
-          this.cartas = data;
-        } else {
-          this.cartas = [data]
-        }
-        this.calcular();
-      });
+      this.calcular();
     }
 
     // Obtener las cartas del carrito del usuario
