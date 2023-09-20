@@ -127,6 +127,10 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       'picaromachete',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/picaromachete.svg')
     )
+    this.matIconRegistry.addSvgIcon(
+      'indicador_disc',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/indicador_descuento.svg')
+    )
 
   }
 
