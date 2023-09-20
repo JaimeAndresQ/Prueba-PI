@@ -221,7 +221,7 @@ export class GunsPageComponent  implements OnInit, AfterViewChecked {
       return;
     }
 
-    const cartEndpoint = 'http://localhost:3000/enviar-token';
+    const cartEndpoint = 'https://store.thenexusbattles2.cloud/webserver/enviar-token';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`

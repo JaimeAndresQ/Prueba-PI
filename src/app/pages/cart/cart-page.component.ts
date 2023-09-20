@@ -49,8 +49,8 @@ export class CartPageComponent implements OnInit {
         return;
       }
 
-      //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
-      const cartEndpoint = 'http://localhost:3000/obtener-carrito';
+      const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/obtener-carrito'
+      //const cartEndpoint = 'http://localhost:3000/obtener-carrito';
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
@@ -81,8 +81,8 @@ export class CartPageComponent implements OnInit {
         return;
       }
 
-      //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/enviar-token'
-      const cartEndpoint = 'http://localhost:3000/enviar-token';
+      const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/enviar-token'
+      //const cartEndpoint = 'http://localhost:3000/enviar-token';
       const headers = new HttpHeaders({
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${accessToken}`
@@ -109,8 +109,8 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/remover-carta'
-    const cartEndpoint = 'http://localhost:3000/remover-carta';
+    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/remover-carta'
+    //const cartEndpoint = 'http://localhost:3000/remover-carta';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
@@ -137,8 +137,8 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/borrar-carta'
-    const cartEndpoint = 'http://localhost:3000/borrar-carta';
+    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/borrar-carta'
+    //const cartEndpoint = 'http://localhost:3000/borrar-carta';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
@@ -165,7 +165,7 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/borrar-carta'
+    //const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/borrar-carta'
     const cartEndpoint = 'http://localhost:3000/crear-orden';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
