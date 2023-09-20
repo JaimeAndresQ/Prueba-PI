@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 //interface de la carta
 interface Carta {
@@ -26,9 +28,38 @@ interface Carta {
 export class ProductDetailComponent  implements OnInit{
     carta: any = {};
 
-    constructor(private http: HttpClient, private route: ActivatedRoute){
+    constructor(private http: HttpClient,
+      private route: ActivatedRoute,
+      private matIconRegistry: MatIconRegistry,
+      private domSanitizer: DomSanitizer){
         this.carta = {}
+
+        this.matIconRegistry.addSvgIcon(
+          'precio',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/precio.svg'),
+        )
+        this.matIconRegistry.addSvgIcon(
+          'ataquebase',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/ataquebase.svg'),
+        )
+        this.matIconRegistry.addSvgIcon(
+          'dañomax',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/dañomax.svg'),
+        )
+        this.matIconRegistry.addSvgIcon(
+          'ataquedado',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/ataquedado.svg'),
+        )
+        this.matIconRegistry.addSvgIcon(
+          'defensa',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/defensa.svg'),
+        )
+        this.matIconRegistry.addSvgIcon(
+          'vida',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/vida.svg'),
+        )
     }
+
 
     ngOnInit(): void {
         this.route.paramMap.subscribe((params)=>{
