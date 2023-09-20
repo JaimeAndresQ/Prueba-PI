@@ -18,7 +18,9 @@ interface Carta {
   tipo: string,
   defensa:number,
   ataqueBase: number,
-  danoMax: number
+  danoMax: number,
+  coleccion: string,
+  desc: string
 }
 
 @Component({

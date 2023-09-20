@@ -102,13 +102,14 @@
             <p *ngIf="carta.nombre_carta === 'Armadura Mediana'">Tipo: Media</p>
             <p *ngIf="carta.nombre_carta === 'Armadura de Tela'">Tipo: Tela</p>
             <p *ngIf="carta.nombre_carta === 'Armadura Media Liviana'">Tipo: Media liviana</p>
-            <p *ngIf="carta.vida >= 3">Poder: {{ carta.poder }}</p>
-            <p *ngIf="carta.vida >= 3">Vida: {{ carta.vida }}</p>
-            <p *ngIf="carta.vida >= 3">Defensa: {{ carta.defensa }}</p>
+            <p *ngIf="carta.coleccion === 'Armas'">Poder: {{ carta.desc }}</p>
+            <p *ngIf="carta.coleccion === 'Heroes'">Poder: {{ carta.poder }}</p>
+            <p *ngIf="carta.coleccion === 'Heroes'">Vida: {{ carta.vida }}</p>
+            <p *ngIf="carta.coleccion === 'Heroes'">Defensa: {{ carta.defensa }}</p>
           </div>
           <div class="2xl:text-[16px] md:text-[11px]">
-            <p *ngIf="carta.vida >= 3">Ataque: {{ carta.ataqueBase }}</p>
-            <p *ngIf="carta.vida >= 3">Dano: {{ carta.danoMax }}</p>
+            <p *ngIf="carta.coleccion === 'Heroes'">Ataque: {{ carta.ataqueBase }}</p>
+            <p *ngIf="carta.coleccion === 'Heroes'">Dano: {{ carta.danoMax }}</p>
           </div>
         </div>
             <button class="deseo">
