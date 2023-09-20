@@ -58,6 +58,18 @@ export class ProductDetailComponent  implements OnInit{
           'vida',
           this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/vida.svg'),
         )
+        this.matIconRegistry.addSvgIcon(
+          'efecto',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/efecto.svg'),
+        )
+        this.matIconRegistry.addSvgIcon(
+          'turnos',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/turnos.svg'),
+        )
+        this.matIconRegistry.addSvgIcon(
+          'estadistica',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/estadistica.svg'),
+        )
     }
 
 

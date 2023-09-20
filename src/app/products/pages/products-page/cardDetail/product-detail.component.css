@@ -24,6 +24,7 @@ main{
 .hijo1 .informacion{
     padding: 10px;
     padding-top: 6.5%;
+    padding-bottom: 6.5%;
     /* background: rgba(187, 134, 65, 0.548); */
     width: 800px;
     height: 600px;
@@ -51,9 +52,6 @@ main{
   background-color: rgba(255, 255, 255, 0.5);
 
 }
-
-
-
 
 
 
