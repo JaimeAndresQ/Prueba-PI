@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private http: HttpClient,
-    private websocketService: WebsocketService
+    //private websocketService: WebsocketService
   ) {
     this.matIconRegistry.addSvgIcon(
       'carrito',
@@ -83,15 +83,16 @@ export class NavbarComponent implements OnInit {
     };
 
     this.getCartas();
-
+    this.calcular();
+    /*8
     this.websocketService.listen('cartUpdated').subscribe((data: Carta[] | Carta) => {
       if (Array.isArray(data)) {
         this.cartas = data;
       } else {
         this.cartas = [data]
       }
-      this.calcular();
-    });
+      
+    });*/
   }
 
   // Obtener las cartas del carrito del usuario
