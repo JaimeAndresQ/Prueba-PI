@@ -113,8 +113,8 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
           return;
       }
 
-      //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
-      const cartEndpoint = 'http://localhost:3000/ver-inventario';
+      const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/ver-inventario'
+      //const cartEndpoint = 'http://localhost:3000/ver-inventario';
       const headers = new HttpHeaders({
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${accessToken}`
@@ -134,9 +134,9 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
 
     getCards(): void {
       for (const item of this.inventario){
-          //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
           const id_carta = item.id_carta
-          const cartEndpoint = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
+          const cartEndpoint =`https://store.thenexusbattles2.cloud/cards/api/cardDetail/${id_carta}`;
+          //const cartEndpoint = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
           const headers = new HttpHeaders({
               'Content-Type': 'application/json',
           });
