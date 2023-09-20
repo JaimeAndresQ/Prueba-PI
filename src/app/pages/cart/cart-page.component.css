@@ -6,13 +6,13 @@ body {
 main{
     background: #CCBEA3;
     background-size: cover;
-    height: 88vh;
+    height: 91vh;
 }
 
 .padre{
     display: flex;
-    margin: 30px;
     padding: 30px;
+    padding-top: 50px;
 }
 
 .tabla{

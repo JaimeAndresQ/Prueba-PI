@@ -141,12 +141,24 @@ form select{
 }
 
 
+
 .imglogo2{
 
   position:absolute;top:89px;right:0px;bottom:0px;left:303px;
   width: 500px;
   height: 750px;
   opacity: 1;
+  z-index: 1;
+}
+
+
+#Avatar_Icon1, #Avatar_Icon2, #Avatar_Icon3, #Avatar_Icon4{
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+  border-radius: 30px;
+  background-image: url('../../../../assets/images/FondoCastillo.png');
+  background-position: center;
 }
 
 #formulario label {

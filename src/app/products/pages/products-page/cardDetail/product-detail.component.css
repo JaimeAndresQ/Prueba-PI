@@ -9,7 +9,7 @@ main{
 }
 
 .hijo1 .img{
-    background: red;
+    background: rgba(175, 187, 65, 0.548);
     width: 400px;
     height: 600px;
     display: flex;
@@ -23,7 +23,7 @@ main{
 
 .hijo1 .informacion{
     padding: 10px;
-    background: blue;
+    background: rgba(187, 134, 65, 0.548);
     width: 800px;
     height: 600px;
 }

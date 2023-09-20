@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -31,8 +31,32 @@ export class SignupPageComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const divSelect = document.querySelector('.avatar') as HTMLSelectElement;
+    const maxIndex = 4; // Define el índice máximo que quieres comprobar
 
+    // Un bucle que recorre desde 1 hasta el índice máximo
+    for (let i = 1; i <= maxIndex; i++) {
+      const divAvatarIcon = document.querySelector(`#Avatar_Icon${i}`) as HTMLElement;
+
+      divSelect.addEventListener('change', () => {
+        if (divSelect.selectedIndex === i - 1) { // Resta 1 para que coincida con el índice base 0
+          // Se seleccionó la opción correspondiente al índice i
+          if (divAvatarIcon) {
+            divAvatarIcon.style.opacity = '1'; // Mostrar el div
+          }
+        } else {
+          // Opción distinta del índice i
+          if (divAvatarIcon) {
+            divAvatarIcon.style.opacity = '0'; // Ocultar el div
+          }
+        }
+      });
+    }
+
+
+
+  }
 
   onSubmit() {
     if (this.registerForm.valid) {

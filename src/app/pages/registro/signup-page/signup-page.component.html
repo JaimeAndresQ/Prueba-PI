@@ -1,6 +1,6 @@
 
 <main class="Fondo">
-  
+
   <div class="container 2xl:left-[10%] md:sms:left-[6%]">
     <div class="box">
       <div class="inner-box">
@@ -19,21 +19,40 @@
                     <input class="text-sm" type="text" id="inputfield" formControlName="username" required>
 
                     <label for="img">Elije tu Avatar</label>
-                    <select name="select" class="avatar" id="inputfield" formControlName="img" required>
-                      <option value="http://4.246.161.219:3000/img/Avatar_Hombre_1.webp" data-image="../../../../assets/images/avatar-1-hombre.png">
-                        Hombre 1
-                      </option>
-                      <option value="http://4.246.161.219:3000/img/Avatar_Hombre_2.webp" data-image="../../../../assets/images/avatar-2-hombre_1.png">
-                        Hombre 2
-                      </option>
-                      <option value="http://4.246.161.219:3000/img/Avatar_Mujer_1.webp" data-image="../../../../assets/images/avatar-2-hombre_1.png">
-                        Mujer 1
-                      </option>
-                      <option value="http://4.246.161.219:3000/img/Avatar_Mujer_2.webp" data-image="../../../../assets/images/avatar-2-hombre_1.png">
-                        Mujer 2
-                      </option>
 
+
+                      <select name="select" class="avatar" id="inputfield" formControlName="img" #selectElement required>
+
+                        <option id="firstOption" value="http://4.246.161.219:3000/img/Avatar_Hombre_1.webp" >
+                        Hombre 1
+                        </option>
+                        <option value="http://4.246.161.219:3000/img/Avatar_Hombre_2.webp" >
+                          Hombre 2
+                        </option>
+                        <option value="http://4.246.161.219:3000/img/Avatar_Mujer_1.webp" >
+                          Mujer 1
+                        </option>
+                        <option value="http://4.246.161.219:3000/img/Avatar_Mujer_2.webp" >
+                          Mujer 2
+                        </option>
                     </select>
+
+                    <div class="absolute top-[24.5%] left-[360px] " id="Avatar_Icon1"  >
+                      <img src="../../../../assets/images/avatar-1-hombre.png" class="w-[100px] h-[100px] rounded-[50%]">
+                      </div>
+                    <div class="absolute top-[24.5%] left-[360px] " id="Avatar_Icon2" >
+                      <img src="../../../../assets/images/avatar-2-hombre_1.png" class="w-[100px] h-[100px] rounded-[50%]">
+                    </div>
+                    <div class="absolute top-[24.5%] left-[360px] " id="Avatar_Icon3" >
+                      <img src="../../../../assets/images/Avatar-1-mujer.png" class="w-[100px] h-[100px] rounded-[50%]">
+                    </div>
+                    <div class="absolute top-[24.5%] left-[360px] " id="Avatar_Icon4" >
+                      <img src="../../../../assets/images/avatar-2-mujer_1.png" class="w-[100px] h-[100px] rounded-[50%]">
+                    </div>
+
+
+
+
 
                     <label for="name" >Nombre</label>
                     <input type="text" id="inputfield" formControlName="name" required>
