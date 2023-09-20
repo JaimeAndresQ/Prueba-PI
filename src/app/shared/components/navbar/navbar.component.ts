@@ -105,8 +105,8 @@ export class NavbarComponent implements OnInit {
       return;
     }
 
-    //const cartEndpoint ='https://store.thenexusbattles2.com/websocket/obtener-carrito'
-    const cartEndpoint = 'http://localhost:3000/obtener-carrito';
+    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/obtener-carrito'
+    //const cartEndpoint = 'http://localhost:3000/obtener-carrito';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${accessToken}`
