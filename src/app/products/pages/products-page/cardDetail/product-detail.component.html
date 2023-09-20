@@ -1,22 +1,174 @@
 <main id="contenedor-vitrina">
     <div class="padre my-4">
-        <div class="hijo1">
-            <div class="img flex-col ">
-                <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[450px] md:sm:h-[450px]">
-                <p class="text-3xl">**Iconos Estrellas**</p>
-            </div>
 
-            <div class="informacion">
-                <h1>{{carta.nombre_carta}}</h1>
-                <br>
-                <p>{{carta.poder}}</p>
-                <p>{{carta.price}}</p>
-
-            </div>
+      <div class="hijo1">
+        <div class="img flex-col ">
+            <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[450px]">
+            <p class="text-3xl">**Iconos Estrellas**</p>
         </div>
+
+        <div class="informacion text-center flex items-center flex-col" #coleccion_Heroe>
+          <div class="flex flex-col space-y-4 w-[675px] items-center justify-center">
+            <p class="text-[32px] ">Poder 4 {{carta.poder}} Guerrero Tanque </p>
+          <div class="grid grid-cols-2 w-max  bg-gradient-to-t from-[#c0a269a6] to-[#b68511a8] p-1 pt-2 px-12 border border-[#E2CD9F] border-dashed rounded-[4px] text-white text-left ">
+
+            <p class="text-[24px] italic">Tipo:</p>
+            <p class="text-[24px] italic">Clase:</p>
+
+            <p class="text-[24px] text-slate-800 " >Tanque</p>
+            <p class="text-[24px] text-rose-800">Guerrero</p>
+
+          </div>
+            <p class="text-[20px]">Esta es una breve descripcion del guerrero tanque</p>
+          </div>
+
+            <div class="grid grid-cols-2 mt-4 gap-4 ">
+
+              <div class="cuadricula flex items-center">
+                <div class="container_icon">
+                  <mat-icon class="text-[#458f3b]" svgIcon="precio">Precio</mat-icon>
+                </div>
+                <div>
+                  <p class="text-[22px] font-semibold">Precio</p>
+                  <p class="text_desc">50.000</p>
+                </div>
+              </div>
+
+              <div class="cuadricula flex items-center">
+                <div class="container_icon">
+                  <mat-icon class="text-[#458f3b]" svgIcon="ataquebase">Ataque Base</mat-icon>
+                </div>
+                <div>
+                  <p class="text-[22px] font-semibold">Ataque Base</p>
+                  <p class="text_desc">10</p>
+                </div>
+              </div>
+
+              <div class="cuadricula flex items-center">
+                <div class="container_icon">
+                  <mat-icon class="text-[#458f3b]" svgIcon="defensa">Defensa</mat-icon>
+                </div>
+                <div>
+                  <p class="text-[22px] font-semibold">Defensa</p>
+                  <p class="text_desc">7</p>
+                </div>
+              </div>
+
+              <div class="cuadricula flex items-center">
+                <div class="container_icon">
+                  <mat-icon class="text-[#458f3b]" svgIcon="dañomax">Daño Max</mat-icon>
+                </div>
+                <div>
+                  <p class="text-[22px] font-semibold">Daño Max</p>
+                  <p class="text_desc">21</p>
+                </div>
+              </div>
+
+              <div class="cuadricula flex items-center">
+                <div class="container_icon">
+                  <mat-icon class="text-[#458f3b]" svgIcon="ataquedado">Ataque Dado</mat-icon>
+                </div>
+                <div>
+                  <p class="text-[22px] font-semibold">Ataque Dado</p>
+                  <p class="text_desc">14</p>
+                </div>
+              </div>
+
+              <div class="cuadricula flex items-center">
+                <div class="container_icon">
+                  <mat-icon class="text-[#458f3b]" svgIcon="vida">Vida</mat-icon>
+                </div>
+                <div>
+                  <p class="text-[22px] font-semibold">Vida</p>
+                  <p class="text_desc">1425</p>
+                </div>
+              </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
         <br>
         <div class="hijo2">
             <p>COMENTARIOS</p>
         </div>
+
     </div>
 </main>
+
+
+<ng-template #coleccion_Armadura>
+
+  <div class="hijo1">
+    <div class="img flex-col">
+        <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[450px]">
+        <p class="text-3xl">**Iconos Estrellas**</p>
+    </div>
+
+    <div class="informacion text-center flex items-center flex-col ">
+      <div class="flex flex-col space-y-4 w-[675px] items-center justify-center">
+        <p class="text-[32px] ">Armadura Pesada {{carta.nombre_carta}}</p>
+      <div class="grid grid-cols-2 w-max  bg-gradient-to-t from-[#c0a269a6] to-[#b68511a8] p-1 pt-2 px-12 border border-[#E2CD9F] border-dashed rounded-[4px] text-white text-left ">
+
+        <p class="text-[24px] italic">Tipo:</p>
+        <p class="text-[24px] italic">Heroe:</p>
+
+        <p class="text-[24px] text-sky-800 " >Pesada</p>
+        <p class="text-[24px] text-purple-800 ">Guerrero Tanque</p>
+
+      </div>
+        <p class="text-[20px]">Esta es una breve descripcion de la armadura pesada</p>
+      </div>
+
+        <div class="grid grid-cols-2 mt-4 gap-4 ">
+
+          <div class="cuadricula flex items-center">
+            <div class="container_icon">
+              <mat-icon class="text-[#458f3b]" svgIcon="precio">Precio</mat-icon>
+            </div>
+            <div>
+              <p class="text-[22px] font-semibold">Precio</p>
+              <p class="text_desc">50.000 {{carta.price}}</p>
+            </div>
+          </div>
+
+          <div class="cuadricula flex items-center">
+            <div class="container_icon">
+              <mat-icon class="text-[#458f3b]" svgIcon="efecto">Efecto de Impacto</mat-icon>
+            </div>
+            <div>
+              <p class="text-[22px] font-semibold">Efecto de Impacto</p>
+              <p class="text_desc">4 {{carta.statEffect}}</p>
+            </div>
+          </div>
+
+          <div class="cuadricula flex items-center">
+            <div class="container_icon">
+              <mat-icon class="text-[#458f3b]" svgIcon="turnos">Numero de Turnos</mat-icon>
+            </div>
+            <div>
+              <p class="text-[22px] font-semibold">Numero de Turnos</p>
+              <p class="text_desc">2 {{carta.turnCount}}</p>
+            </div>
+          </div>
+
+          <div class="cuadricula flex items-center">
+            <div class="container_icon">
+              <mat-icon class="text-[#458f3b]" svgIcon="estadistica">Estadistica</mat-icon>
+            </div>
+            <div>
+              <p class="text-[22px] font-semibold">Estadistica</p>
+              <p class="text_desc">Defensa</p>
+            </div>
+          </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+</ng-template>
