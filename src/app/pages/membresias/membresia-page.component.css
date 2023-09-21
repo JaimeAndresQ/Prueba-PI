@@ -21,10 +21,13 @@
     transform: scale(0.8);
     transition: transform 0.3s;
     flex: 1; /* Hace que las cartas ocupen un espacio igual */
-    max-width: 600px;/* Establece un ancho máximo para evitar que se extiendan demasiado */
+    max-width: 300px;/* Establece un ancho máximo para evitar que se extiendan demasiado */
     max-height: 500px;
     height: 500px;
-    
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .subscription-card:hover {
