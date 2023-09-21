@@ -44,7 +44,7 @@ main{
   width: 1325px;
   height: 950px;
   padding: 20px;
-  padding-top: 70px;
+  padding-top: 150px;
   display: flex;
   flex-direction: column;
   justify-items: center;
