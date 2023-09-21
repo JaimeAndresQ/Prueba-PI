@@ -2,12 +2,6 @@
 <main id="contenedor-vitrina" class="relative bg-center">
   <div  class="caja-inv my-16">
     <div class="profile-header text-center flex flex-col items-center justify-center">
-      <img
-        class="profile-image"
-        src="../../../assets/images/avatar-2-hombre_1.png"
-        alt="Imagen de perfil"
-      />
-      <h1 class="nameperfil">Nombre de Usuario</h1>
     </div>
 
     <div *ngIf="inventario.length < 4; else pagination" class="profile-container">
@@ -25,7 +19,7 @@
                   </div>
                   <div class="img">
                     <a>
-                      <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
+                      <img src="{{ carta.urlImagen }}" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
                     <div class="overlay"></div>
                     </a>
                   </div>
