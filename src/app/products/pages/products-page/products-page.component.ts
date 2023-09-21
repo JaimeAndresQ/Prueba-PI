@@ -246,5 +246,3 @@ getCardBackgroundClass(id_carta: string): string {
 
 
 }
-
-
