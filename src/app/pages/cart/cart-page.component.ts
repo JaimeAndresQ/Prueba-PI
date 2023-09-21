@@ -177,6 +177,11 @@ export class CartPageComponent implements OnInit {
           // Manejar la respuesta del servicio de carrito si es necesario
           console.log('Cart response:', response);
           const orderID = response.order.order_id
+          const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accessToken}`
+          });
+          this.http.post('https://store.thenexusbattles2.cloud/webserver/vaciar-carrito',{},{headers})
           this.router.navigate(['/order', orderID]);
       },
       (error) => {
