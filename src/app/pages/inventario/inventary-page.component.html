@@ -19,26 +19,26 @@
                   </div>
                   <div class="img">
                     <a>
-                      <img src="{{ carta.urlImagen }}" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
+                      <img src="{{ item.carta.urlImagen }}" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
                     <div class="overlay"></div>
                     </a>
                   </div>
                   <div class="contenido 2xl:w-[220px] 2xl:h-[75px] md:sm:w-[165px] md:sm:h-[50px]">
                     <div class="2xl:text-[16px] md:text-[11px] text-ellipsis overflow-hidden">
-                      <p *ngIf="carta.nombre_carta === 'Armadura Pesada'">Tipo: Pesada</p>
-                      <p *ngIf="carta.nombre_carta === 'Armadura Mediana'">Tipo: Media</p>
-                      <p *ngIf="carta.nombre_carta === 'Armadura de Tela'">Tipo: Tela</p>
-                      <p *ngIf="carta.nombre_carta === 'Armadura Media Liviana'">Tipo: Media liviana</p>
-                      <p *ngIf="carta.coleccion === 'Armaduras'">{{ carta.desc }}</p>
-                      <p *ngIf="carta.coleccion === 'Armas'">{{ carta.desc }}</p>
-                      <p *ngIf="carta.coleccion === 'Items'">{{ carta.desc }}</p>
-                      <p *ngIf="carta.coleccion === 'Heroes'">Poder: {{ carta.poder }}</p>
-                      <p *ngIf="carta.coleccion === 'Heroes'">Vida: {{ carta.vida }}</p>
-                      <p *ngIf="carta.coleccion === 'Heroes'">Defensa: {{ carta.defensa }}</p>
+                      <p *ngIf="item.carta.nombre_carta === 'Armadura Pesada'">Tipo: Pesada</p>
+                      <p *ngIf="item.carta.nombre_carta === 'Armadura Mediana'">Tipo: Media</p>
+                      <p *ngIf="item.carta.nombre_carta === 'Armadura de Tela'">Tipo: Tela</p>
+                      <p *ngIf="item.carta.nombre_carta === 'Armadura Media Liviana'">Tipo: Media liviana</p>
+                      <p *ngIf="item.carta.coleccion === 'Armaduras'">{{ item.carta.desc }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Armas'">{{ item.carta.desc }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Items'">{{ item.carta.desc }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Poder: {{ item.carta.poder }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Vida: {{ item.carta.vida }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Defensa: {{ item.carta.defensa }}</p>
                     </div>
                     <div class="2xl:text-[16px] md:text-[11px]">
-                      <p *ngIf="carta.coleccion === 'Heroes'">Ataque: {{ carta.ataqueBase }}</p>
-                      <p *ngIf="carta.coleccion === 'Heroes'">Dano: {{ carta.danoMax }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Ataque: {{ item.carta.ataqueBase }}</p>
+                      <p *ngIf="item.carta.coleccion === 'Heroes'">Dano: {{ item.carta.danoMax }}</p>
                     </div>
                   </div>
                   <br>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="img">
                   <a>
-                    <img src="{{ carta.urlImagen }}" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
+                    <img src="{{ item.carta.urlImagen }}" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
                   <div class="overlay"></div>
                   </a>
                 </div>

@@ -20,14 +20,13 @@ interface Carta {
   stock: number;
   nombre_carta: string;
   poder: string,
-  clase:string,
   vida:number,
-  tipo: string,
   defensa:number,
   ataqueBase: number,
   danoMax: number,
-  coleccion: string,
-  desc: string
+  tipo:string,
+  coleccion:string,
+  desc:string
 }
 
 @Component({
