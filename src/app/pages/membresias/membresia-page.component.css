@@ -9,20 +9,21 @@
     flex-wrap: wrap;
     justify-content: center; /* Centra las cartas horizontalmente */
     background-color: rgba(234, 233, 233, 0.8); /* Fondo semi-transparente */
-    padding: 20px; /* Espacio alrededor del contenido */
+    padding: 60px; /* Espacio alrededor del contenido */
+    padding-bottom: 90px;
     border-radius: 20px;
 }
 
 .subscription-card {
-    
+    margin-top: -70px;
     padding: 10px;
+
     width: 200px;
     text-align: center;
     transform: scale(0.8);
     transition: transform 0.3s;
     flex: 1; /* Hace que las cartas ocupen un espacio igual */
-    max-width: 300px;/* Establece un ancho máximo para evitar que se extiendan demasiado */
-    max-height: 500px;
+    width: 300px;/* Establece un ancho máximo para evitar que se extiendan demasiado */
     height: 500px;
     align-items: center;
     justify-content: center;
@@ -35,14 +36,14 @@
 }
 
 .featured {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
     padding: 0px;
     height: calc(100vh - 540px);
     background-size: cover;
 }
 
-.fondomenbre{   
+.fondomenbre{
     height: calc(100vh - 525px);
     width: calc(100vh - 650px);
     background-size: cover;

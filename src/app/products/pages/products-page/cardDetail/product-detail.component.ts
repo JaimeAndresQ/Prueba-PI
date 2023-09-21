@@ -73,6 +73,10 @@ export class ProductDetailComponent  implements OnInit{
           'estadistica',
           this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/estadistica.svg'),
         )
+        this.matIconRegistry.addSvgIcon(
+          'stock',
+          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/stock.svg'),
+        )
     }
 
 
