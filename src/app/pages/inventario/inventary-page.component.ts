@@ -82,29 +82,32 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
       }
     }
 
-
     prevImage(): void {
-      this.imagenActualIndex = (this.imagenActualIndex - 1 + this.inventario.length) % this.inventario.length;
+      const prevIndex = (this.imagenActualIndex - 1 + this.inventario.length) % this.inventario.length;
+      this.imagenActualIndex = prevIndex;
       this.updateDisplayedImages();
     }
 
     nextImage(): void {
-      this.imagenActualIndex = (this.imagenActualIndex + 1) % this.inventario.length;
+      const nextIndex = (this.imagenActualIndex + 1) % this.inventario.length;
+      this.imagenActualIndex = nextIndex;
       this.updateDisplayedImages();
     }
 
+    isLastPage(): boolean {
+      return this.imagenActualIndex + this.cartasAMostrar >= this.inventario.length;
+    }
+
     private updateDisplayedImages(): void {
-      if (this.inventario.length < this.cartasAMostrar) {
-        this.displayedImages = this.inventario;
-      } else {
-        const startIndex = this.imagenActualIndex;
-        const endIndex = (this.imagenActualIndex + this.cartasAMostrar) % this.inventario.length;
-        if (startIndex < endIndex) {
-          this.displayedImages = this.inventario.slice(startIndex, endIndex);
-        } else {
-          this.displayedImages = this.inventario.slice(startIndex).concat(this.inventario.slice(0, endIndex));
-        }
+      const numCartas = this.inventario.length;
+      const displayedImages: Inventary[] = [];
+
+      for (let i = 0; i < this.cartasAMostrar; i++) {
+        const index = (this.imagenActualIndex + i) % numCartas;
+        displayedImages.push(this.inventario[index]);
       }
+
+      this.displayedImages = displayedImages;
     }
 
 
