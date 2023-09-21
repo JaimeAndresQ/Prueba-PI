@@ -3,7 +3,7 @@
 
       <div class="hijo1">
         <div class="img flex-col ">
-            <img src="{{ carta.urlImagen }}" alt="" class="h-[450px]">
+            <img src="{{ carta.urlImagen }}" alt="" class="h-[420px] w-[320px]">
             <p class="text-3xl">**Iconos Estrellas**</p>
         </div>
 
@@ -15,7 +15,7 @@
             <p class="text-[24px] italic">Tipo:</p>
             <p class="text-[24px] italic">Coleccion:</p>
 
-            <p class="text-[24px] text-slate-800 " >{{carta.tipo}}</p>
+            <p class="text-[24px] text-slate-800 " >{{ carta.tipo ? carta.tipo : 'Ninguno' }}</p>
             <p class="text-[24px] text-rose-800">{{carta.coleccion}}</p>
 
           </div>
