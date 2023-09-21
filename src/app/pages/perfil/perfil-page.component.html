@@ -1,5 +1,30 @@
-<h1>Hola</h1>
-<p>Username:{{perfil.user}}</p>
-<p>Email:{{informacionUsuario.email}}</p>
-<p>Nombre:{{informacionUsuario.username}}</p>
-<p>Apellido:{{informacionUsuario.name}}</p>
+<main class="Fondo">
+    <div class="profile-card">
+        <form class="profile-form">
+            <img src="../../../assets/images/avatar-2-hombre_1.png" alt="Imagen de usuario" class="profile-image">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="{{informacionUsuario.username}}">
+                </div>
+                <div class="grid-item">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" value="{{informacionUsuario.name}}">
+                </div>
+                <div class="grid-item">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" value="{{informacionUsuario.email}}">
+                </div>
+                <div class="grid-item">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" value="{{perfil.user}}">
+                </div>
+               
+            </div>
+            <div class="button-container">
+                <button type="submit">Guardar Informacion</button>
+                <button type="submit">Editar Informacion</button>
+            </div>
+        </form>
+    </div>
+</main>
