@@ -84,7 +84,7 @@
                 </div>
               </div>
 
-              <div class="cuadricula flex items-center">
+              <div class="cuadricula flex items-center " >
                 <div class="container_icon">
                   <mat-icon class="text-[#458f3b]" svgIcon="stock">Stock</mat-icon>
                 </div>
@@ -94,7 +94,7 @@
                 </div>
               </div>
 
-              <div class="cuadricula flex items-center">
+              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Armaduras'">
                 <div class="container_icon">
                   <mat-icon class="text-[#458f3b]" svgIcon="efecto">Efecto de Impacto</mat-icon>
                 </div>
@@ -104,7 +104,7 @@
                 </div>
               </div>
 
-              <div class="cuadricula flex items-center">
+              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Armaduras'">
                 <div class="container_icon">
                   <mat-icon class="text-[#458f3b]" svgIcon="turnos">Numero de Turnos</mat-icon>
                 </div>
@@ -114,7 +114,7 @@
                 </div>
               </div>
 
-              <div class="cuadricula flex items-center">
+              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Armaduras'">
                 <div class="container_icon">
                   <mat-icon class="text-[#458f3b]" svgIcon="estadistica">Estadistica</mat-icon>
                 </div>
