@@ -4,7 +4,7 @@
       <div class="hijo1">
         <div class="img flex-col ">
             <img src="{{ carta.urlImagen }}" alt="" class="h-[420px] w-[320px]">
-            
+
         </div>
 
         <div class="informacion text-center flex items-center flex-col" #coleccion_Heroe>
@@ -94,6 +94,35 @@
                 </div>
               </div>
 
+              <div class="cuadricula flex items-center">
+                <div class="container_icon">
+                  <mat-icon class="text-[#458f3b]" svgIcon="efecto">Efecto de Impacto</mat-icon>
+                </div>
+                <div>
+                  <p class="text-[22px] font-semibold">Efecto de Impacto</p>
+                  <p class="text_desc">{{carta.efecto.statEffect}}</p>
+                </div>
+              </div>
+
+              <div class="cuadricula flex items-center">
+                <div class="container_icon">
+                  <mat-icon class="text-[#458f3b]" svgIcon="turnos">Numero de Turnos</mat-icon>
+                </div>
+                <div>
+                  <p class="text-[22px] font-semibold">Numero de Turnos</p>
+                  <p class="text_desc">{{carta.efecto.turnCount}}</p>
+                </div>
+              </div>
+
+              <div class="cuadricula flex items-center">
+                <div class="container_icon">
+                  <mat-icon class="text-[#458f3b]" svgIcon="estadistica">Estadistica</mat-icon>
+                </div>
+                <div>
+                  <p class="text-[22px] font-semibold">Estadistica</p>
+                  <p class="text_desc">{{carta.efecto.stat}}</p>
+                </div>
+              </div>
 
             </div>
 
@@ -101,7 +130,7 @@
     </div>
 
         <br>
-        
+
 
     </div>
 </main>
