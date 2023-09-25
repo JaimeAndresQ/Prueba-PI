@@ -18,6 +18,7 @@ import { OrderPageComponent } from './pages/order/order-page.component';
 import { ProfilePageComponent } from './pages/perfil/perfil-page.component';
 import { InventaryPageComponent } from './pages/inventario/inventary-page.component';
 import { MembershipPageComponent } from './pages/membresias/membresia-page.component';
+import { AdministracionComponent } from './pages/administracion/administracion.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MembershipPageComponent } from './pages/membresias/membresia-page.compo
     OrderPageComponent,
     ProfilePageComponent,
     InventaryPageComponent,
-    MembershipPageComponent
+    MembershipPageComponent,
+    AdministracionComponent
   ],
   imports: [
     BrowserModule,
