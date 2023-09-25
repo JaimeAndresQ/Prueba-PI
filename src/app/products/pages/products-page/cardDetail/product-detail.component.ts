@@ -22,6 +22,13 @@ interface Carta {
     desc:string
 }
 
+interface Comment {
+  idcomentarioscartas: number;
+  comentariosTexto: string;
+  comentariosImg: string;
+  comentariosFecha: Date;
+}
+
 @Component({
     selector: 'app-products-detail',
     templateUrl: './product-detail.component.html',
@@ -31,11 +38,14 @@ interface Carta {
 export class ProductDetailComponent  implements OnInit{
     carta: any = {};
 
+    comments: any = [];
+
     constructor(private http: HttpClient,
       private route: ActivatedRoute,
       private matIconRegistry: MatIconRegistry,
       private domSanitizer: DomSanitizer){
-        this.carta = {}
+        this.carta = {};
+        this.comments = [];
 
         this.matIconRegistry.addSvgIcon(
           'precio',
@@ -84,8 +94,8 @@ export class ProductDetailComponent  implements OnInit{
         this.route.paramMap.subscribe((params)=>{
             const id_carta = params.get('id_carta');
 
-            const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
-            //const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/cardDetail/${id_carta}`;
+            //const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
+            const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/cardDetail/${id_carta}`;
             this.http.get<Carta>(apiUrl).subscribe(
                 (data: any) => {
                     this.carta = data
@@ -96,6 +106,20 @@ export class ProductDetailComponent  implements OnInit{
                 }
             );
         })
+        this.getComments();
+    }
+
+    getComments(): void{
+      //const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
+      const apiUrl = `http://alpha.bucaramanga.upb.edu.co:3000/api/comentariosCartas/1`;
+      this.http.get<Comment>(apiUrl).subscribe(
+          (data: any) => {
+              console.log('Respuesta de la API:', data);
+          },
+          (error) => {
+              console.error('Error al obtener el carrito de compras:', error);
+          }
+      );
     }
 
 }
