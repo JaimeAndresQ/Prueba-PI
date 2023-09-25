@@ -1,0 +1,4 @@
+#contenedor-vitrina {
+  background-image: url('../../../assets/images/fondo-inicio.jpg');
+  height: calc(105vh - 100px);
+}
