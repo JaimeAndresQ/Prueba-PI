@@ -39,7 +39,7 @@ main{
 .padre {
   z-index: 1;
   background-image: url('../../../../../assets/images/Fondo-Detalle.png');
-  background-size: contain;
+  background-size: cover;
   border-radius: 30px;
   width: 1325px;
   height: 950px;
