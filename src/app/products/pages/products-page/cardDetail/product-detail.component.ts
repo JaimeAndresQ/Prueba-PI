@@ -84,8 +84,8 @@ export class ProductDetailComponent  implements OnInit{
         this.route.paramMap.subscribe((params)=>{
             const id_carta = params.get('id_carta');
 
-            //const apiUrl = `http://104.40.5.117:8000/api/cardDetail/${id_carta}`;
-            const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/cardDetail/${id_carta}`;
+            const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
+            //const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/cardDetail/${id_carta}`;
             this.http.get<Carta>(apiUrl).subscribe(
                 (data: any) => {
                     this.carta = data

@@ -39,7 +39,7 @@ export class MembershipPageComponent  implements OnInit{
 
   //obtener las cartas de la API
     getCartas(): void {
-    const apiUrl = `http://127.0.0.1:8000/cards/api/membership/`;
+    const apiUrl = `http://127.0.0.1:8000/api/membership/`;
     //const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/membership/`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
@@ -81,6 +81,35 @@ export class MembershipPageComponent  implements OnInit{
             },
             onClientAuthorization: (data) => {
                 console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+                console.log(carta.games)
+                const accessToken = localStorage.getItem('access_token');
+
+                if (!accessToken) {
+                    console.error('No se ha encontrado el token de acceso.');
+                    return;
+                }
+
+                const games = carta.games
+
+                const paymentDetails = {
+                    games:games,
+                }
+
+                //const apiUrl = 'https://store.thenexusbattles2.cloud/webserver/comprar-membresia';
+                const apiUrl = 'http://localhost:3000/comprar-membresia';
+                const headers = new HttpHeaders({
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken}`
+                });
+
+                this.http.post(apiUrl, paymentDetails, { headers }).subscribe(
+                    (response) => {
+                        console.log('Respuesta del backend:', response);
+                    },
+                    (error) => {
+                        console.error('Error al enviar los datos de pago al backend:', error);
+                    }
+                );
             },
             onCancel: (data, actions) => {
                 console.log('OnCancel', data, actions);

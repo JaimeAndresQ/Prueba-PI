@@ -98,6 +98,7 @@
 
         <div class="contenido 2xl:w-[220px] 2xl:h-[75px] md:sm:w-[165px] md:sm:h-[50px]">
           <div class="2xl:text-[16px] md:text-[11px] text-ellipsis overflow-hidden">
+            <p>${{ carta.price }}</p>
             <p *ngIf="carta.nombre_carta === 'Armadura Pesada'">Tipo: Pesada</p>
             <p *ngIf="carta.nombre_carta === 'Armadura Mediana'">Tipo: Media</p>
             <p *ngIf="carta.nombre_carta === 'Armadura de Tela'">Tipo: Tela</p>

@@ -60,7 +60,7 @@
         <a href="banco" class="flex">Mi Banco</a>
         <a href="#" class="flex">Torneos</a>
         <a href="#" class="flex">Subasta</a>
-        <a href="login" class="flex">Mi Cuenta</a>
+        <a *ngIf="!usuarioHaIniciadoSesion" href="login" class="flex">Mi Cuenta</a>
 
       </div>
 
