@@ -53,8 +53,8 @@ export class OrderPageComponent implements OnInit {
                 return;
             }
 
-            const cartEndpoint =`https://store.thenexusbattles2.cloud/webserver/obtener-orden/${orderId}`
-            //const cartEndpoint = `http://127.0.0.1:8003/api/order/${orderId}`;
+            //const cartEndpoint =`https://store.thenexusbattles2.cloud/webserver/obtener-orden/${orderId}`
+            const cartEndpoint = `http://127.0.0.1:8003/api/order/${orderId}`;
             const headers = new HttpHeaders({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
@@ -129,7 +129,6 @@ export class OrderPageComponent implements OnInit {
                 this.http.post(apiUrl, paymentDetails, { headers }).subscribe(
                     (response) => {
                         console.log('Respuesta del backend:', response);
-                        // Realiza cualquier acción adicional necesaria después de guardar los datos en el backend.
                     },
                     (error) => {
                         console.error('Error al enviar los datos de pago al backend:', error);

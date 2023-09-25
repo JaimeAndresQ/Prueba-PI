@@ -119,8 +119,8 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
           return;
       }
 
-      const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/ver-inventario'
-      //const cartEndpoint = 'http://localhost:3000/ver-inventario';
+      //const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/ver-inventario'
+      const cartEndpoint = 'http://localhost:3000/ver-inventario';
       const headers = new HttpHeaders({
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${accessToken}`

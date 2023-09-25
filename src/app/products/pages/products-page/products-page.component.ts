@@ -182,8 +182,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   //obtener las cartas de la API
   getCartasByPage(pageNumber: number): void {
-    //const apiUrl = `http://104.40.5.117:8000/api/cards/?page_number=${pageNumber}`;
-    const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/cards/?page_number=${pageNumber}`;
+    const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
+    //const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/cards/?page_number=${pageNumber}`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
       this.cartas = data;
@@ -210,8 +210,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       return;
     }
 
-    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/enviar-token'
-    //const cartEndpoint = 'http://localhost:3000/enviar-token';
+    //const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/enviar-token'
+    const cartEndpoint = 'http://localhost:3000/enviar-token';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
