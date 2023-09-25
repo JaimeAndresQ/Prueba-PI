@@ -49,8 +49,8 @@ export class CartPageComponent implements OnInit {
         return;
       }
 
-      //const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/obtener-carrito'
-      const cartEndpoint = 'http://localhost:3000/obtener-carrito';
+      const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/obtener-carrito'
+      //const cartEndpoint = 'http://localhost:3000/obtener-carrito';
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
@@ -81,8 +81,8 @@ export class CartPageComponent implements OnInit {
         return;
       }
 
-      //const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/enviar-token'
-      const cartEndpoint = 'http://localhost:3000/enviar-token';
+      const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/enviar-token'
+      //const cartEndpoint = 'http://localhost:3000/enviar-token';
       const headers = new HttpHeaders({
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${accessToken}`
@@ -109,8 +109,8 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    //const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/remover-carta'
-    const cartEndpoint = 'http://localhost:3000/remover-carta';
+    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/remover-carta'
+    //const cartEndpoint = 'http://localhost:3000/remover-carta';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
@@ -137,8 +137,8 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    //const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/borrar-carta'
-    const cartEndpoint = 'http://localhost:3000/borrar-carta';
+    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/borrar-carta'
+    //const cartEndpoint = 'http://localhost:3000/borrar-carta';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
@@ -165,8 +165,10 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    //const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/crear-orden'
-    const cartEndpoint = 'http://localhost:3000/crear-orden';
+    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/crear-orden'
+    const cartEndpoint2 ='https://store.thenexusbattles2.cloud/webserver/vaciar-carrito'
+    //const cartEndpoint2 ='http://localhost:3000/vaciar-carrito'
+    //const cartEndpoint = 'http://localhost:3000/crear-orden';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${accessToken}`
@@ -177,12 +179,18 @@ export class CartPageComponent implements OnInit {
           // Manejar la respuesta del servicio de carrito si es necesario
           console.log('Cart response:', response);
           const orderID = response.order.order_id
-          const headers = new HttpHeaders({
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${accessToken}`
-          });
-          this.http.post('https://store.thenexusbattles2.cloud/webserver/vaciar-carrito',{},{headers})
           this.router.navigate(['/order', orderID]);
+          if(response){
+            this.http.post(cartEndpoint2,{}, { headers }).subscribe(
+              (response: any) => {
+                  // Manejar la respuesta del servicio de carrito si es necesario
+                  console.log('Cart response:', response);
+              },
+              (error) => {
+                  console.error('Error adding to cart:', error);
+              }
+          );
+          }
       },
       (error) => {
           console.error('Error adding to cart:', error);

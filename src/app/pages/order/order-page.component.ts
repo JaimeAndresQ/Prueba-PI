@@ -53,8 +53,8 @@ export class OrderPageComponent implements OnInit {
                 return;
             }
 
-            //const cartEndpoint =`https://store.thenexusbattles2.cloud/webserver/obtener-orden/${orderId}`
-            const cartEndpoint = `http://127.0.0.1:8003/api/order/${orderId}`;
+            const cartEndpoint =`https://store.thenexusbattles2.cloud/webserver/obtener-orden/${orderId}`
+            //const cartEndpoint = `http://127.0.0.1:8003/api/order/${orderId}`;
             const headers = new HttpHeaders({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
@@ -121,6 +121,7 @@ export class OrderPageComponent implements OnInit {
                 }
 
                 const apiUrl = 'https://store.thenexusbattles2.cloud/webserver/pagar-orden';
+                //const apiUrl = 'http://localhost:3000/pagar-orden';
                 const headers = new HttpHeaders({
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${accessToken}`
