@@ -10,6 +10,7 @@ import { ProfilePageComponent } from './pages/perfil/perfil-page.component';
 import { InventaryPageComponent } from './pages/inventario/inventary-page.component';
 import { MembershipPageComponent } from './pages/membresias/membresia-page.component';
 import { AdministracionComponent } from './pages/administracion/administracion.component';
+import { ActivateComponent } from './pages/registro/signup-page/activate-page.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: SignupPageComponent
+  },
+  {
+    path: 'api/activate/:uid/:token',
+    component: ActivateComponent
   },
   {
     path: 'cart',

@@ -1,26 +1,37 @@
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
-
+@Component({
+  selector:'app-activate',
+  templateUrl: './activate.component.html'
+})
 export class ActivateComponent implements OnInit {
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private route:ActivatedRoute) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
-  onSubmit() {
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/json'
-      });
+    this.route.params.subscribe(params => {
 
-      this.http.post('http://login.thenexusbattles2.com:8001/api/activate/', registerData, { headers }).subscribe(
-        (response: any) => {
-          console.log('Registro exitoso:', response);
-        },
-        (error) => {
-          console.error('Error al registrar:', error);
-        }
-      );
-    }
+      const uid = params['uid'];
+      const token = params['token'];
+
+      this.activarCuenta(uid,token);
+
+    })
+
+  }
+
+  activarCuenta(uid: string, token: string){
+    this.http.get(`http://127.0.0.1:8002/api/activate/${uid}/${token}/`).subscribe(
+      (response) =>{
+        console.log('Cuenta activada:',response)
+      },
+      (error) =>{
+        console.log('Error al activar cuenta:',error)
+      }
+    )
+  }
 }
