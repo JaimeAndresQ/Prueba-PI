@@ -9,6 +9,7 @@ import { OrderPageComponent } from './pages/order/order-page.component';
 import { ProfilePageComponent } from './pages/perfil/perfil-page.component';
 import { InventaryPageComponent } from './pages/inventario/inventary-page.component';
 import { MembershipPageComponent } from './pages/membresias/membresia-page.component';
+import { AdministracionComponent } from './pages/administracion/administracion.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'payment',
     component: ProfilePageComponent
+  },
+  {
+    path:'admin',
+    component: AdministracionComponent
   },
   {
     path: '',
