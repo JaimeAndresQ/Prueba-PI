@@ -61,13 +61,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "browserTarget": "Angula-App-PI2:build:production"
-            },
-            "development": {
-              "browserTarget": "Angula-App-PI2:build:development"
-            }
+          "options": {
+            "disableHostCheck": true,
+            "port": 4200
           },
           "defaultConfiguration": "development"
         },
