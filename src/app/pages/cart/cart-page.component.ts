@@ -49,7 +49,7 @@ export class CartPageComponent implements OnInit {
         return;
       }
 
-      const cartEndpoint ='https://172.177.102.198:3000/obtener-carrito'
+      const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/obtener-carrito'
       //const cartEndpoint = 'http://localhost:3000/obtener-carrito';
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',

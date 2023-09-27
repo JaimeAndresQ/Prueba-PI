@@ -208,7 +208,6 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
         'Authorization': `Bearer ${accessToken}`
     });
     const requestData = { id_carta: Id, price: Precio,nombre_carta: Nombre };
-
     this.http.post(cartEndpoint, requestData, { headers }).subscribe(
         (response: any) => {
             // Manejar la respuesta del servicio de carrito si es necesario
@@ -216,7 +215,7 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
         },
         (error) => {
             console.error('Error adding to cart:', error);
-        }
+        },
     );
 }
 
