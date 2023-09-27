@@ -67,7 +67,7 @@
           "options": {
             "browserTarget": "Angula-App-PI2:build:production",
             "disableHostCheck": false,
-            "port": 4201
+            "port": 4200
           },
           "configurations": {
             "production": {
