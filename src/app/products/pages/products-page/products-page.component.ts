@@ -6,21 +6,19 @@ import VanillaTilt from 'vanilla-tilt';
 
 //interface de la carta
 interface Carta {
-  id_carta: string;
-  activo: boolean;
-  urlImagen: string;
-  price: number;
-  stock: number;
-  nombre_carta: string;
-  poder: string,
-  clase:string,
-  vida:number,
-  tipo: string,
-  defensa:number,
-  ataqueBase: number,
-  danoMax: number,
-  coleccion: string,
-  desc: string
+  Id: string;
+  Estado: boolean;
+  Imagen: string;
+  Precio: number;
+  Stock: number;
+  Nombre: string;
+  Poder: string,
+  Vida:number,
+  Defensa:number,
+  AtaqueBase: number,
+  Dano: number,
+  Coleccion: string,
+  Descripcion: string
 }
 
 @Component({

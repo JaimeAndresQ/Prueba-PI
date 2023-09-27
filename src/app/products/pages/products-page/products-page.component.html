@@ -85,11 +85,11 @@
         <!-- Bordeado Exotico Carta -->
         <!-- Imagen Superior -->
         <div class="titulo">
-          <p class="2xl:text-[18px] md:text-[14px] truncate ">{{ carta.nombre_carta }}</p>
+          <p class="2xl:text-[18px] md:text-[14px] truncate ">{{ carta.Nombre }}</p>
         </div>
         <div class="img">
-          <a [routerLink]="['/carta', carta.id_carta]">
-            <img src="{{ carta.urlImagen }}" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
+          <a [routerLink]="['/carta', carta.Id]">
+            <img src="https://cards.thenexusbattles2.cloud/assets/{{ carta.Imagen }}" alt="" class="2xl:h-[250px] md:sm:h-[150px]">
           <div class="overlay"></div>
           </a>
           <!-- Indicador del Descuento -->
@@ -98,27 +98,27 @@
 
         <div class="contenido 2xl:w-[220px] 2xl:h-[75px] md:sm:w-[165px] md:sm:h-[50px]">
           <div class="2xl:text-[16px] md:text-[11px] text-ellipsis overflow-hidden">
-            <p>${{ carta.price }}</p>
-            <p *ngIf="carta.nombre_carta === 'Armadura Pesada'">Tipo: Pesada</p>
-            <p *ngIf="carta.nombre_carta === 'Armadura Mediana'">Tipo: Media</p>
-            <p *ngIf="carta.nombre_carta === 'Armadura de Tela'">Tipo: Tela</p>
-            <p *ngIf="carta.nombre_carta === 'Armadura Media Liviana'">Tipo: Media liviana</p>
-            <div><p *ngIf="carta.coleccion === 'Armaduras'" class="marco">{{ carta.desc }}</p></div>
-            <div><p *ngIf="carta.coleccion === 'Armas'" class="marco">{{ carta.desc }}</p></div>
-            <div><p *ngIf="carta.coleccion === 'Items'" class="marco">{{ carta.desc }}</p></div>
-            <p *ngIf="carta.coleccion === 'Heroes'">Poder: {{ carta.poder }}</p>
-            <p *ngIf="carta.coleccion === 'Heroes'">Vida: {{ carta.vida }}</p>
-            <p *ngIf="carta.coleccion === 'Heroes'">Defensa: {{ carta.defensa }}</p>
+            <p>${{ carta.Precio }}</p>
+            <p *ngIf="carta.Nombre === 'Armadura Pesada'">Tipo: Pesada</p>
+            <p *ngIf="carta.Nombre === 'Armadura Mediana'">Tipo: Media</p>
+            <p *ngIf="carta.Nombre === 'Armadura de Tela'">Tipo: Tela</p>
+            <p *ngIf="carta.Nombre === 'Armadura Media Liviana'">Tipo: Media liviana</p>
+            <p *ngIf="carta.Coleccion === 'Armaduras'">{{ carta.Descripcion }}</p>
+            <p *ngIf="carta.Coleccion === 'Armas'">{{ carta.Descripcion }}</p>
+            <p *ngIf="carta.Coleccion === 'Items'">{{ carta.Descripcion }}</p>
+            <p *ngIf="carta.Coleccion === 'Heroes'">Poder: {{ carta.Poder }}</p>
+            <p *ngIf="carta.Coleccion === 'Heroes'">Vida: {{ carta.Vida }}</p>
+            <p *ngIf="carta.Coleccion === 'Heroes'">Defensa: {{ carta.Defensa }}</p>
           </div>
           <div class="2xl:text-[16px] md:text-[11px]">
-            <p *ngIf="carta.coleccion === 'Heroes'">Ataque: {{ carta.ataqueBase }}</p>
-            <p *ngIf="carta.coleccion === 'Heroes'">Dano: {{ carta.danoMax }}</p>
+            <p *ngIf="carta.Coleccion === 'Heroes'">Ataque: {{ carta.AtaqueBase }}</p>
+            <p *ngIf="carta.Coleccion === 'Heroes'">Dano: {{ carta.Dano }}</p>
           </div>
         </div>
             <button class="deseo">
               <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
             </button>
-            <button class="carrito" (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)">
+            <button class="carrito" (click)="addToCart(carta.Id,carta.Precio,carta.Nombre)">
               <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
             </button>
       </div>

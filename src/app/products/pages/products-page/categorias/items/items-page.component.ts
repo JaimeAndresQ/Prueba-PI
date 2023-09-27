@@ -6,19 +6,19 @@ import VanillaTilt from 'vanilla-tilt';
 
 //interface de la carta
 interface Carta {
-  id_carta: string;
-  activo: boolean;
-  urlImagen: string;
-  price: number;
-  stock: number;
-  nombre_carta: string;
-  poder: string,
-  vida:number,
-  defensa:number,
-  ataqueBase: number,
-  danoMax: number,
-  coleccion: string,
-  desc: string
+  Id: string;
+  Estado: boolean;
+  Imagen: string;
+  Precio: number;
+  Stock: number;
+  Nombre: string;
+  Poder: string,
+  Vida:number,
+  Defensa:number,
+  AtaqueBase: number,
+  Dano: number,
+  Coleccion: string,
+  Descripcion: string
 }
 
 @Component({
@@ -173,7 +173,7 @@ export class ItemsPageComponent  implements OnInit, AfterViewChecked {
   //obtener las cartas de la API
   getCartasByPage(pageNumber: number): void {
     //const apiUrl = `http://api-cartas-gama.thenexusbattles2.com:8002/api/cards/?page_number=${pageNumber}`;
-    const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/items/`;
+    const apiUrl = `https://cards.thenexusbattles2.cloud/api/consumible/?size=6&page=1&coleccion=Items&statusFilter=false`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
       this.cartas = data;

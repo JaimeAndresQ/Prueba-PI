@@ -3,23 +3,23 @@
 
       <div class="hijo1">
         <div class="img">
-            <img src="{{ carta.urlImagen }}" alt="" class="h-[420px] w-[320px]">
+            <img src="{{ carta.Imagen }}" alt="" class="h-[420px] w-[320px]">
 
         </div>
 
         <div class="informacion text-center flex items-center flex-col" #coleccion_Heroe>
           <div class="flex flex-col space-y-4 w-[675px] items-center justify-center">
-            <p class="text-[32px] ">{{carta.nombre_carta}} </p>
+            <p class="text-[32px] ">{{carta.Nombre}} </p>
           <div class="grid grid-cols-2 gap-x-4 w-max  bg-gradient-to-t from-[#c0a269a6] to-[#b68511a8] p-1 pt-2 px-12 border border-[#E2CD9F] border-dashed rounded-[4px] text-white text-left ">
 
             <p class="text-[24px] italic">Tipo:</p>
             <p class="text-[24px] italic">Coleccion:</p>
 
-            <p class="text-[24px] text-slate-800 " >{{ carta.tipo ? carta.tipo : 'Ninguno' }}</p>
-            <p class="text-[24px] text-rose-800">{{carta.coleccion}}</p>
+            <p class="text-[24px] text-slate-800 " >{{ carta.Tipo ? carta.Tipo : 'Ninguno' }}</p>
+            <p class="text-[24px] text-rose-800">{{carta.Coleccion}}</p>
 
           </div>
-            <p class="text-[20px]">{{carta.desc}}</p>
+            <p class="text-[20px]">{{carta.Descripcion}}</p>
           </div>
 
             <div class="grid grid-cols-2 mt-4 gap-4 ">
@@ -30,7 +30,7 @@
                 </div>
                 <div>
                   <p class="text-[22px] font-semibold">Precio</p>
-                  <p class="text_desc">{{carta.price}}</p>
+                  <p class="text_desc">{{carta.Precio}}</p>
                 </div>
               </div>
 
@@ -40,7 +40,7 @@
                 </div>
                 <div>
                   <p class="text-[22px] font-semibold">Ataque Base</p>
-                  <p class="text_desc">{{carta.ataqueBase}}</p>
+                  <p class="text_desc">{{carta.AtaqueBase}}</p>
                 </div>
               </div>
 
@@ -50,7 +50,7 @@
                 </div>
                 <div>
                   <p class="text-[22px] font-semibold">Defensa</p>
-                  <p class="text_desc">{{carta.defensa}}</p>
+                  <p class="text_desc">{{carta.Defensa}}</p>
                 </div>
               </div>
 
@@ -60,7 +60,7 @@
                 </div>
                 <div>
                   <p class="text-[22px] font-semibold">Daño Max</p>
-                  <p class="text_desc">{{carta.danoMax}}</p>
+                  <p class="text_desc">{{carta.Dano}}</p>
                 </div>
               </div>
 
@@ -80,7 +80,7 @@
                 </div>
                 <div>
                   <p class="text-[22px] font-semibold">Vida</p>
-                  <p class="text_desc">{{carta.vida}}</p>
+                  <p class="text_desc">{{carta.Vida}}</p>
                 </div>
               </div>
 
@@ -90,7 +90,7 @@
                 </div>
                 <div>
                   <p class="text-[22px] font-semibold">Stock</p>
-                  <p class="text_desc">{{ carta.stock }}</p>
+                  <p class="text_desc">{{ carta.Stock }}</p>
                 </div>
               </div>
 
@@ -100,7 +100,7 @@
                 </div>
                 <div>
                   <p class="text-[22px] font-semibold">Efecto de Impacto</p>
-                  <p class="text_desc">{{carta.efecto.statEffect}}</p>
+                  <p class="text_desc"></p>
                 </div>
               </div>
 
@@ -110,7 +110,7 @@
                 </div>
                 <div>
                   <p class="text-[22px] font-semibold">Numero de Turnos</p>
-                  <p class="text_desc">{{carta.efecto.turnCount}}</p>
+                  <p class="text_desc"></p>
                 </div>
               </div>
 
@@ -120,7 +120,7 @@
                 </div>
                 <div>
                   <p class="text-[22px] font-semibold">Estadistica</p>
-                  <p class="text_desc">{{carta.efecto.stat}}</p>
+                  <p class="text_desc"></p>
                 </div>
               </div>
 

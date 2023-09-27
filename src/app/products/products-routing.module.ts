@@ -59,7 +59,7 @@ const routes: Routes = [
     component: ItemsPageComponent
   },
   {
-    path:'carta/:id_carta',
+    path:'carta/:Id',
     component: ProductDetailComponent
   },
   {

@@ -6,20 +6,20 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 //interface de la carta
 interface Carta {
-    id_carta: string;
-    activo: boolean;
-    urlImagen: string;
-    price: number;
-    stock: number;
-    nombre_carta: string;
-    poder: string,
-    vida:number,
-    defensa:number,
-    ataqueBase: number,
-    danoMax: number,
-    tipo:string,
-    coleccion:string,
-    desc:string
+  Id: string;
+  Estado: boolean;
+  Imagen: string;
+  Precio: number;
+  Stock: number;
+  Nombre: string;
+  Poder: string,
+  Vida:number,
+  Defensa:number,
+  AtaqueBase: number,
+  Dano: number,
+  Tipo:string,
+  Coleccion: string,
+  Descripcion: string
 }
 
 interface Comment {
@@ -92,10 +92,10 @@ export class ProductDetailComponent  implements OnInit{
 
     ngOnInit(): void {
         this.route.paramMap.subscribe((params)=>{
-            const id_carta = params.get('id_carta');
+            const Id = params.get('Id');
 
             //const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
-            const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/cardDetail/${id_carta}`;
+            const apiUrl = `https://cards.thenexusbattles2.cloud/api/consumible/${Id}`;
             this.http.get<Carta>(apiUrl).subscribe(
                 (data: any) => {
                     this.carta = data
