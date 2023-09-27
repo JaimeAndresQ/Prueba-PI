@@ -16,6 +16,7 @@
             "outputPath": "dist/angula-app-pi2",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "publicHost": "store.thenexusbattles2.cloud",
             "polyfills": [
               "zone.js"
             ],
@@ -63,7 +64,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "Angula-App-PI2:build:production",
-            "disableHostCheck": true,
+            "host": "0.0.0.0",
             "port": 4200
           },
           "configurations": {
