@@ -180,8 +180,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   //obtener las cartas de la API
   getCartasByPage(pageNumber: number): void {
-    const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
-    //const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/cards/?page_number=${pageNumber}`;
+    //const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
+    const apiUrl = `https://cards.thenexusbattles2.cloud/api/cartas/?size=6&page=${pageNumber}&coleccion=All&onlyActives=true`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
       this.cartas = data;

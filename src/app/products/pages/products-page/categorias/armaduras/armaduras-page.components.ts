@@ -172,7 +172,7 @@ export class ArmorsPageComponent  implements OnInit, AfterViewChecked {
   //obtener las cartas de la API
   getCartasByPage(pageNumber: number): void {
     //const apiUrl = `http://api-cartas-gama.thenexusbattles2.com:8002/api/cards/?page_number=${pageNumber}`;
-    const apiUrl = `https://cards.thenexusbattles2.cloud/api/consumible/?size=6&page=1&coleccion=Armaduras&statusFilter=false`;
+    const apiUrl = `https://cards.thenexusbattles2.cloud/api/cartas/?size=6&page=1&coleccion=Armaduras&onlyActives=true`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
       this.cartas = data;
