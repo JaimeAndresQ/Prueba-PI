@@ -1,6 +1,7 @@
 #contenedor-vitrina {
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
-  height: 100%;
+  height: calc(115vh - 100px);
+  /* height: 100%; */
 }
 
 .caja{
@@ -14,12 +15,12 @@
   display: flex;
 }
 
-.marco{
+/* .marco{
   width: 195px;
   text-align: center;
   border: 1px solid rgba(255,244,0,1);
   border-radius: 5px;
-}
+} */
 
 .contenedor{
   z-index: 1;
@@ -100,9 +101,9 @@
 
 }
 
-.carta2:hover .contenido div {
+.carta2:hover .contenido {
   overflow: auto; /* Agrega scroll al hacer hover */
-  max-height: 120%; /* Establece la altura máxima para el scroll */
+  max-height: 110%; /* Establece la altura máxima para el scroll */
 }
 
 .carta2:hover .contenido {
