@@ -81,6 +81,8 @@ body {
   background-color: rgba(180, 81, 0, 0.507);
   /* background-image: url('./assets/images/patron_madera3.png'); */
   background-blend-mode: screen;
+  font-size: 1.125rem/* 18px */;
+  line-height: 1.75rem/* 28px */;
 
 }
 
@@ -93,7 +95,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 22px;
+  font-size: 19px;
   position: relative;
   z-index: 2;
 }
@@ -128,10 +130,26 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+#enlace_menuv mat-icon{
+  height: 30px;
+  width: 30px;
+}
+
+@media (max-width: 1536px) {
+  #enlace_menuv mat-icon{
+    height: 27px;
+    width: 27px;
+  }
+}
+
+
 @media (min-width: 1536px) {
   #logoNexusBattle {
     top: -4rem;
   }
+
+
+
 
 }
 

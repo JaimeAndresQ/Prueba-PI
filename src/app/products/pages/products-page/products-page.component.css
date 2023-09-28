@@ -12,8 +12,6 @@
 
 .padre {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .marco{
@@ -30,6 +28,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+
 }
 
 .carta2{
@@ -88,14 +87,28 @@
 
 
 .carta2 .contenido{
-  display: flex;
   justify-content: space-between;
   border:1px solid rgba(255,244,0,1);
   border-radius:5px;
   background:rgba(57,57,15,1);
   transform: translateZ(20px);
   padding: 10px;
+  padding-bottom: 10px;
+  overflow: hidden; /* Oculta el contenido que se desborde */
+  position: relative;
+
+
 }
+
+.carta2:hover .contenido div {
+  overflow: auto; /* Agrega scroll al hacer hover */
+  max-height: 120%; /* Establece la altura máxima para el scroll */
+}
+
+.carta2:hover .contenido {
+  height: 70px;
+}
+
 
 .carta2:hover .titulo p{
   white-space: normal;
@@ -135,8 +148,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  bottom: 25px;
   z-index: 30;
 }
 
@@ -255,6 +266,11 @@
     transform-style: preserve-3d;
     margin: 8%;
   }
+
+  .carta2:hover .contenido {
+    height: 50px;
+  }
+
 
   .carta2 .botones button{
     transform: translateZ(50px);

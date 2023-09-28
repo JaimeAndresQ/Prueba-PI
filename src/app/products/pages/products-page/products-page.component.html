@@ -3,7 +3,7 @@
 
 <div class="caja md:mx-12 2xl:items-stretch md:sm:sms:items-start">
 
-  <div class="categorias my-12 md:sm:sms:my-8">
+  <div class="categorias my-12 md:sm:sms:my-2">
 
     <h3>Categorias</h3>
     <ul>
@@ -77,9 +77,49 @@
   </div>
 
 
-  <div class="padre my-12 md:sm:sms:my-8">
+  <div class="padre my-12 md:sm:sms:my-2 flex-col items-center space-y-4">
 
-    <div class="contenedor 2xl:w-[1360px] 2xl:h-[968px] md:w-[1000px] md:h-[720px]">
+    <div class="contenedor 2xl:w-[1360px] 2xl:h-[868px] md:w-[1000px] md:h-max ">
+
+
+
+      <div id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[395px] md:w-[200px] md:h-[295px] hover:2xl:h-[430px] hover:md:h-[320px]" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+        <!-- Bordeado Exotico Carta -->
+        <!-- Imagen Superior -->
+        <div class="titulo">
+          <p class="2xl:text-[18px] md:text-[14px] truncate ">Caballero Plateado</p>
+        </div>
+        <div class="img">
+          <a>
+            <img src="../../../../assets/images/carta.png" alt="" class="2xl:h-[225px] 2xl:w-[175px] md:sm:h-[150px] md:sm:w-[125px]">
+          <div class="overlay"></div>
+          </a>
+          <!-- Indicador del Descuento -->
+          <!-- <mat-icon class="absolute top-[1.5%] right-[12.5%]" id="Indicador_Desc" aria-hidden="false" aria-label="Indicador Descuento" svgIcon="indicador_disc">Indicador Descuento</mat-icon> -->
+        </div>
+
+        <div class="contenido 2xl:w-[220px] 2xl:h-[50px] md:sm:w-[165px] md:sm:h-[42px] 2xl:text-[16px] md:text-[11px] ">
+          <div class="grid grid-cols-2 grid-flow-row gap-[2px] truncate">
+            <p>$40.000</p>
+            <p >Poder: 4</p>
+            <p >Vida: 3400</p>
+            <p >Defensa: 24</p>
+            <p >Ataque: 23</p>
+            <p >Dano: 45</p>
+            <p >Efecto: Hielo</p>
+            <p >Duracion: 10s</p>
+          </div>
+
+        </div>
+            <button class="deseo">
+              <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
+            </button>
+            <button class="carrito" >
+              <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
+            </button>
+      </div>
+
+
 
       <div *ngFor="let carta of cartas" id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 2xl:w-[250px] 2xl:h-[450px] md:w-[200px] md:h-[300px] hover:2xl:h-[470px] hover:md:h-[320px]" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
         <!-- Bordeado Exotico Carta -->
@@ -124,17 +164,18 @@
       </div>
 
     </div>
+        <!-- Paginacion -->
+    <div *ngIf="totalPages <= 5; else pagination" class="pagination flex justify-between w-6 h-6 p-6 mt-20" id="pagination">
+      <button class="bg- border-2 border-solid btnpaginacion" *ngFor="let pageNumber of totalPagesArray" [class.active]="pageNumber === currentPage" (click)="changePageTo(pageNumber)">
+        {{ pageNumber }}
+      </button>
+    </div>
   </div>
 
 </div>
 <br>
 <br>
-<!-- Paginacion -->
-<div *ngIf="totalPages <= 5; else pagination" class="pagination flex justify-between w-6 h-6 p-6" id="pagination">
-  <button class="bg- border-2 border-solid btnpaginacion" *ngFor="let pageNumber of totalPagesArray" [class.active]="pageNumber === currentPage" (click)="changePageTo(pageNumber)">
-    {{ pageNumber }}
-  </button>
-</div>
+
 
 <ng-template #pagination>
 
