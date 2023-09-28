@@ -6,19 +6,19 @@ import VanillaTilt from 'vanilla-tilt';
 
 //interface de la carta
 interface Carta {
-    id_carta: string;
-    activo: boolean;
-    urlImagen: string;
-    price: number;
-    stock: number;
-    nombre_carta: string;
-    poder: string,
-    vida:number,
-    defensa:number,
-    ataqueBase: number,
-    danoMax: number,
-    coleccion: string,
-    desc: string
+  _id: string;
+  estado: boolean;
+  imagen: string;
+  precio: number;
+  stock: number;
+  nombre: string;
+  poder: string,
+  vida:number,
+  defensa:number,
+  ataqueBase: number,
+  dano: number,
+  coleccion: string,
+  descripcion: string
 }
 
 @Component({
@@ -193,7 +193,7 @@ export class VenenoPageComponent  implements OnInit, AfterViewChecked {
 
 
   //boton para agregar al carrito de compras
-    addToCart(id_carta: string, price: number,nombre_carta: string) {
+    addToCart(Id: string, Precio: number,Nombre: string) {
     // Realizar una solicitud HTTP para agregar la carta al carrito
     const accessToken = localStorage.getItem('access_token');
 
@@ -207,7 +207,7 @@ export class VenenoPageComponent  implements OnInit, AfterViewChecked {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
     });
-    const requestData = { id_carta: id_carta, price: price,nombre_carta: nombre_carta };
+    const requestData = { id_carta: Id, price: Precio,nombre_carta: Nombre };
 
     this.http.post(cartEndpoint, requestData, { headers }).subscribe(
         (response: any) => {

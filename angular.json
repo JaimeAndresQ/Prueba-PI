@@ -30,6 +30,9 @@
             ],
             "scripts": [
               "./node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "vanilla-tilt"
             ]
           },
           "configurations": {
@@ -61,6 +64,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "disableHostCheck": false,
+            "port": 4201
+          },
           "configurations": {
             "production": {
               "browserTarget": "Angula-App-PI2:build:production"

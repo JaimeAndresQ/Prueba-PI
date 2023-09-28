@@ -6,21 +6,19 @@ import VanillaTilt from 'vanilla-tilt';
 
 //interface de la carta
 interface Carta {
-  id_carta: string;
-  activo: boolean;
-  urlImagen: string;
-  price: number;
+  _id: string;
+  estado: boolean;
+  imagen: string;
+  precio: number;
   stock: number;
-  nombre_carta: string;
+  nombre: string;
   poder: string,
-  clase:string,
   vida:number,
-  tipo: string,
   defensa:number,
   ataqueBase: number,
-  danoMax: number,
+  dano: number,
   coleccion: string,
-  desc: string
+  descripcion: string
 }
 
 @Component({
@@ -182,8 +180,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   //obtener las cartas de la API
   getCartasByPage(pageNumber: number): void {
-    const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
-    //const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/cards/?page_number=${pageNumber}`;
+    //const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
+    const apiUrl = `https://cards.thenexusbattles2.cloud/api/cartas/?size=6&page=${pageNumber}&coleccion=All&onlyActives=true`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
       this.cartas = data;
@@ -201,7 +199,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   }
 
   //boton para agregar al carrito de compras
-  addToCart(id_carta: string, price: number, nombre_carta: string) {
+  addToCart(Id: string, Precio: number,Nombre: string) {
     // Realizar una solicitud HTTP para agregar la carta al carrito
     const accessToken = localStorage.getItem('access_token');
 
@@ -216,7 +214,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
     });
-    const requestData = { id_carta: id_carta, price: price, nombre_carta:nombre_carta };
+    const requestData = { id_carta: Id, price: Precio, nombre_carta:Nombre };
 
     this.http.post(cartEndpoint, requestData, { headers }).subscribe(
         (response: any) => {
