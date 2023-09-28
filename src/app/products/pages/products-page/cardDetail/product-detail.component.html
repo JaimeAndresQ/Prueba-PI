@@ -130,7 +130,9 @@
     </div>
 
         <br>
-
+        <div *ngFor="let comment of comments">
+            <p>{{ comment.comentariosTexto }}</p>
+        </div>
 
     </div>
 </main>
