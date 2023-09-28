@@ -37,7 +37,7 @@ interface Comment {
 export class ProductDetailComponent  implements OnInit{
     carta: any = {};
 
-    comments: any = [];
+    comments: Comment[] = [];
 
     constructor(private http: HttpClient,
       private route: ActivatedRoute,
@@ -111,8 +111,9 @@ export class ProductDetailComponent  implements OnInit{
     getComments(): void{
       //const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
       const apiUrl = `http://alpha.bucaramanga.upb.edu.co:3000/api/comentariosCartas/1`;
-      this.http.get<Comment>(apiUrl).subscribe(
-          (data: any) => {
+      this.http.get<Comment[]>(apiUrl).subscribe(
+          (data) => {
+            this.comments = data;
               console.log('Respuesta de la API:', data);
           },
           (error) => {
