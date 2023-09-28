@@ -6,20 +6,19 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 //interface de la carta
 interface Carta {
-  Id: string;
-  Estado: boolean;
-  Imagen: string;
-  Precio: number;
-  Stock: number;
-  Nombre: string;
-  Poder: string,
-  Vida:number,
-  Defensa:number,
-  AtaqueBase: number,
-  Dano: number,
-  Tipo:string,
-  Coleccion: string,
-  Descripcion: string
+  _id: string;
+  estado: boolean;
+  imagen: string;
+  precio: number;
+  stock: number;
+  nombre: string;
+  poder: string,
+  vida:number,
+  defensa:number,
+  ataqueBase: number,
+  dano: number,
+  coleccion: string,
+  descripcion: string
 }
 
 interface Comment {
