@@ -57,11 +57,12 @@
   text-align: center;
 }
 
-.carta2 img{
-  border:1px solid rgba(255,244,0,1);
-  border-radius:5px;
+.carta2 img {
+  border: 1px solid rgba(255, 244, 0, 1);
+  border-radius: 5px;
   display: block;
-  transition: transform 0.3s, filter 0.3s;
+  transition: transform 0.3s ease, filter 0.3s ease, width 0.3s ease, height 0.3s ease;
+  /* Agregamos transiciones para transform, filter, width y height */
 }
 
 .img{
@@ -79,11 +80,10 @@
 }
 
 
-.carta2:hover img{
+.carta2:hover img {
   transform: scale(1.1);
   filter: brightness(1.1);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-
 }
 
 
@@ -97,6 +97,7 @@
   padding-bottom: 10px;
   overflow: hidden; /* Oculta el contenido que se desborde */
   position: relative;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Agregamos transiciones para transform, width y height */
 
 
 }

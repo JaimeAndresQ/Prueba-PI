@@ -92,7 +92,6 @@ form{
   width: 400px;
   height: 25px;
   border-radius: 10px;
-  border-color: none;
   font-size: 16px;
 
 }
@@ -100,8 +99,6 @@ form{
   width: 400px;
   height: 25px;
   border-radius: 10px;
-  border-color: none;
-
 }
 .btnenter{
 

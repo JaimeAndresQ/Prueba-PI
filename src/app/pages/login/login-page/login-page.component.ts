@@ -15,8 +15,13 @@ import { CookieService } from 'ngx-cookie-service';
 
 //creamos el componente del login
 export class LoginPageComponent implements OnInit{
+
     //definimos el formulario
     public loginForm: FormGroup;
+
+    //Definimos el error custom
+    showCustomError: boolean = false;
+
 
     //este constructor define los metodos a usar
     constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private cookieService: CookieService){
@@ -26,6 +31,18 @@ export class LoginPageComponent implements OnInit{
             password: ['',Validators.required]
         })
     }
+
+    getErrorMessage() {
+      const control = this.loginForm.get("username");
+
+      if (this.showCustomError) {
+        if (control?.hasError('required')) {
+          return `Puede que tu nombre de usuario o contraseña sean incorrectos. Por favor, asegúrese de que ha ingresado la información adecuada en los campos correspondientes.`;
+        }
+      }
+      return '';
+    }
+
 
     ngOnInit(): void {}
 
@@ -71,6 +88,11 @@ export class LoginPageComponent implements OnInit{
 
                     // Restablecer el formulario para borrar los datos incorrectos
                     this.loginForm.reset();
+
+                    // Mostrar el controlador error personalizado en verdadero
+                    this.showCustomError = true;
+
+
                 }
             )
         }
