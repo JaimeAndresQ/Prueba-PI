@@ -68,6 +68,9 @@ export class LoginPageComponent implements OnInit{
                 //callback para manejar errores
                 (error) => {
                     console.error('Error', error);
+
+                    // Restablecer el formulario para borrar los datos incorrectos
+                    this.loginForm.reset();
                 }
             )
         }

@@ -10,10 +10,16 @@
  */
 @layer base {
 /* Use the imported font family in your styles */
-body {
-  font-family: 'Irish Grover';
+/* @font-face {
+  font-family: FontPersonalizada;
+  src: url(./assets/fonts/Mokgech-Regular.otf);
+} */
 
+body {
+  font-family: 'Young Serif', serif;
+  /* font-family: FontPersonalizada; */
 }
+
 }
 
 

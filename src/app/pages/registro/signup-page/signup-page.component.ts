@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 // Importa jQuery y Select2
@@ -10,8 +10,41 @@ declare var $: any;
   templateUrl: './signup-page.component.html',
   styleUrls: ['./signup-page.component.css']
 })
+
+
 export class SignupPageComponent implements OnInit {
+  errorMessages = {
+    username: [
+      { type: 'required', message: 'Username is required' },
+    ],
+    name: [
+      { type: 'required', message: 'Name is required' },
+    ],
+    last_name: [
+      { type: 'required', message: 'Last name is required' },
+    ],
+    email: [
+      { type: 'required', message: 'Email is required' },
+      { type: 'email', message: 'Invalid email format' },
+    ],
+    img: [
+      { type: 'required', message: 'Image is required' },
+    ],
+    password: [
+      { type: 'required', message: 'Password is required' },
+      { type: 'invalidPassword', message: 'Invalid password format' },
+    ],
+    question: [
+      { type: 'required', message: 'Security question is required' },
+    ],
+    answer: [
+      { type: 'required', message: 'Answer is required' },
+    ],
+  };
+
   registerForm: FormGroup;
+  hide = true;
+  selectedQuestion: boolean = false;
   securityQuestions = [
     { value: 'mother', label: '¿Cómo se llama tu madre?' },
     { value: 'father', label: '¿Cómo se llama tu padre?' },
@@ -23,13 +56,102 @@ export class SignupPageComponent implements OnInit {
       username: ['', Validators.required],
       name: ['', Validators.required],
       last_name: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.compose([
+        Validators.required,
+        Validators.email,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ])],
       img: ['', Validators.required,],
-      password: ['', Validators.required],
+      password: ['', Validators.compose([
+        Validators.required,
+        this.passwordValidator // Agregar la validación personalizada aquí
+      ])],
       question: ['', Validators.required],
       answer: ['', Validators.required]
     });
+
+
+
   }
+
+
+
+  getErrorMessage(fieldName: string) {
+    const control = this.registerForm.get(fieldName);
+
+    if (control?.hasError('required')) {
+      if (fieldName == "email") {
+        return `Correo es obligatorio`;
+      }
+      if (fieldName == "name") {
+        return `Nombre es obligatorio`;
+      }
+      if (fieldName == "last_name") {
+        return `Apellido es obligatorio`;
+      }
+      if (fieldName == "password") {
+        return `Contraseña es obligatoria`;
+      }
+      if (fieldName == "img") {
+        return `Debes escoger un avatar obligatorio`;
+      }
+      if (fieldName == "username") {
+        return `Debes eligir un nickname obligatorio`;
+      }
+      if (fieldName == "question") {
+        return `Tienes que eligir una pregunta de seguridad`;
+      }
+      if (fieldName == "answer") {
+        if (!control?.hasError('question')) {
+          return `Tienes que eligir una pregunta`;
+        }
+      }
+      else
+      {
+        return `${fieldName} es obligatorio`;
+      }
+    }
+
+    if (control?.hasError('email')) {
+      return 'Formato invalido de correo';
+    }
+
+    if (control?.hasError('invalidPassword')) {
+      return 'La contraseña debe contener al menos una mayúscula, una minúscula, un número y ser mayor a 8 caracteres.';
+    }
+
+    return '';
+
+  }
+
+  getErrorMessageSelect(fieldName: string) {
+    const control = this.registerForm.get(fieldName);
+
+    if (fieldName === 'question') {
+      this.selectedQuestion = !!control?.value; // true si se selecciona una pregunta, false de lo contrario
+    }
+
+    // Resto de tu lógica de manejo de errores aquí
+  }
+
+
+
+  // Validación personalizada de contraseña
+  passwordValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const password = control.value;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSymbol = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password);
+    const isLengthValid = password.length >= 8;
+
+    if (isLengthValid && hasUpperCase && hasLowerCase && hasNumber && hasSymbol) {
+      return null; // La contraseña es válida
+    } else {
+      return { invalidPassword: true }; // La contraseña no cumple con los criterios
+    }
+  }
+
 
   ngOnInit(): void {
     const divSelect = document.querySelector('.avatar') as HTMLSelectElement;

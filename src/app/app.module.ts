@@ -20,6 +20,7 @@ import { InventaryPageComponent } from './pages/inventario/inventary-page.compon
 import { MembershipPageComponent } from './pages/membresias/membresia-page.component';
 import { AdministracionComponent } from './pages/administracion/administracion.component';
 import { ActivateComponent } from './pages/registro/signup-page/activate-page.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { CookieService } from 'ngx-cookie-service';
 
 
@@ -36,9 +37,11 @@ import { CookieService } from 'ngx-cookie-service';
     MembershipPageComponent,
     AdministracionComponent,
     ActivateComponent
+
   ],
   imports: [
     BrowserModule,
+    MatFormFieldModule,
     AppRoutingModule,
     SharedModule,
     NoopAnimationsModule,
@@ -49,7 +52,7 @@ import { CookieService } from 'ngx-cookie-service';
     FormsModule,
     NgxPayPalModule
   ],
-  exports: [MatIconModule],
+  exports: [MatIconModule, MatFormFieldModule],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })
