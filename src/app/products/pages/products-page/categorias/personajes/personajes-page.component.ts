@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import VanillaTilt from 'vanilla-tilt';
+import { CookieService } from 'ngx-cookie-service';
 
 //interface de la carta
 interface Carta {
@@ -42,6 +43,7 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
 
   constructor(private http: HttpClient,
     private matIconRegistry: MatIconRegistry,
+    private cookieService: CookieService,
     private domSanitizer: DomSanitizer
     )  {
 
@@ -195,7 +197,7 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
   //boton para agregar al carrito de compras
   addToCart(Id: string, Precio: number,Nombre: string) {
     // Realizar una solicitud HTTP para agregar la carta al carrito
-    const accessToken = localStorage.getItem('access_token');
+    const accessToken = this.cookieService.get('access_token');
 
     if (!accessToken) {
       console.error('No se ha encontrado el token de acceso.');

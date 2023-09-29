@@ -3,6 +3,7 @@ import { HttpClient} from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CookieService } from 'ngx-cookie-service';
 
 //interface de la carta
 interface Carta {
@@ -42,6 +43,7 @@ export class ProductDetailComponent  implements OnInit{
     constructor(private http: HttpClient,
       private route: ActivatedRoute,
       private matIconRegistry: MatIconRegistry,
+      private cookieService: CookieService,
       private domSanitizer: DomSanitizer){
         this.carta = {};
         this.comments = [];

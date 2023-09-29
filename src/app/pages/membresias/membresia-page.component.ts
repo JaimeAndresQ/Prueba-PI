@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal/public_api';
+import { CookieService } from 'ngx-cookie-service';
 let paypal;
 
 //interface de la carta
@@ -30,7 +31,8 @@ export class MembershipPageComponent  implements OnInit{
 
     constructor(private http: HttpClient,
         private matIconRegistry: MatIconRegistry,
-        private domSanitizer: DomSanitizer
+        private domSanitizer: DomSanitizer,
+        private cookieService: CookieService,
     )  {}
 
     ngOnInit(): void {
@@ -82,7 +84,7 @@ export class MembershipPageComponent  implements OnInit{
             onClientAuthorization: (data) => {
                 console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
                 console.log(carta.games)
-                const accessToken = localStorage.getItem('access_token');
+                const accessToken = this.cookieService.get('access_token');
 
                 if (!accessToken) {
                     console.error('No se ha encontrado el token de acceso.');

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 
 //componentes que se utilizaran como templates y estilos
@@ -18,7 +19,7 @@ export class LoginPageComponent implements OnInit{
     public loginForm: FormGroup;
 
     //este constructor define los metodos a usar
-    constructor(private fb: FormBuilder, private http: HttpClient, private router: Router){
+    constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private cookieService: CookieService){
         //inicializamos el formulario
         this.loginForm = this.fb.group({
             username: ['', Validators.required],
@@ -46,11 +47,13 @@ export class LoginPageComponent implements OnInit{
 
             //hacer la peticion al servidor para poder mandar los datos del login
             //y recibir los tokens
-            //http://20.25.34.123:8002/api/token/ || http://127.0.0.1:8002/api/token/
+            //https://store.thenexusbattles2.cloud/login-api/api/token/ || http://127.0.0.1:8002/api/token/
             this.http.post('https://store.thenexusbattles2.cloud/login-api/api/token/', loginData, { headers }).subscribe(
                 (response: any) => {
                     //almacenamos los tokens de access y refresh
-                    localStorage.setItem('access_token', response.access);
+                    //localStorage.setItem('access_token', response.access);
+                    this.cookieService.set('access_token', response.access,undefined,'/','.nexusbattles2.cloud',true, 'Lax');
+                    //this.cookieService.set('access_token', response.access,undefined,'/','localhost',true, 'Lax');
                     localStorage.setItem('refresh_token', response.refresh);
                     localStorage.setItem('username',formData.username);
 

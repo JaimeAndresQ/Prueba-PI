@@ -4,6 +4,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { WebsocketService } from './websocket.service';
 import { Router  } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 //interface de la carta
 interface Carta {
@@ -30,7 +31,7 @@ export class CartPageComponent implements OnInit {
     iva: number = 0;
     total: number = 0;
   
-    constructor(private http: HttpClient, private websocketService: WebsocketService, private router: Router ) {
+    constructor(private cookieService: CookieService,private http: HttpClient, private websocketService: WebsocketService, private router: Router ) {
       this.cartas = []
     }
   
@@ -42,7 +43,7 @@ export class CartPageComponent implements OnInit {
     // Obtener las cartas del carrito del usuario
     getCartas(): void { 
       // Realizar una solicitud HTTP para agregar la carta al carrito
-      const accessToken = localStorage.getItem('access_token');
+      const accessToken = this.cookieService.get('access_token');
 
       if (!accessToken) {
         console.error('No se ha encontrado el token de acceso.');
@@ -74,7 +75,7 @@ export class CartPageComponent implements OnInit {
 
     addToCart(id_carta: string, price: number, nombre_carta: string) {
       // Realizar una solicitud HTTP para agregar la carta al carrito
-      const accessToken = localStorage.getItem('access_token');
+      const accessToken = this.cookieService.get('access_token');
   
       if (!accessToken) {
         console.error('No se ha encontrado el token de acceso.');
@@ -102,7 +103,7 @@ export class CartPageComponent implements OnInit {
 
   removeToCart(id_carta: string) {
     // Realizar una solicitud HTTP para agregar la carta al carrito
-    const accessToken = localStorage.getItem('access_token');
+    const accessToken = this.cookieService.get('access_token');
 
     if (!accessToken) {
       console.error('No se ha encontrado el token de acceso.');
@@ -130,7 +131,7 @@ export class CartPageComponent implements OnInit {
 
   deleteToCart(id_carta: string) {
     // Realizar una solicitud HTTP para agregar la carta al carrito
-    const accessToken = localStorage.getItem('access_token');
+    const accessToken = this.cookieService.get('access_token');
 
     if (!accessToken) {
       console.error('No se ha encontrado el token de acceso.');
@@ -158,7 +159,7 @@ export class CartPageComponent implements OnInit {
 
   CreateOrder(){
     // Realizar una solicitud HTTP para crear la orden
-    const accessToken = localStorage.getItem('access_token');
+    const accessToken = this.cookieService.get('access_token');
 
     if (!accessToken) {
       console.error('No se ha encontrado el token de acceso.');

@@ -4,6 +4,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal/public_api';
 import VanillaTilt from 'vanilla-tilt';
+import { CookieService } from 'ngx-cookie-service';
 
 //interface de la carta
 interface Inventary {
@@ -47,6 +48,7 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
 
     constructor(private http: HttpClient,
       private matIconRegistry: MatIconRegistry,
+      private cookieService: CookieService,
       private domSanitizer: DomSanitizer) {
         this.matIconRegistry.addSvgIcon(
           'flecha_derecha',
@@ -112,7 +114,7 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
 
 
     getInventary(): void {
-      const accessToken = localStorage.getItem('access_token');
+      const accessToken = this.cookieService.get('access_token');
 
       if (!accessToken) {
           console.error('No se ha encontrado el token de acceso.');

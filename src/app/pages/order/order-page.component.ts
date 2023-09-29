@@ -4,6 +4,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal/public_api';
 import { ActivatedRoute } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 let paypal;
 
@@ -34,7 +35,7 @@ export class OrderPageComponent implements OnInit {
     iva: number = 0;
     total: number = 0;
 
-    constructor(private http: HttpClient, private route: ActivatedRoute) {
+    constructor(private http: HttpClient, private route: ActivatedRoute,private cookieService: CookieService,) {
         this.order= {}
     }
     
@@ -46,7 +47,7 @@ export class OrderPageComponent implements OnInit {
         this.route.params.subscribe(params => {
             const orderId = params['orderId'];
 
-            const accessToken = localStorage.getItem('access_token');
+            const accessToken = this.cookieService.get('access_token');
 
             if (!accessToken) {
                 console.error('No se ha encontrado el token de acceso.');
@@ -103,7 +104,7 @@ export class OrderPageComponent implements OnInit {
             },
             onClientAuthorization: (data) => {
                 console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
-                const accessToken = localStorage.getItem('access_token');
+                const accessToken = this.cookieService.get('access_token');
 
                 if (!accessToken) {
                     console.error('No se ha encontrado el token de acceso.');

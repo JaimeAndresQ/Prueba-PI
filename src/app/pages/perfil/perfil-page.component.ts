@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal/public_api';
+import { CookieService } from 'ngx-cookie-service';
 
 //interface de la carta
 interface Perfil {
@@ -28,7 +29,7 @@ export class ProfilePageComponent implements OnInit {
     perfil: any = {};
     informacionUsuario: any = {}
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,private cookieService: CookieService,) {
         this.perfil = {};
         this.informacionUsuario = {}
     }
@@ -39,7 +40,7 @@ export class ProfilePageComponent implements OnInit {
     }
 
     getUser(): void { 
-        const accessToken = localStorage.getItem('access_token');
+        const accessToken = this.cookieService.get('access_token');
 
         if (!accessToken) {
             console.error('No se ha encontrado el token de acceso.');
@@ -65,7 +66,7 @@ export class ProfilePageComponent implements OnInit {
     }
 
     getUserInformation(): void { 
-        const accessToken = localStorage.getItem('access_token');
+        const accessToken = this.cookieService.get('access_token');
 
         if (!accessToken) {
             console.error('No se ha encontrado el token de acceso.');

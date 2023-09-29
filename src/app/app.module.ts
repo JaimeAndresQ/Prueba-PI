@@ -20,6 +20,7 @@ import { InventaryPageComponent } from './pages/inventario/inventary-page.compon
 import { MembershipPageComponent } from './pages/membresias/membresia-page.component';
 import { AdministracionComponent } from './pages/administracion/administracion.component';
 import { ActivateComponent } from './pages/registro/signup-page/activate-page.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { ActivateComponent } from './pages/registro/signup-page/activate-page.co
     NgxPayPalModule
   ],
   exports: [MatIconModule],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
