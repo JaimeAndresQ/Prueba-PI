@@ -52,7 +52,7 @@ export class LoginPageComponent implements OnInit{
                 (response: any) => {
                     //almacenamos los tokens de access y refresh
                     //localStorage.setItem('access_token', response.access);
-                    this.cookieService.set('access_token', response.access,undefined,'/','.nexusbattles2.cloud',true, 'Lax');
+                    this.cookieService.set('access_token', response.access,undefined,'/','.thenexusbattles2.cloud',true, 'Lax');
                     //this.cookieService.set('access_token', response.access,undefined,'/','localhost',true, 'Lax');
                     localStorage.setItem('refresh_token', response.refresh);
                     localStorage.setItem('username',formData.username);
