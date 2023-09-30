@@ -1,4 +1,77 @@
-#contenedor-vitrina {
+
+
+.contenedor {
   background-image: url('../../../assets/images/fondo-inicio.jpg');
   height: calc(105vh - 100px);
+  -webkit-text-stroke: .5px black; /* Borde de 2 píxeles de ancho, color negro */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+
+.tabla__contenedor__titulo{
+  color: white;
+  text-align: center;
+  font-size: 47px;
+}
+
+.tabla {
+  border-collapse: collapse;
+  width: 50%;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+}
+
+.fila {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  font-size: 25px;
+}
+
+.encabezado {
+  background: #000;
+  color: white;
+}
+
+.columna {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  max-width: 250px;
+
+}
+
+button {
+  border-radius: 20px;
+  background-image: url("../../../assets/images/Rectangle.png");
+  background-size: cover;
+  cursor: pointer;
+  border: none;
+  padding: 5px 20px;
+  font-size: 22px;
+  color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  transition: .8s ease;
+}
+button:hover{
+  transform: scale(1.05);
+}
+
+.tabla__contenedor__padre{
+  display: flex;
+
+}
+
+.contenedor img{
+  margin-left: 20px;
+  position: absolute;
+  margin-top: -100px;
+}
+
+.nombreP{
+  flex-grow: 2;
+  
+}
+

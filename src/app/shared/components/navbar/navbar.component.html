@@ -99,10 +99,14 @@
         <!-- Icono Carrito -->
           <a>
             <button type="button" data-dropdown-toggle="resumen_flot" id="carrito-boton" class="flex flex-wrap items-center py-2.5 pr-3.5 pl-5">
-              <mat-icon class="icono-carrito" aria-hidden="false" aria-label="Carrito Compras" svgIcon="carrito" style="">Carrito</mat-icon>
+              <mat-icon class="icono-carrito" aria-hidden="false" aria-label="Carrito Compras" svgIcon="carrito">Carrito</mat-icon>
               <p class="px-2.5" id="texto-carrito">Carrito</p>
             </button>
           </a>
+      </div>
+
+      <div class="bg-[#dbaf29] text-black rounded-full w-6 h-6 text-center absolute bottom-4 2xl:right-[110px]" *ngIf="cantidadProductosEnCarrito > 0" id="indicadorCarrito">
+        {{ cantidadProductosEnCarrito }}
       </div>
 
       <!-- Contenido Resumen Flotante -->

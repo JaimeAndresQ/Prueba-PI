@@ -134,7 +134,10 @@
 .carta2:hover .titulo p{
   white-space: normal;
 }
-
+.clic-animation {
+  transform: scale(1.1); /* Aumenta el tamaño del botón cuando se hace clic */
+  transition: transform 0.3s; /* Duración de la animación */
+}
 [data-tilt] button{
   transform: translateZ(20px);
   text-align: center;

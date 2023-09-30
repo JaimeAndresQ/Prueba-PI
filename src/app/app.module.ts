@@ -50,7 +50,8 @@ import { CookieService } from 'ngx-cookie-service';
     ProductsModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPayPalModule
+    NgxPayPalModule,
+
   ],
   exports: [MatIconModule, MatFormFieldModule],
   providers: [CookieService],

@@ -103,7 +103,7 @@ export class SignupPageComponent implements OnInit {
       }
       if (fieldName == "answer") {
         if (!control?.hasError('question')) {
-          return `Tienes que eligir una pregunta`;
+          return `Tienes que responder la pregunta`;
         }
       }
       else
@@ -117,7 +117,7 @@ export class SignupPageComponent implements OnInit {
     }
 
     if (control?.hasError('invalidPassword')) {
-      return 'La contraseña debe contener al menos una mayúscula, una minúscula, un número y ser mayor a 8 caracteres.';
+      return 'La contraseña debe contener al menos una mayúscula, una minúscula, un número, un símbolo y ser mayor a 8 caracteres.';
     }
 
     return '';

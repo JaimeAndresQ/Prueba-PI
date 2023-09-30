@@ -117,10 +117,12 @@
             <p *ngIf="carta.coleccion === 'Items'">{{ carta.descripcion }}</p>
           </div>
 
+
         </div>
             <button class="deseo">
               <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="favorito">Deseos </mat-icon>
             </button>
+
             <button class="carrito" (click)="addToCart(carta._id,carta.precio,carta.nombre)">
               <mat-icon class="" aria-hidden="false" aria-label="Carrito Compras" svgIcon="añadir_carrito">Carrito </mat-icon>
             </button>

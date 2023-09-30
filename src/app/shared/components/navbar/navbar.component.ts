@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatIconRegistry} from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { WebsocketService } from 'src/app/pages/cart/websocket.service';
-
+import { ProductsPageComponent } from 'src/app/products/pages/products-page/products-page.component';
+import { CarritoService } from '../../../products/carrito-servicio.component';
+import { Subscription } from 'rxjs';
 
 //interface de la carta
 interface Carta {
@@ -21,9 +23,10 @@ interface Carta {
   styleUrls: ['./navbar.component.css']
 })
 
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy  {
 
   title = 'custom icons';
+  cantidadProductosEnCarrito: number = 0;
 
   usuarioHaIniciadoSesion: boolean = false;
   nombreUsuario: string = '';
@@ -31,11 +34,16 @@ export class NavbarComponent implements OnInit {
   subtotal: number = 0;
   iva: number = 0;
   total: number = 0;
+  private carritoSubscription!: Subscription;
+
 
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private http: HttpClient,
+    private carritoService: CarritoService,
+
+
     //private websocketService: WebsocketService
   ) {
     this.matIconRegistry.addSvgIcon(
@@ -73,6 +81,16 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Obtener la cantidad inicial de productos en el carrito
+    this.cantidadProductosEnCarrito = this.carritoService.obtenerCantidadProductosEnCarrito();
+
+    // Suscribirse a los cambios en la cantidad de productos en el carrito
+    this.carritoSubscription = this.carritoService.cantidadProductosEnCarrito$.subscribe(
+      (cantidad) => {
+        this.cantidadProductosEnCarrito = cantidad;
+      }
+    );
+
     // Comprobar si existe un token de acceso en el localStorage
     const token = localStorage.getItem('access_token');
     const username = localStorage.getItem('username')
@@ -91,9 +109,15 @@ export class NavbarComponent implements OnInit {
       } else {
         this.cartas = [data]
       }
-      
+
     });*/
   }
+
+  ngOnDestroy() {
+    // Asegurarse de desuscribirse para evitar fugas de memoria
+    this.carritoSubscription.unsubscribe();
+  }
+
 
   // Obtener las cartas del carrito del usuario
   getCartas(): void {
@@ -133,5 +157,6 @@ export class NavbarComponent implements OnInit {
     this.iva = this.subtotal*0.19;
     this.total = this.iva+this.subtotal;
   }
+
 
 }

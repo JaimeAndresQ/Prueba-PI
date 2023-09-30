@@ -4,6 +4,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import VanillaTilt from 'vanilla-tilt';
 import { CookieService } from 'ngx-cookie-service';
+import { CarritoService } from 'src/app/products/carrito-servicio.component';
 
 //interface de la carta
 interface Carta {
@@ -32,6 +33,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   //guardar cartas
   cartas: Carta[] = [];
+  botonCarrito = document.getElementById('botonCarrito');
 
   ///paginacion
   public currentPage:number = 1;
@@ -45,7 +47,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   constructor(private http: HttpClient,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private carritoService: CarritoService,
     )  {
 
     this.matIconRegistry.addSvgIcon(
@@ -131,13 +134,19 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
     this.matIconRegistry.addSvgIcon(
       'indicador_disc',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/indicador_descuento.svg')
+
     )
 
+
+
+
   }
+
 
   ngOnInit(): void {
     this.generateTotalPagesArray();
     this.getCartasByPage(this.currentPage);
+
   }
 
 
@@ -201,6 +210,8 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   //boton para agregar al carrito de compras
   addToCart(Id: string, Precio: number,Nombre: string) {
+
+    this.carritoService.incrementarCantidad();
     // Realizar una solicitud HTTP para agregar la carta al carrito
     const accessToken = this.cookieService.get('access_token');
 
