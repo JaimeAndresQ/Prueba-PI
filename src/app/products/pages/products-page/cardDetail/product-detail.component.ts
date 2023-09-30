@@ -111,17 +111,20 @@ export class ProductDetailComponent  implements OnInit{
     }
 
     getComments(): void{
-      //const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
-      const apiUrl = `http://alpha.bucaramanga.upb.edu.co:3000/api/comentariosCartas/1`;
-      this.http.get<Comment[]>(apiUrl).subscribe(
-          (data) => {
-            this.comments = data;
-              console.log('Respuesta de la API:', data);
-          },
-          (error) => {
-              console.error('Error al obtener el carrito de compras:', error);
-          }
-      );
+      this.route.paramMap.subscribe((params)=>{
+        const Id = params.get('Id');
+        const apiUrl = `https://store.thenexusbattles2.cloud/comentarios/${Id}`;
+        //const apiUrl = `http://alpha.bucaramanga.upb.edu.co:3000/api/comentariosCartas/1`;
+        this.http.get<Comment[]>(apiUrl).subscribe(
+            (data) => {
+              this.comments = data;
+                console.log('Respuesta de la API:', data);
+            },
+            (error) => {
+                console.error('Error al obtener el carrito de compras:', error);
+            }
+        );
+      })
     }
 
 }
