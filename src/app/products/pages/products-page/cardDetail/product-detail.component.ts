@@ -111,7 +111,7 @@ export class ProductDetailComponent  implements OnInit{
     }
 
     getComments(): void{
-      const apiUrl = `https://store.thenexusbattles2.cloud/comentarios/1`;
+      const apiUrl = `https://store.thenexusbattles2.cloud/comentarios/650f38ee7aaeb67f7dfc712e`;
       //const apiUrl = `http://alpha.bucaramanga.upb.edu.co:3000/api/comentariosCartas/1`;
       this.http.get<Comment[]>(apiUrl).subscribe(
           (data) => {
