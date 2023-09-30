@@ -12,6 +12,7 @@ import { FirePageComponent } from './pages/products-page/categorias/Tipo de cart
 import { IcePageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaHielo-page.component';
 import { VenenoPageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaVeneno-page.component';
 import { MachetePageComponent } from './pages/products-page/categorias/Tipo de carta/tipoCartaMachete-page.component';
+import { EpicasPageComponent } from './pages/products-page/categorias/epicas/epicas-page.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'Gtanque',
     component: TankPageComponent
+  },
+  {
+    path:'epicas',
+    component: EpicasPageComponent
   },
   {
     path: 'items',
