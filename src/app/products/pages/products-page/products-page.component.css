@@ -73,12 +73,6 @@
   margin-bottom:10px;
 }
 
-#Indicador_Desc{
-  transition: transform 0.3s, filter 0.3s;
-  width: 35px;
-  height: 30px;
-}
-
 
 .carta2:hover img {
   transform: scale(1.1);
@@ -111,6 +105,17 @@
   height: 70px;
 }
 
+#Indicador_Desc{
+  transition: all 0.3s ease;
+  width: 25px;
+  height: 20px;
+}
+
+.carta2:hover #Indicador_Desc {
+  width: 35px;
+  height: 30px;
+}
+
 
 .carta2:hover .contenido::-webkit-scrollbar {
   width: 4px;
@@ -134,10 +139,15 @@
 .carta2:hover .titulo p{
   white-space: normal;
 }
+
+/* Iconos de la carta */
+
 .clic-animation {
   transform: scale(1.1); /* Aumenta el tamaño del botón cuando se hace clic */
   transition: transform 0.3s; /* Duración de la animación */
 }
+
+
 [data-tilt] button{
   transform: translateZ(20px);
   text-align: center;

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
+import VanillaTilt from 'vanilla-tilt';
 
 //interface de la carta
 interface Carta {
@@ -108,6 +109,23 @@ export class ProductDetailComponent  implements OnInit{
             );
         })
         this.getComments();
+    }
+
+    ngAfterViewChecked(){
+      const elementosCarta = document.querySelectorAll('[data-tilt]');
+      if (elementosCarta.length > 0) {
+        elementosCarta.forEach((elemento: any) => {
+          // Aplicar VanillaTilt a cada elemento
+          VanillaTilt.init(elemento, {
+            max: 10,
+            speed: 500,
+            perspective: 1000,
+            scale: 1.1,
+            transition: true,
+            gyroscope: true,
+          });
+        });
+      }
     }
 
     getComments(): void{

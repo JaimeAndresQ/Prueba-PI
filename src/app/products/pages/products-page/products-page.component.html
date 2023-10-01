@@ -95,7 +95,7 @@
           <div class="overlay"></div>
           </a>
           <!-- Indicador del Descuento -->
-          <!-- <mat-icon class="absolute top-[1.5%] right-[12.5%]" id="Indicador_Desc" aria-hidden="false" aria-label="Indicador Descuento" svgIcon="indicador_disc">Indicador Descuento</mat-icon> -->
+          <mat-icon class="absolute 2xl:top-[1.5%] 2xl:right-[26.5%] group-hover/carta:right-[12.5%]" id="Indicador_Desc" aria-hidden="false" aria-label="Indicador Descuento" svgIcon="indicador_disc" >Indicador Descuento</mat-icon>
         </div>
 
         <div class="contenido 2xl:w-[220px] 2xl:h-[125px] md:sm:w-[165px] md:sm:h-[92px] 2xl:text-[16px] md:text-[11px] space-y-[2px]">
@@ -105,7 +105,7 @@
             <p *ngIf="carta.coleccion === 'Heroes'">Vida: {{ carta.vida }}</p>
             <p *ngIf="carta.coleccion === 'Heroes'">Defensa: {{ carta.defensa }}</p>
             <p *ngIf="carta.coleccion === 'Heroes'">Ataque: {{ carta.ataqueBase }}</p>
-            <p *ngIf="carta.coleccion === 'Heroes'">Dano: {{ carta.dano }}</p>
+            <p *ngIf="carta.coleccion === 'Heroes'">Daño: {{ carta.dano }}</p>
             <p *ngIf="carta.nombre === 'Armadura Pesada'">Tipo: Pesada</p>
             <p *ngIf="carta.nombre === 'Armadura Mediana'">Tipo: Media</p>
             <p *ngIf="carta.nombre === 'Armadura de Tela'">Tipo: Tela</p>

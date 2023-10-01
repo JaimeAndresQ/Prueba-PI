@@ -1,82 +1,395 @@
-main{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-.hijo1{
-    display: flex;
-}
-
-.hijo1 .img{
-    /* background: rgba(175, 187, 65, 0.548); */
-    width: 400px;
-    height: 600px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.img img{
-    border-radius: 20px;
-}
-
-.hijo1 .informacion{
-    padding: 10px;
-    padding-top: 6.5%;
-    padding-bottom: 6.5%;
-    /* background: rgba(187, 134, 65, 0.548); */
-    width: 800px;
-    height: 600px;
-}
-
-.hijo2{
-    width: 1200px;
-    min-height: 200px;
-    background: rgba(255, 255, 0, 0.582);
-}
-
-.padre {
-  z-index: 1;
-  background-image: url('../../../../../assets/images/Fondo-Detalle.png');
+/* Contenedor principal */
+#contenedor-vitrina {
+  background-image: url('../../../../../assets/images/fondo-inicio.jpg');
   background-size: cover;
-  border-radius: 30px;
-  width: 1325px;
-  height: 950px;
-  padding: 20px;
-  padding-top: 150px;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+
+/* Contenedor principal */
+.container {
   display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
 
+.contenedor-izquierdo {
+  flex: 1;
+  width: 720px;
+  float: left;
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+
+.contenedor-derecho {
+  flex: 1;
+  width: 479px;
+  float: left;
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
+/* Estilos para el fondo de la página */
+body {
 
-.cuadricula{
-  text-align: start;
-  padding: 3px;
-  /* background-image: linear-gradient(to right, rgba(250, 235, 215, 0.658) , #e2cd9f); */
-  background: rgba(250, 235, 215, 0.658);
-  max-height: fit-content;
-  width: 335px;
-  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+
 }
 
-.cuadricula mat-icon {
-  width: 46px;
-  height: 46px;
+/* Contenedor principal */
+.container {
+  max-width: 1360px; /* Establece el ancho máximo */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 20px; /* Agrega espacio interior alrededor del contenido */
 }
 
-.cuadricula .text_desc {
+/* Estilos para los rectángulos */
+.rectangulo {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  opacity: 75%;
+}
+
+/* Estilos para el contenedor de la carta */
+.carta {
+  width: 720px;
+  height: 582px;
+  display: flex; /* Habilita el modelo de caja flexible */
+  align-items: center; /* Alinea verticalmente el contenido en el centro */
+  justify-content: center; /* Alinea horizontalmente el contenido en el centro */
+  border-radius: 5px;
+}
+
+/* Estilos para el contenedor de carta interna */
+.carta-interna {
+  width: 334px;
+  height: 511px;
+  background-color: #111212;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.comentarios.rectangulo {
+  width: 700px;
+  height: auto;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.nuevoComentario {
+  width: 670px;
+  height: auto;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Estilos para el título "Comentarios" */
+.comentarios h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los comentarios individuales */
+.comentario {
+  background-color: #CAC8C4;
+  width: 670px;
+  border: 1px solid #000000;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Estilos para el nombre del usuario */
+.comentario p {
+  font-weight: bold;
+}
+
+/* Estilos para el contenido del comentario */
+.contenido-comentario {
+  width: 640px;
+  margin-top: 5px;
+  font-size: 14px;
+  padding: 10px;
+  line-height: 1.4;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+/* Estilos para el contenedor de descripción */
+.descripcion {
+  width: 100%;
+  height: 560px;
+  padding: 10px;
+}
+
+/* Estilos para el título "Nombre carta" */
+.descripcion h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el contenedor de descripción interna */
+.descripcion-interna {
+  width: 445px;
+  height: 300px;
+  background-color: #fafafa;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.descripcion-interna ul li {
+  margin: 5px;
+  margin-bottom: 12px;
   font-size: 18px;
+  list-style: none;
+  display: flex;
+  align-items: center;
 }
 
-.container_icon{
-    background-color: #e2cd9f;
-    max-height: 3rem;
-    margin-right: 0.25rem/* 4px */;
-    padding: 1px;
+.descripcion-interna img {
+  margin-right: 5px;
+  width: 28px;
+  height: 28px;
 }
+
+/* Estilos para el icono de estrella */
+.estrella {
+
+  height: 24px;
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin-top: 50px;
+  border: solid 1px #000000;
+  border-radius: 5px;
+}
+
+.estrella  p {
+  padding: 10px;
+}
+
+/* Estilos para el contenedor de calificación */
+.calificacion {
+  width: 600px;
+  height: 210px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* Estilos para el título "Tu calificación" */
+.calificacion h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.calificacion p {
+  font-size: 54px;
+  margin-left: 400px;
+}
+
+/* Estilos para el input de comentario */
+#nuevoComentarioTexto {
+  width: 670px; /* O ajusta el ancho según tus necesidades */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc; /* Un borde ligero */
+  border-radius: 5px;
+  font-size: 16px;
+
+}
+
+/* Estilos para el botón de enviar comentario */
+#enviarComentario {
+  width: 20%;
+  background-color: #8B4513;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  align-items:right;
+}
+
+/* Estilo para el botón de enviar cuando se pasa el cursor sobre él */
+#enviarComentario:hover {
+  background-color: #5A2B0F;
+}
+
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: right;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  padding-right: 65vh;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+/* Carta CSS */
+.carta2{
+  margin: 3.5%;
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+
+.carta2 .botones button{
+  transform: translateZ(50px);
+}
+
+.carta2 .titulo{
+  transform: translateZ(20px);
+  font-weight: 500;
+  padding:5px;
+  background:rgba(57,57,15,1);
+  opacity:1;
+  border:1px solid rgba(255,244,0,1);
+  border-radius:5px;
+  margin-bottom:10px;
+  text-align: center;
+}
+
+.carta2 img {
+  border: 1px solid rgba(255, 244, 0, 1);
+  border-radius: 5px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease, width 0.3s ease, height 0.3s ease;
+  /* Agregamos transiciones para transform, filter, width y height */
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(50px);
+  margin-bottom:10px;
+}
+
+#Indicador_Desc{
+  transition: transform 0.3s, filter 0.3s;
+  width: 35px;
+  height: 30px;
+}
+
+
+.carta2:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+.carta2 .contenido{
+  justify-content: space-between;
+  border:1px solid rgba(255,244,0,1);
+  border-radius:5px;
+  background:rgba(57,57,15,1);
+  transform: translateZ(20px);
+  padding: 12px;
+  padding-bottom: 10px;
+  overflow: hidden; /* Oculta el contenido que se desborde */
+  position: relative;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease; /* Agregamos transiciones para transform, width y height */
+
+
+}
+
+.carta2:hover .contenido {
+  overflow: auto; /* Agrega scroll al hacer hover */
+  max-height: 110%; /* Establece la altura máxima para el scroll */
+}
+
+
+
+.carta2:hover .contenido::-webkit-scrollbar {
+  width: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(168, 98, 98);
+  scrollbar-darkshadow-color: #dbaf29;
+
+}
+
+.carta2:hover .contenido::-webkit-scrollbar-thumb{
+  background-color: rgba(255,244,0,1);
+  border-radius: 30px;
+}
+
+.carta2:hover .contenido::-webkit-scrollbar-track{
+  background-color: #b88f15da;
+  border-radius: 5px;
+}
+
+
+.carta2:hover .titulo p{
+  white-space: normal;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  .descripcion{
+      width: 720px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+  }
+  .calificacion{
+      width: 720px;
+  }
+}
+
+

@@ -1,139 +1,130 @@
 <main id="contenedor-vitrina">
-    <div class="padre my-4">
 
-      <div class="hijo1">
-        <div class="img">
-            <img src="https://cards.thenexusbattles2.cloud/assets/{{ carta.imagen }}" alt="" class="h-[420px] w-[320px]">
 
-        </div>
-
-        <div class="informacion text-center flex items-center flex-col" #coleccion_Heroe>
-          <div class="flex flex-col space-y-4 w-[675px] items-center justify-center">
-            <p class="text-[32px] ">{{carta.nombre}} </p>
-          <div class="grid grid-cols-2 gap-x-4 w-max  bg-gradient-to-t from-[#c0a269a6] to-[#b68511a8] p-1 pt-2 px-12 border border-[#E2CD9F] border-dashed rounded-[4px] text-white text-left ">
-
-            <p class="text-[24px] italic">Tipo:</p>
-            <p class="text-[24px] italic">Coleccion:</p>
-
-            <p class="text-[24px] text-slate-800 " >{{ carta.tipo ? carta.tipo : 'Ninguno' }}</p>
-            <p class="text-[24px] text-rose-800">{{carta.coleccion}}</p>
-
-          </div>
-            <p class="text-[20px]">{{carta.descripcion}}</p>
-          </div>
-
-            <div class="grid grid-cols-2 mt-4 gap-4 ">
-
-              <div class="cuadricula flex items-center">
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="precio">Precio</mat-icon>
-                </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Precio</p>
-                  <p class="text_desc">{{carta.precio}}</p>
-                </div>
+<div class="container">
+  <div class="contenedor-izquierdo contenedor-superior">
+      <div class="carta rectangulo" id="cartaContainer">
+          <div class="carta-interna flex items-center justify-center" id="cartaNombre">
+            <div id="bordeCarta" style="background:rgba(17,18,18,1); color:white; border:1px solid rgba(255,244,0,1);" id="bordeCarta" class="carta2 group/carta 2xl:w-[350px] 2xl:h-[480px]" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+              <!-- Bordeado Exotico Carta -->
+              <!-- Imagen Superior -->
+              <div class="img">
+                <a [routerLink]="['/carta', carta._id]">
+                  <img src="https://cards.thenexusbattles2.cloud/assets/{{ carta.imagen }}" alt="" class="2xl:h-[270px] 2xl:w-[210px]  group-hover/carta:2xl:sm:h-[270px] group-hover/carta:2xl:w-[210px]">
+                <div class="overlay"></div>
+                </a>
+                <!-- Indicador del Descuento -->
+                <!-- <mat-icon class="absolute top-[1.5%] right-[12.5%]" id="Indicador_Desc" aria-hidden="false" aria-label="Indicador Descuento" svgIcon="indicador_disc">Indicador Descuento</mat-icon> -->
               </div>
 
-              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="ataquebase">Ataque Base</mat-icon>
+              <div class="contenido 2xl:w-[280px] 2xl:h-[175px] 2xl:text-[16px] space-y-[2px]">
+                <div class="">
+                  <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Ataque Base</p>
-                  <p class="text_desc">{{carta.ataqueBase}}</p>
+                <div class="flex justify-between space-x-4 space-y-[2px]">
                 </div>
-              </div>
 
-              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="defensa">Defensa</mat-icon>
-                </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Defensa</p>
-                  <p class="text_desc">{{carta.defensa}}</p>
-                </div>
-              </div>
-
-              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="dañomax">Daño Max</mat-icon>
-                </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Daño Max</p>
-                  <p class="text_desc">{{carta.dano}}</p>
-                </div>
-              </div>
-
-              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="ataquedado">Ataque Dado</mat-icon>
-                </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Ataque Dado</p>
-                  <p class="text_desc">14</p>
-                </div>
-              </div>
-
-              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="vida">Vida</mat-icon>
-                </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Vida</p>
-                  <p class="text_desc">{{carta.vida}}</p>
-                </div>
-              </div>
-
-              <div class="cuadricula flex items-center " >
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="stock">Stock</mat-icon>
-                </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Stock</p>
-                  <p class="text_desc">{{ carta.stock }}</p>
-                </div>
-              </div>
-
-              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Armaduras'">
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="efecto">Efecto de Impacto</mat-icon>
-                </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Efecto de Impacto</p>
-                  <p class="text_desc"></p>
-                </div>
-              </div>
-
-              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Armaduras'">
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="turnos">Numero de Turnos</mat-icon>
-                </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Numero de Turnos</p>
-                  <p class="text_desc"></p>
-                </div>
-              </div>
-
-              <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Armaduras'">
-                <div class="container_icon">
-                  <mat-icon class="text-[#458f3b]" svgIcon="estadistica">Estadistica</mat-icon>
-                </div>
-                <div>
-                  <p class="text-[22px] font-semibold">Estadistica</p>
-                  <p class="text_desc"></p>
-                </div>
               </div>
 
             </div>
 
-        </div>
-    </div>
+          </div>
 
-        <br>
-        <div *ngFor="let comment of comments">
-            <p>{{ comment.comentariosTexto }}</p>
-        </div>
+      </div>
 
-    </div>
+      <div class="comentarios rectangulo" id="comentariosContainer">
+
+          <h2>Comentarios</h2>
+          <div id="nuevoComentario">
+              <input type="text" id="nuevoComentarioTexto" placeholder="Escribe tu comentario"> <br>
+              <button id="enviarComentario">Enviar</button>
+          </div> <br>
+          <div class="comentario" id="comentario2">
+              <p>Usuario 2</p>
+              <div class="contenido-comentario" id="comentarioContenido2">
+                  <!-- <div *ngFor="let comment of comments">
+                    <p>Este es: {{ comment.comentariosTexto }}</p>
+                </div> -->
+              </div>
+          </div>
+          <div class="comentario" id="comentario3">
+              <p>Usuario 3</p>
+              <div class="contenido-comentario" id="comentarioContenido3">
+                  <p>Texto de comentario 3</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="contenedor-derecho contenedor-superior">
+      <div class="descripcion rectangulo" id="descripcionContainer">
+          <h2>{{carta.nombre}}</h2>
+          <div class="descripcion-contenedor">
+              <div class="descripcion-interna">
+                  <ul>
+                      <li>
+                        <img src="../../../../../assets/images/empoderamiento.png" alt="">
+                        <p>Poder: {{carta.poder}}</p>
+                      </li>
+                      <li>
+                        <img src="../../../../../assets/images/me-gusta.png" alt="">
+                        <p>Vida: {{carta.vida}}</p>
+                      </li>
+                      <li>
+                        <img src="../../../../../assets/images/proteger.png" alt="">
+                        <p>Defensa: {{carta.defensa}}</p>
+                      </li>
+                      <li>
+                        <img src="../../../../../assets/images/espadas.png" alt="">
+                        <p>Ataque: {{carta.ataqueBase}}</p>
+                      </li>
+                      <li>
+                        <img src="../../../../../assets/images/daga.png" alt="">
+                        <p>Daño: {{carta.dano}}</p>
+                      </li>
+                      <li>
+                        <img src="../../../../../assets/images/descuento.png" alt="">
+                        <p *ngIf="carta.descuento">Descuento: {{ carta.descuento}}%</p>
+                        <p *ngIf="!carta.descuento">Descuento: No aplica</p>
+                      </li>
+                      <li>
+                        <img src="../../../../../assets/images/dolar.png" alt="">
+                        <p>Precio: {{carta.precio}}</p>
+                      </li>
+                  </ul>
+              </div>
+              <div class="estrella w-max items-center" id="calificacion">
+                  <i class="fi fi-rs-star"></i>
+                  <div class="flex items-start -space-x-4 -m-3">
+                    <p class="text-[25px]">★</p>
+                    <p id="calificacionValor" >4.5</p>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      <div class="calificacion rectangulo">
+          <h2>Tu calificación</h2>
+          <form>
+              <p class="clasificacion">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                --><label for="radio1">★</label><!--
+
+                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                --><label for="radio2">★</label><!--
+
+                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                --><label for="radio3">★</label><!--
+
+                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                --><label for="radio4">★</label><!--
+
+                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                --><label for="radio5">★</label>
+              </p>
+            </form>
+      </div>
+  </div>
+
+</div>
 </main>
-

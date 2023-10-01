@@ -1,0 +1,140 @@
+<!-- <main id="contenedor-vitrina">
+  <div class="padre my-4">
+
+    <div class="hijo1">
+      <div class="img">
+          <img src="https://cards.thenexusbattles2.cloud/assets/{{ carta.imagen }}" alt="" class="h-[420px] w-[320px]">
+
+      </div>
+
+      <div class="informacion text-center flex items-center flex-col" #coleccion_Heroe>
+        <div class="flex flex-col space-y-4 w-[675px] items-center justify-center">
+          <p class="text-[32px] ">{{carta.nombre}} </p>
+        <div class="grid grid-cols-2 gap-x-4 w-max  bg-gradient-to-t from-[#c0a269a6] to-[#b68511a8] p-1 pt-2 px-12 border border-[#E2CD9F] border-dashed rounded-[4px] text-white text-left ">
+
+          <p class="text-[24px] italic">Tipo:</p>
+          <p class="text-[24px] italic">Coleccion:</p>
+
+          <p class="text-[24px] text-slate-800 " >{{ carta.tipo ? carta.tipo : 'Ninguno' }}</p>
+          <p class="text-[24px] text-rose-800">{{carta.coleccion}}</p>
+
+        </div>
+          <p class="text-[20px]">{{carta.descripcion}}</p>
+        </div>
+
+          <div class="grid grid-cols-2 mt-4 gap-4 ">
+
+            <div class="cuadricula flex items-center">
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="precio">Precio</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Precio</p>
+                <p class="text_desc">{{carta.precio}}</p>
+              </div>
+            </div>
+
+            <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="ataquebase">Ataque Base</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Ataque Base</p>
+                <p class="text_desc">{{carta.ataqueBase}}</p>
+              </div>
+            </div>
+
+            <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="defensa">Defensa</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Defensa</p>
+                <p class="text_desc">{{carta.defensa}}</p>
+              </div>
+            </div>
+
+            <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="dañomax">Daño Max</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Daño Max</p>
+                <p class="text_desc">{{carta.dano}}</p>
+              </div>
+            </div>
+
+            <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="ataquedado">Ataque Dado</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Ataque Dado</p>
+                <p class="text_desc">14</p>
+              </div>
+            </div>
+
+            <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Heroes'">
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="vida">Vida</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Vida</p>
+                <p class="text_desc">{{carta.vida}}</p>
+              </div>
+            </div>
+
+            <div class="cuadricula flex items-center " >
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="stock">Stock</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Stock</p>
+                <p class="text_desc">{{ carta.stock }}</p>
+              </div>
+            </div>
+
+            <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Armaduras'">
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="efecto">Efecto de Impacto</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Efecto de Impacto</p>
+                <p class="text_desc"></p>
+              </div>
+            </div>
+
+            <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Armaduras'">
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="turnos">Numero de Turnos</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Numero de Turnos</p>
+                <p class="text_desc"></p>
+              </div>
+            </div>
+
+            <div class="cuadricula flex items-center" *ngIf="carta.coleccion === 'Armaduras'">
+              <div class="container_icon">
+                <mat-icon class="text-[#458f3b]" svgIcon="estadistica">Estadistica</mat-icon>
+              </div>
+              <div>
+                <p class="text-[22px] font-semibold">Estadistica</p>
+                <p class="text_desc"></p>
+              </div>
+            </div>
+
+          </div>
+
+      </div>
+  </div>
+
+      <br>
+
+      <div *ngFor="let comment of comments">
+          <p>{{ comment.comentariosTexto }}</p>
+      </div>
+
+  </div>
+</main>
+ -->
