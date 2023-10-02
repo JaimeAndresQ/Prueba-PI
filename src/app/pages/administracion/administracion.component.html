@@ -10,30 +10,20 @@
 
                   <div class="fila encabezado">
 
-                    <div class="columna nombreP">Nombre Completo</div>
-                    <div class="columna ">Usuario</div>
-                    <div class="columna ">Contraseña</div>
+                    <div class="columna ">Username</div>
+                    <div class="columna ">Nombre</div>
+                    <div class="columna ">Apellido</div>
+                    <div class="columna ">Correo</div>
                     <div class="columna ">Estado</div>
                   </div>
 
                   <!-- ngFor desde aca -->
-                  <div class="fila">
-                    <div class="columna nombreP">Pepito Perez </div>
-                    <div class="columna ">Pepe21</div>
-                    <div class="columna ">1234</div>
-                    <div class="columna "><button>Activo</button></div>
-                  </div>
-                  <div class="fila">
-                    <div class="columna nombreP">Lola Gonzalez</div>
-                    <div class="columna ">Lola12</div>
-                    <div class="columna ">Lorito13</div>
-                    <div class="columna "><button>No Activo</button></div>
-                  </div>
-                  <div class="fila">
-                    <div class="columna nombreP">Lola Gonzalez</div>
-                    <div class="columna ">Lola12</div>
-                    <div class="columna ">Lorito13</div>
-                    <div class="columna "><button>No Activo</button></div>
+                  <div class="fila" *ngFor="let user of users">
+                    <div class="columna nombreP">{{ user.username }}</div>
+                    <div class="columna ">{{ user.name }}</div>
+                    <div class="columna ">{{ user.last_name }}</div>
+                    <div class="columna ">{{ user.email }}</div>
+                    <div class="columna "><button>{{ user.is_active }}</button></div>
                   </div>
 
 
