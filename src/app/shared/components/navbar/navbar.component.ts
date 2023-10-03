@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { ProductsPageComponent } from 'src/app/products/pages/products-page/products-page.component';
 import { CarritoService } from '../../../products/carrito-servicio.component';
 import { Subscription } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 //interface de la carta
 interface Carta {
@@ -41,6 +42,7 @@ export class NavbarComponent implements OnInit, OnDestroy  {
     private domSanitizer: DomSanitizer,
     private http: HttpClient,
     private carritoService: CarritoService,
+    private cookieService: CookieService
 
 
     //private websocketService: WebsocketService
@@ -121,7 +123,7 @@ export class NavbarComponent implements OnInit, OnDestroy  {
   // Obtener las cartas del carrito del usuario
   getCartas(): void {
     // Realizar una solicitud HTTP para agregar la carta al carrito
-    const accessToken = localStorage.getItem('access_token');
+    const accessToken = this.cookieService.get('access_token');
 
     if (!accessToken) {
       console.error('No se ha encontrado el token de acceso.');
