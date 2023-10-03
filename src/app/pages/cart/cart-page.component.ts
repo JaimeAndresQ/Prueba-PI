@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { WebsocketService } from './websocket.service';
 import { Router  } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
