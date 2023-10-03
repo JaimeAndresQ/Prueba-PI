@@ -13,7 +13,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let carta of cartas">
-                    <td><img src="https://cards.thenexusbattles2.cloud/assets/{{ carta.imagen }}" alt="" style="height: 250px;"></td>
+                    <td><img src="" alt="" style="height: 250px;"></td>
                     <td>{{ carta.nombre_carta }}</td>
                     <td><button (click)="removeToCart(carta.id_carta)"><img src="../../../assets/icons/remove.svg" alt=""></button> {{ carta.quantity }} <button (click)="addToCart(carta.id_carta,carta.price,carta.nombre_carta)"><img src="../../../assets/icons/add.svg" alt=""></button></td>
                     <td>{{ carta.price }}</td>
