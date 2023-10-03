@@ -61,25 +61,29 @@
           <div class="descripcion-contenedor">
               <div class="descripcion-interna">
                   <ul>
-                      <li>
+                      <li *ngIf="carta.coleccion === 'Heroes'">
                         <img src="../../../../../assets/images/empoderamiento.png" alt="">
                         <p>Poder: {{carta.poder}}</p>
                       </li>
-                      <li>
+                      <li *ngIf="carta.coleccion === 'Heroes'">
                         <img src="../../../../../assets/images/me-gusta.png" alt="">
                         <p>Vida: {{carta.vida}}</p>
                       </li>
-                      <li>
+                      <li *ngIf="carta.coleccion === 'Heroes'">
                         <img src="../../../../../assets/images/proteger.png" alt="">
                         <p>Defensa: {{carta.defensa}}</p>
                       </li>
-                      <li>
+                      <li *ngIf="carta.coleccion === 'Heroes'">
                         <img src="../../../../../assets/images/espadas.png" alt="">
                         <p>Ataque: {{carta.ataqueBase}}</p>
                       </li>
-                      <li>
+                      <li *ngIf="carta.coleccion === 'Heroes'">
                         <img src="../../../../../assets/images/daga.png" alt="">
                         <p>Daño: {{carta.dano}}</p>
+                      </li>
+                      <li *ngIf="carta.coleccion === 'Armas' || carta.coleccion === 'Armaduras' || carta.coleccion === 'Items' || carta.coleccion === 'Epicas'">
+                        <img src="../../../../../assets/images/daga.png" alt="">
+                        <p>Descripcion: {{carta.descripcion}}</p>
                       </li>
                       <li>
                         <img src="../../../../../assets/images/descuento.png" alt="">
