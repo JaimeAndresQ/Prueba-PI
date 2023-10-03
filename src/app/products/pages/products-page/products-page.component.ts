@@ -20,7 +20,8 @@ interface Carta {
   ataqueBase: number,
   dano: number,
   coleccion: string,
-  descripcion: string
+  descripcion: string,
+  descuento: number
 }
 
 @Component({

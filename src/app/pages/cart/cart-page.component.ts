@@ -31,7 +31,7 @@ export class CartPageComponent implements OnInit {
     iva: number = 0;
     total: number = 0;
   
-    constructor(private cookieService: CookieService,private http: HttpClient, private websocketService: WebsocketService, private router: Router ) {
+    constructor(private cookieService: CookieService,private http: HttpClient, private router: Router ) {
       this.cartas = []
     }
   
