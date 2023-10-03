@@ -143,7 +143,7 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
     getCards(): void {
       for (const item of this.inventario){
           const id_carta = item.id_carta
-          const cartEndpoint =`https://store.thenexusbattles2.cloud/cards/api/cardDetail/${id_carta}`;
+          const cartEndpoint =`https://cards.thenexusbattles2.cloud/api/cartas/${id_carta}`;
           //const cartEndpoint = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
           const headers = new HttpHeaders({
               'Content-Type': 'application/json',
