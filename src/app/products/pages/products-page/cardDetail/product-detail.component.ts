@@ -43,52 +43,12 @@ export class ProductDetailComponent  implements OnInit{
 
     constructor(private http: HttpClient,
       private route: ActivatedRoute,
-      private matIconRegistry: MatIconRegistry,
       private cookieService: CookieService,
-      private domSanitizer: DomSanitizer){
+){
         this.carta = {};
         this.comments = [];
 
-        this.matIconRegistry.addSvgIcon(
-          'precio',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/precio.svg'),
-        )
-        this.matIconRegistry.addSvgIcon(
-          'ataquebase',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/ataquebase.svg'),
-        )
-        this.matIconRegistry.addSvgIcon(
-          'dañomax',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/dañomax.svg'),
-        )
-        this.matIconRegistry.addSvgIcon(
-          'ataquedado',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/ataquedado.svg'),
-        )
-        this.matIconRegistry.addSvgIcon(
-          'defensa',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/defensa.svg'),
-        )
-        this.matIconRegistry.addSvgIcon(
-          'vida',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/vida.svg'),
-        )
-        this.matIconRegistry.addSvgIcon(
-          'efecto',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/efecto.svg'),
-        )
-        this.matIconRegistry.addSvgIcon(
-          'turnos',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/turnos.svg'),
-        )
-        this.matIconRegistry.addSvgIcon(
-          'estadistica',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/estadistica.svg'),
-        )
-        this.matIconRegistry.addSvgIcon(
-          'stock',
-          this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/stock.svg'),
-        )
+
     }
 
 

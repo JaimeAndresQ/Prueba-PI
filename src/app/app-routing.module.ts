@@ -11,6 +11,7 @@ import { InventaryPageComponent } from './pages/inventario/inventary-page.compon
 import { MembershipPageComponent } from './pages/membresias/membresia-page.component';
 import { AdministracionComponent } from './pages/administracion/administracion.component';
 import { ActivateComponent } from './pages/registro/signup-page/activate-page.component';
+import { RecoveryComponent } from './pages/login/recovery-page/recovery.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path:'admin',
     component: AdministracionComponent
+  },
+  {
+    path:'recovery',
+    component: RecoveryComponent
   },
   {
     path: '',

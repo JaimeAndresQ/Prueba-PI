@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Irish Grover';
-}
-
-
 
 .Fondo {
   background-image: url('../../../../assets/images/fondo-inicio.jpg');
@@ -16,13 +9,17 @@ body {
   height: calc(145vh - 100px); /* Toma el 100% del viewport height y resta la altura del header */
   /* Toma el 100% del viewport height y resta la altura del header */
   overflow-x: hidden;
+  overflow: hidden;
 }
 
-
+::-webkit-scrollbar{
+  overflow: hidden;
+}
 
 .container {
   position: relative;
   top: 9%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,10 +36,7 @@ body {
 
 .inner-box {
   background-color: #ffffff75;
-  padding-left: 50px;
-  padding-right: 100px;
-  padding-top: 5px;
-  padding-bottom: 25px;
+  padding: 50px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -58,7 +52,7 @@ body {
 }
 .inner-box h3 {
 
-  font-size: 20px;
+  font-size: 25px;
   margin: 0;
   text-align:center;
   color: rgb(83, 82, 82);
@@ -77,27 +71,14 @@ p{
 }
 /* Alinea los elementos label y los campos de entrada uno debajo del otro */
 
-.BTN{
 
-  text-align: center;
-  margin-right: 50px;
-
-
-}
 form{
   display: flex;
   flex-direction: column;
   margin: 2px;
-  align-self: start;
+  align-self: end;
   font-size: 30px;
-  margin-right: 300px;
-  margin-top: 40px;
-
-}
-
-form select{
-  font-size: 15px; /* Ajusta el tamaño de fuente según tus necesidades */
-  margin-bottom: 20px;
+  margin-top: 10px;
 
 }
 
@@ -119,7 +100,6 @@ form select{
   font-size: 15px;
 }
 
-
 .btnenter{
 
   border-radius: 10px;
@@ -127,49 +107,14 @@ form select{
   background-color: #CEB25D;
   height: 32px;
   font-size: 18px;
-  width: 55%;
+  width: 80%;
   cursor: pointer;
   transition: transform.5s;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 .btnenter:hover{
 
   transform: scale(1.2);
 }
 
-.imglogo{
-
-  position:absolute;top:2px;right:0px;bottom:0;left:540px;
-  width: 240px;
-  transition: transform.5s;
-  cursor: pointer;
-}
-
-
-
-.imglogo2{
-
-  position:absolute;top:89px;right:0px;bottom:0px;left:280px;
-  width: 600px;
-  height: 800px;
-  opacity: 1;
-  z-index: 1;
-}
-
-
-#Avatar_Icon1, #Avatar_Icon2, #Avatar_Icon3, #Avatar_Icon4{
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 2;
-  border-radius: 30px;
-  background-image: url('../../../../assets/images/FondoCastillo.png');
-  background-position: center;
-}
-
-#formulario label {
-  font-size: 23px;
-  margin-bottom: 10px;
-}
 
 
