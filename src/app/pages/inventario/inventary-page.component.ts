@@ -134,7 +134,7 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
               this.getCards();
           },
           (error) => {
-              console.error('Error al obtener el carrito de compras:', error);
+              console.error('Error al obtener el inventario1:', error);
           }
       );
   }
@@ -154,7 +154,7 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
                   console.log('Respuesta de la API:', carta);
               },
               (error) => {
-                  console.error('Error al obtener el inventario:', error);
+                  console.error('Error al obtener el inventario2:', error);
               }
           );
       }
