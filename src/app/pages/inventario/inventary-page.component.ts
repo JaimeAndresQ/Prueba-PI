@@ -14,20 +14,19 @@ interface Inventary {
 }
 
 interface Carta {
-  id_carta: string;
-  activo: boolean;
-  urlImagen: string;
-  price: number;
+  _id: string;
+  estado: boolean;
+  imagen: string;
+  precio: number;
   stock: number;
-  nombre_carta: string;
+  nombre: string;
   poder: string,
   vida:number,
   defensa:number,
   ataqueBase: number,
-  danoMax: number,
-  tipo:string,
-  coleccion:string,
-  desc:string
+  dano: number,
+  coleccion: string,
+  descripcion: string
 }
 
 @Component({
@@ -155,7 +154,7 @@ export class InventaryPageComponent implements OnInit, AfterViewChecked {
                   console.log('Respuesta de la API:', carta);
               },
               (error) => {
-                  console.error('Error al obtener el carrito de compras:', error);
+                  console.error('Error al obtener el inventario:', error);
               }
           );
       }

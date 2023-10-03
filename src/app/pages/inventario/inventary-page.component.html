@@ -14,7 +14,7 @@
                   <!-- Bordeado Exotico Carta -->
                   <!-- Imagen Superior -->
                   <div class="titulo">
-                    <p class="2xl:text-[18px] md:text-[14px] truncate">{{ item.carta.nombre_carta }}</p>
+                    <p class="2xl:text-[18px] md:text-[14px] truncate">{{ item.carta.nombre }}</p>
                   </div>
                   <div class="img">
                     <a>
@@ -32,6 +32,14 @@
                       <p *ngIf="item.carta.coleccion === 'Heroes'">Defensa: {{ item.carta.defensa }}</p>
                       <p *ngIf="item.carta.coleccion === 'Heroes'">Ataque: {{ item.carta.ataqueBase }}</p>
                       <p *ngIf="item.carta.coleccion === 'Heroes'">Dano: {{ item.carta.danoMax }}</p>
+                      <p *ngIf="carta.coleccion === 'Armaduras'">{{ item.carta.descripcion }}</p>
+                      <p *ngIf="carta.coleccion === 'Armas'">{{ item.carta.descripcion }}</p>
+                      <p *ngIf="carta.coleccion === 'Items'">{{ item.carta.descripcion }}</p>
+                      <p *ngIf="carta.coleccion === 'Epicas'">{{ iten.carta.descripcion }}</p>
+                      <p *ngIf="carta.nombre === 'Armadura Pesada'">Tipo: Pesada</p>
+                      <p *ngIf="carta.nombre === 'Armadura Mediana'">Tipo: Media</p>
+                      <p *ngIf="carta.nombre === 'Armadura de Tela'">Tipo: Tela</p>
+                      <p *ngIf="carta.nombre === 'Armadura Media Liviana'">Tipo: Media liviana</p>
                     </div>
                   </div>
                 </div>
