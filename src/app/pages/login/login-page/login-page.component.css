@@ -118,6 +118,14 @@ form{
   transform: scale(1.2);
 }
 
+#linkRecovery{
+  color: rgb(117, 44, 44);
+  text-decoration: underline;
+}
+#linkRecovery:focus{
+  color: #97791d
+}
+
 
 .imglogo{
 

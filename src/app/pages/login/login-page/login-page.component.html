@@ -20,8 +20,8 @@
                             [ngClass]="{'invalid:border-red-600': showCustomError, 'focus:invalid:border-red-600 focus:invalid:ring-red-600': showCustomError}">
 
                             <!-- MatError para mostrar el mensaje personalizado -->
-                             <mat-error class="text-[10px] text-red-600 mt-2 ml-3 max-w-[410px]" *ngIf="showCustomError">
-                              {{ getErrorMessage() }}
+                             <mat-error class="text-[12px] text-red-600 mt-2 ml-3 max-w-[390px]">
+                              {{ getErrorMessage() }} <a href="/recovery" id="linkRecovery" >¿Olvidaste tu contraseña? Recupérala aquí.</a>
                              </mat-error>
 
                             <!-- <button type="submit">Login</button> -->
