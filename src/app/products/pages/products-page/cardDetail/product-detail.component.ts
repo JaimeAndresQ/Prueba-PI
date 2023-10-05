@@ -91,7 +91,7 @@ export class ProductDetailComponent  implements OnInit{
     getComments(): void{
       this.route.paramMap.subscribe((params)=>{
         const Id = params.get('Id');
-        const apiUrl = `https://store.thenexusbattles2.cloud/comentarios/${Id}`;
+        const apiUrl = `https://store.thenexusbattles2.cloud/comentarios/api/comentariosCartas/${Id}`;
         //const apiUrl = `http://alpha.bucaramanga.upb.edu.co:3000/api/comentariosCartas/1`;
         this.http.get<Comment[]>(apiUrl).subscribe(
             (data) => {
