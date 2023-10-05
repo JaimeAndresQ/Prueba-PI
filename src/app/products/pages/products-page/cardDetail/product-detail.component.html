@@ -30,18 +30,10 @@
               <input type="text" id="nuevoComentarioTexto" placeholder="Escribe tu comentario"> <br>
               <button id="enviarComentario">Enviar</button>
           </div> <br>
-          <div class="comentario" id="comentario2">
-              <p>Usuario 2</p>
+          <div *ngFor="let comment of comments" class="comentario" id="comentario2">
+              <p>{{ comment.comentariosUserName }}</p>
               <div class="contenido-comentario" id="comentarioContenido2">
-                  <!-- <div *ngFor="let comment of comments">
-                    <p>Este es: {{ comment.comentariosTexto }}</p>
-                </div> -->
-              </div>
-          </div>
-          <div class="comentario" id="comentario3">
-              <p>Usuario 3</p>
-              <div class="contenido-comentario" id="comentarioContenido3">
-                  <p>Texto de comentario 3</p>
+                  <p>{{ comment.comentariosTexto }}</p>
               </div>
           </div>
       </div>
