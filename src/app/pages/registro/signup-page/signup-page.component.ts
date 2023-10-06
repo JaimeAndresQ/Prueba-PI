@@ -43,8 +43,17 @@ export class SignupPageComponent implements OnInit {
   };
 
   registerForm: FormGroup;
+
+
+  // Control para los avaters
   hide = true;
+
+  // Controlador para seleccionar preguntas
   selectedQuestion: boolean = false;
+
+  // Controlar proceso del registro
+  isSubmitting = false;
+
   securityQuestions = [
     { value: 'mother', label: '¿Cómo se llama tu madre?' },
     { value: 'father', label: '¿Cómo se llama tu padre?' },
@@ -66,15 +75,19 @@ export class SignupPageComponent implements OnInit {
         Validators.required,
         this.passwordValidator // Agregar la validación personalizada aquí
       ])],
-      question: ['', Validators.required],
-      answer: ['', Validators.required]
+      answer: ['', Validators.required],
+      question: ['', Validators.required]
     });
+
+
 
 
 
   }
 
-
+  mostrarMensaje() {
+    console.log('Funcionando');
+  }
 
   getErrorMessage(fieldName: string) {
     const control = this.registerForm.get(fieldName);
@@ -138,6 +151,9 @@ export class SignupPageComponent implements OnInit {
 
   // Validación personalizada de contraseña
   passwordValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    if (!control || !control.value) {
+      return null; // No hay valor para validar, retorna nulo
+    }
     const password = control.value;
     const hasUpperCase = /[A-Z]/.test(password);
     const hasLowerCase = /[a-z]/.test(password);
@@ -180,9 +196,18 @@ export class SignupPageComponent implements OnInit {
 
   }
 
+  resetForm() {
+    this.registerForm.reset();
+    this.isSubmitting = false;
+
+  }
+
   onSubmit() {
     if (this.registerForm.valid) {
+      this.isSubmitting = true;
+
       const formData = this.registerForm.value;
+
 
       const registerData = {
         username: formData.username,
@@ -202,9 +227,12 @@ export class SignupPageComponent implements OnInit {
       this.http.post('https://store.thenexusbattles2.cloud/login-api/api/create/', registerData, { headers }).subscribe(
         (response: any) => {
           console.log('Registro exitoso:', response);
+          // Aca falta la redireccion a la vitrina
+          this.isSubmitting = false;
         },
         (error) => {
           console.error('Error al registrar:', error);
+          this.resetForm();
         }
       );
     }

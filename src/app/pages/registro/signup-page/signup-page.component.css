@@ -133,8 +133,8 @@ form select{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.btnenter:hover{
 
+.btnenter:not(:disabled):hover {
   transform: scale(1.2);
 }
 

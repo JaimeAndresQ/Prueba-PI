@@ -25,9 +25,8 @@
                     <label for="img">Elije tu Avatar</label>
 
 
-                      <select name="select" class="avatar" id="inputfield" formControlName="img" #selectElement class="
-                      invalid:border-red-600
-                      focus:invalid:border-red-600 focus:invalid:ring-red-600" required>
+                      <select name="select" id="inputfield" formControlName="img" #selectElement
+                      class="avatar invalid:border-red-600 focus:invalid:border-red-600 focus:invalid:ring-red-600" required>
 
                         <option id="firstOption" value="http://4.246.161.219:3000/img/Avatar_Hombre_1.webp" >
                         Hombre 1
@@ -116,9 +115,6 @@
 
 
 
-
-
-
                     <!-- Select Pregunta Seguridad -->
                     <label for="question">Pregunta Seguridad</label>
                     <select formControlName="question" id="inputfieldPregunta" class="
@@ -130,13 +126,13 @@
 
 
                     <label for="answer">Respuesta</label>
-                    <input type="text" id="inputfield" formControlName="answer" required>
+                    <input type="text" id="inputfield" formControlName="answer" class="respuestaInput" required>
                     <mat-error class="text-[10px] text-red-600 -mt-[6px] ml-3 mb-2">{{ getErrorMessage('answer') }}</mat-error>
 
 
                     <div class="BTN">
 
-                      <button class="btnenter" type="submit">Registrarte</button>
+                      <button class="btnenter" type="submit" (click)="mostrarMensaje()" [disabled]="isSubmitting">Registrarte</button>
 
                     </div>
 
