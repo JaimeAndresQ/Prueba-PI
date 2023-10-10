@@ -21,7 +21,8 @@ interface Carta {
   dano: number,
   coleccion: string,
   descripcion: string,
-  descuento: number
+  descuento: number,
+  icono: string
 }
 
 @Component({
