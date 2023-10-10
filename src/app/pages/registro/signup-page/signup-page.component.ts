@@ -1,6 +1,7 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, TemplateRef } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ModalService } from '../../../shared/services/modal.service';
 
 // Importa jQuery y Select2
 declare var $: any;
@@ -60,7 +61,7 @@ export class SignupPageComponent implements OnInit {
     { value: 'siblings', label: '¿Cuántos hermanos tienes?' }
   ];
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private modalService: ModalService) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       name: ['', Validators.required],
@@ -79,10 +80,13 @@ export class SignupPageComponent implements OnInit {
       question: ['', Validators.required]
     });
 
+  }
 
-
-
-
+  openModal(modalTemplate:TemplateRef<any>){
+    this.modalService.open(modalTemplate, {size: 'lg', title:'TYC'})
+    .subscribe((action) => {
+      console.log('ModalAction', action)
+    })
   }
 
   mostrarMensaje() {
