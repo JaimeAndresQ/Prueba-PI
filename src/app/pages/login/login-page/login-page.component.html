@@ -29,7 +29,7 @@
 
                             <div class="BTN flex flex-col items-center">
 
-                              <button class="btnenter" type="submit">Iniciar Sesión</button>
+                              <button class="btnenter" type="submit" (click)="openModal(modalTemplate)">Iniciar Sesión</button>
 
                               <p class="">!Sin cuenta aun? Que esperas unete!</p>
 
@@ -46,6 +46,18 @@
 
                         </div>
                     </div>
+
+                    <ng-template #modalTemplate>
+                      <div class="container3 overflow-y-auto max-h-[600px] z-10">
+                        <div class="content flex flex-col items-center">
+
+                          <img src="../../../../assets/images/success.png" class="w-[175px] h-[175px] text-center">
+                          <h2 class="text-center font-medium">Exito!</h2>
+                          <p class="text-center font-thin">El usuario se ha creado con éxito. ¡Listo para entrar en The Nexus Battle II!</p>
+
+                        </div>
+                    </div>
+                    </ng-template>
 
                 </div>
             </div>

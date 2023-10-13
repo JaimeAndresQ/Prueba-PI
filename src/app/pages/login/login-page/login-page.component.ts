@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { ModalService } from 'src/app/shared/services/modal.service';
 
 
 //componentes que se utilizaran como templates y estilos
@@ -24,12 +25,20 @@ export class LoginPageComponent implements OnInit{
 
 
     //este constructor define los metodos a usar
-    constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private cookieService: CookieService){
+    constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private cookieService: CookieService, private modalService: ModalService){
         //inicializamos el formulario
         this.loginForm = this.fb.group({
             username: ['', Validators.required],
             password: ['',Validators.required]
         })
+    }
+
+
+    openModal(modalTemplate:TemplateRef<any>){
+      this.modalService.open(modalTemplate, {size: 'lg', title:''})
+      .subscribe((action) => {
+        console.log('ModalAction', action)
+      })
     }
 
     getErrorMessage() {

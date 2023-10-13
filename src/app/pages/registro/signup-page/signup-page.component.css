@@ -175,10 +175,73 @@ form select{
 #checkbox{
   width: 20px;
   height: 20px;
-  border-radius: 10px;
+  border-radius: 6px;
   margin-bottom: 10px;
   font-size: 15px;
 }
+
+/* Terminos y Condiciones */
+
+.container3 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container3::-webkit-scrollbar {
+  width: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(168, 98, 98);
+  scrollbar-darkshadow-color: #dbaf29;
+
+}
+
+.container3::-webkit-scrollbar-thumb{
+  background-color: rgba(255, 242, 0, 0.733);
+  border-radius: 30px;
+}
+
+.container3::-webkit-scrollbar-track{
+  background-color: #b88f1596;
+  border-radius: 5px;
+  margin-top: 25px;
+
+}
+
+.container3 h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content {
+  background-color: #fff;
+  border-radius: 5px;
+
+}
+
+.content h2 {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+/* Ejemplo de estilo para los párrafos de contenido */
+.content p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Ejemplo de estilo para las viñetas de listas */
+.content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* Ejemplo de estilo para los enlaces */
+.content a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
 
 
 

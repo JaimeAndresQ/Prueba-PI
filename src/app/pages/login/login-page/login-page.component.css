@@ -116,6 +116,10 @@ form{
 
 #linkRecovery{
   color: rgb(117, 44, 44);
+
+}
+#linkRecovery:hover{
+  color: rgb(150, 40, 40);
   text-decoration: underline;
 }
 #linkRecovery:focus{
@@ -139,3 +143,37 @@ form{
   opacity: 0.4;
 }
 
+/* Creado Exitosamente */
+.container3 h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content {
+  background-color: #fff;
+  border-radius: 5px;
+
+}
+
+.content h2 {
+  font-size: 32px;
+  margin-top: 15px;
+}
+
+/* Ejemplo de estilo para los párrafos de contenido */
+.content p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Ejemplo de estilo para las viñetas de listas */
+.content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* Ejemplo de estilo para los enlaces */
+.content a {
+  color: #007bff;
+  text-decoration: underline;
+}

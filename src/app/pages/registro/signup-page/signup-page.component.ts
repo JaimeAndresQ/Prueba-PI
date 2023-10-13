@@ -77,13 +77,14 @@ export class SignupPageComponent implements OnInit {
         this.passwordValidator // Agregar la validación personalizada aquí
       ])],
       answer: ['', Validators.required],
-      question: ['', Validators.required]
+      question: ['', Validators.required],
+      checkterms: ['', Validators.required],
     });
 
   }
 
   openModal(modalTemplate:TemplateRef<any>){
-    this.modalService.open(modalTemplate, {size: 'lg', title:'TYC'})
+    this.modalService.open(modalTemplate, {size: 'lg', title:'Términos y Condiciones The Nexus Battles II'})
     .subscribe((action) => {
       console.log('ModalAction', action)
     })
@@ -199,6 +200,7 @@ export class SignupPageComponent implements OnInit {
 
 
   }
+
 
   resetForm() {
     this.registerForm.reset();
