@@ -120,8 +120,10 @@ body {
 }
 
 #indicadorCarrito{
-  right: 110px;
-  font-size: 18px;
+  right: 100px;
+  font-size: 16px;
+  width: 21px;
+  height: 21px;
 }
 
 #nav #enlace_menuv a {
@@ -142,21 +144,8 @@ body {
 }
 
 #enlace_menuv mat-icon{
-  height: 30px;
-  width: 30px;
-}
-
-@media (max-width: 1536px) {
-  #enlace_menuv mat-icon{
-    height: 27px;
-    width: 27px;
-  }
-  #indicadorCarrito{
-    right: 100px;
-    font-size: 16px;
-    width: 21px;
-    height: 21px;
-  }
+  height: 27px;
+  width: 27px;
 }
 
 
@@ -164,10 +153,6 @@ body {
   #logoNexusBattle {
     top: -4rem;
   }
-
-
-
-
 }
 
 @media (max-width: 1532px) {

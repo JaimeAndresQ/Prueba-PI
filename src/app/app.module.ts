@@ -23,6 +23,7 @@ import { ActivateComponent } from './pages/registro/signup-page/activate-page.co
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CookieService } from 'ngx-cookie-service';
 import { RecoveryComponent } from './pages/login/recovery-page/recovery.component';
+import { EliminacionComponent } from './pages/eliminacion/eliminacion.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { RecoveryComponent } from './pages/login/recovery-page/recovery.componen
     MembershipPageComponent,
     AdministracionComponent,
     ActivateComponent,
-    RecoveryComponent
+    RecoveryComponent,
+    EliminacionComponent
 
   ],
   imports: [

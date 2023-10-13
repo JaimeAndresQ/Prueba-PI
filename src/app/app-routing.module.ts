@@ -12,6 +12,7 @@ import { MembershipPageComponent } from './pages/membresias/membresia-page.compo
 import { AdministracionComponent } from './pages/administracion/administracion.component';
 import { ActivateComponent } from './pages/registro/signup-page/activate-page.component';
 import { RecoveryComponent } from './pages/login/recovery-page/recovery.component';
+import { EliminacionComponent } from './pages/eliminacion/eliminacion.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path:'recovery',
     component: RecoveryComponent
+  },
+  {
+    path:'eliminacion',
+    component: EliminacionComponent
   },
   {
     path: '',

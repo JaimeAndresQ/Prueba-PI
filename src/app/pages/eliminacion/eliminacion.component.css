@@ -4,9 +4,9 @@
 
 
 .Fondo {
-  background-image: url('../../../../assets/images/fondo-inicio.jpg');
+  background-image: url('../../../assets/images/fondo-inicio.jpg');
   background-size: cover;
-  height: calc(125vh - 100px); /* Toma el 100% del viewport height y resta la altura del header */
+  height: calc(145vh - 100px); /* Toma el 100% del viewport height y resta la altura del header */
   /* Toma el 100% del viewport height y resta la altura del header */
   overflow-x: hidden;
   overflow: hidden;
@@ -17,8 +17,12 @@
 }
 
 .container {
-  display: flex;
+  position: relative;
+  top: 9%;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
 }
@@ -84,7 +88,7 @@ form{
   margin-top: 40px;
 
 }
-#username{
+#razon{
   width: 400px;
   height: 25px;
   border-radius: 10px;

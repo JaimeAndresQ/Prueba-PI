@@ -172,4 +172,31 @@ form select{
   margin-bottom: 10px;
 }
 
+#checkbox{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+
+
+
+@media (min-width: 1825px){
+
+  .container {
+    left: 10%;
+}
+
+}
+
+@media (max-width: 1525px){
+
+  .container {
+    left: 6%;
+}
+
+}
+
 

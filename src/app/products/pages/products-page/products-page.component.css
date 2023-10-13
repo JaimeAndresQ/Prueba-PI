@@ -33,12 +33,14 @@
 }
 
 .carta2{
-  margin: 3.5%;
+  margin: 8%;
   transform: perspective(1000px);
   transform-style: preserve-3d;
   padding: 15px;
   border-radius: 10px;
 }
+
+
 
 
 .carta2 .botones button{
@@ -47,7 +49,7 @@
 
 .carta2 .titulo{
   transform: translateZ(20px);
-  font-weight: 500;
+  font-weight: bold;
   padding:5px;
   background:rgba(57,57,15,1);
   opacity:1;
@@ -102,7 +104,7 @@
 }
 
 .carta2:hover .contenido {
-  height: 70px;
+  height: 50px;
 }
 
 #Indicador_Desc{
@@ -114,6 +116,18 @@
 .carta2:hover #Indicador_Desc {
   width: 35px;
   height: 30px;
+}
+
+#icono_Carta{
+  transition: all 0.3s ease;
+  height: 20px;
+  width: 20px;
+  border-radius: 100px;
+}
+
+.carta2:hover #icono_Carta {
+  width: 25px;
+  height: 25px;
 }
 
 
@@ -159,8 +173,9 @@
 }
 
 [data-tilt] mat-icon{
-  width: 30px;
-  height: 30px;
+  transition: all 0.3s ease;
+  width: 20px;
+  height: 20px;
 }
 
 .carta2 .deseo:hover{
@@ -290,41 +305,6 @@
 
 
 
-
-
-/*responsive*/
-
-@media (max-width: 1525px){
-
-  .carta2{
-    transform-style: preserve-3d;
-    margin: 8%;
-  }
-
-  .carta2:hover .contenido {
-    height: 50px;
-  }
-
-
-  .carta2 .botones button{
-    transform: translateZ(50px);
-  }
-  .carta2 .titulo{
-    transform: translateZ(20px);
-    font-weight: bold;
-  }
-
-  [data-tilt] button{
-    transform: translateZ(20px);
-    margin: 5px;
-    padding: 2px;
-  }
-  [data-tilt] mat-icon{
-    width: 20px;
-    height: 20px;
-  }
-
-}
 
 @media (max-width: 900px){
 

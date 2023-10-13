@@ -1,7 +1,7 @@
 
 <main class="Fondo">
 
-  <div class="container 2xl:left-[10%] md:sms:left-[6%]">
+  <div class="container 2xl:left-[2%]">
     <div class="box">
       <div class="inner-box">
           <div class="image-container">
@@ -129,6 +129,10 @@
                     <input type="text" id="inputfield" formControlName="answer" class="respuestaInput" required>
                     <mat-error class="text-[10px] text-red-600 -mt-[6px] ml-3 mb-2">{{ getErrorMessage('answer') }}</mat-error>
 
+                    <div class="terms flex items-start space-x-2 mt-3">
+                      <input type="checkbox" id="checkbox" formControlName="checkbox" class="w-5" required>
+                      <div class="text-[16px] mt-[2px]">Acepto los <a (click)="openModal(modalTemplate)" class="terlink text-blue-800 hover:text-blue-600 cursor-pointer underline" >terminos y condiciones</a></div>
+                    </div>
 
                     <div class="BTN">
 
@@ -136,11 +140,20 @@
 
                     </div>
 
-                    <button class="btnenter" (click)="openModal(modalTemplate)">TYC - MODAL</button>
+
                     <ng-template #modalTemplate>
-                      <div>TYC: Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse porro ad explicabo quam molestias soluta impedit error debitis iusto eveniet?</div>
+                      <div class="overflow-y-auto max-h-[300px] whitespace-break-spaces">
+
+                        Términos y Condiciones del Juego de Ecommerce "E-Shop Adventures"
+
+                        1. Aceptación de los Términos y Condiciones
+
+                      </div>
                     </ng-template>
 
+                    <ng-template #modalTemplate #Button>
+                      <div>Cerrar</div>
+                    </ng-template>
 
                     <br>
                   </form>
