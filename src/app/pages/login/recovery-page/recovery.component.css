@@ -16,16 +16,7 @@
   overflow: hidden;
 }
 
-.container {
-  position: relative;
-  top: 9%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-
-}
 
 .box {
   background-color: rgba(240, 240, 240, 0.8); /* Ajustar el valor alfa aquí */

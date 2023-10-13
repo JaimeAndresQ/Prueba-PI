@@ -16,12 +16,6 @@
   overflow: hidden;
 }
 
-.container {
-  display: flex;
-
-
-
-}
 
 .box {
   background-color: rgba(240, 240, 240, 0.8); /* Ajustar el valor alfa aquí */
