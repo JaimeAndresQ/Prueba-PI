@@ -38,7 +38,7 @@ export class AdministracionComponent implements OnInit{
         return;
     }
 
-    const cartEndpoint ='https://store.thenexusbattles2.cloud/login-api/api/getUsers/'
+    const cartEndpoint ='https://api.thenexusbattles2.cloud/login-api/api/getUsers/'
     //const cartEndpoint = 'http://127.0.0.1:8002/api/getUsers';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',

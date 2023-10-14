@@ -42,7 +42,7 @@ export class MembershipPageComponent  implements OnInit{
   //obtener las cartas de la API
     getCartas(): void {
     //const apiUrl = `http://127.0.0.1:8000/api/membership/`;
-    const apiUrl = `https://store.thenexusbattles2.cloud/cards/api/membership/`;
+    const apiUrl = `https://api.thenexusbattles2.cloud/cards/api/membership/`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
         this.cartas = data;
@@ -97,7 +97,7 @@ export class MembershipPageComponent  implements OnInit{
                     games:games,
                 }
 
-                const apiUrl = 'https://store.thenexusbattles2.cloud/webserver/comprar-membresia';
+                const apiUrl = 'https://webserver.thenexusbattles2.cloud/comprar-membresia';
                 //const apiUrl = 'http://localhost:3000/comprar-membresia';
                 const headers = new HttpHeaders({
                     'Content-Type': 'application/json',

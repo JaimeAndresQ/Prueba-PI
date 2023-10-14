@@ -47,7 +47,7 @@ export class ProfilePageComponent implements OnInit {
             return;
         }
 
-        const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/ver-perfil'
+        const cartEndpoint ='https://webserver.thenexusbattles2.cloud/ver-perfil'
         //const cartEndpoint = 'http://localhost:3000/ver-perfil';
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export class ProfilePageComponent implements OnInit {
             return;
         }
 
-        const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/ver-informacion-perfil'
+        const cartEndpoint ='https://webserver.thenexusbattles2.cloud/ver-informacion-perfil'
         //const cartEndpoint = 'http://localhost:3000/ver-informacion-perfil';
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
