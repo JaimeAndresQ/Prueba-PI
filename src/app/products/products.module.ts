@@ -14,6 +14,7 @@ import { GunsPageComponent } from './pages/products-page/categorias/armas/armas-
 import { ProductDetailComponent  } from './pages/products-page/cardDetail/product-detail.component';
 import { CardInventarioComponent } from './components/card-inventario/card-inventario.component';
 import { EpicasPageComponent } from './pages/products-page/categorias/epicas/epicas-page.component';
+import { SearchProductsPageComponent } from './pages/products-page/search-card.components';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { EpicasPageComponent } from './pages/products-page/categorias/epicas/epi
     ArmorsPageComponent,
     GunsPageComponent,
     ProductDetailComponent,
+    SearchProductsPageComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,7 @@ import { EpicasPageComponent } from './pages/products-page/categorias/epicas/epi
     ProductsRoutingModule,
     MatIconModule,
   ],
-  exports: [CardProductsComponent, ProductsPageComponent, CharactersPageComponent, ItemsPageComponent,ArmorsPageComponent, GunsPageComponent,ProductDetailComponent, CardInventarioComponent, EpicasPageComponent],
+  exports: [CardProductsComponent, ProductsPageComponent, CharactersPageComponent, ItemsPageComponent,ArmorsPageComponent, GunsPageComponent,ProductDetailComponent, CardInventarioComponent, EpicasPageComponent,SearchProductsPageComponent],
   providers: [],
 })
 export class ProductsModule { }
