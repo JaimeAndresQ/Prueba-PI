@@ -17,29 +17,13 @@
                   </div>
 
                   <!-- ngFor desde aca -->
-                  <div class="fila">
-                    <div class="columna nombreP">SuarezArandaSuarezArandaSuarezArandaSuarezArandaSuarezArandaSuarezArandaSuarezArandaSuarezArandaSuarezArandaSuarezArandaSuarezAranda</div>
-                    <div class="columna ">mariamariamariamariamariamariamariamariamariamariamariamariamariamariamariamariamariamariamaria</div>
-                    <div class="columna ">suarezsuarezsuarezsuarezsuarezsuarezsuarezsuarezsuarezsuarezsuarezsuarezsuarezsuarezsuarez</div>
-                    <div class="columna ">mariaangelsuarez17@gmail.com as mariaangelsuarez17@gmail.commariaangelsuarez17@gmail.com</div>
+                  <div class="fila" *ngFor="let user of users">
+                    <div class="columna nombreP">{{ user.username }}</div>
+                    <div class="columna ">{{ user.name }}</div>
+                    <div class="columna ">{{ user.last_name }}</div>
+                    <div class="columna ">{{ user.email }}</div>
                     <div class="columna self-center"><button>Activo</button></div>
                   </div>
-                  <div class="fila">
-                    <div class="columna nombreP">SuarezAranda</div>
-                    <div class="columna ">maria</div>
-                    <div class="columna ">suarez</div>
-                    <div class="columna ">mariaangelsuarez17@gmail.com</div>
-                    <div class="columna self-center"><button>No Activo</button></div>
-                  </div>
-                  <div class="fila">
-                    <div class="columna nombreP">SuarezAranda</div>
-                    <div class="columna ">maria</div>
-                    <div class="columna ">suarez</div>
-                    <div class="columna ">mariaangelsuarez17@gmail.com</div>
-                    <div class="columna self-center"><button>No Activo</button></div>
-                  </div>
-
-
                 </div>
 
                 <div class="btn__actualizar mt-8">
