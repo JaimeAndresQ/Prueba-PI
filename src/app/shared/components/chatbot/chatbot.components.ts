@@ -6,6 +6,7 @@ import { LocalStorageService } from 'ngx-webstorage';
 
 interface Message{
     text: string;
+    type: string
 }
 
 
@@ -21,7 +22,7 @@ export class ChatbotComponent{
     messages: Message[] = [];
     messagesKey: string = 'chatbotMessages';
 
-    constructor(private localStorage: LocalStorageService){
+    constructor(private localStorage: LocalStorageService, private http: HttpClient){
         const saved = this.localStorage.retrieve(this.messagesKey);
 
         if(saved && saved.timestamp){
@@ -41,11 +42,31 @@ export class ChatbotComponent{
         }
     
         const newMessage: Message ={
-            text: this.messageText
+            text: this.messageText,
+            type: 'user'
         }
         this.messages.push(newMessage);
         this.messageText = '';
-
+        //const chatEndpoint = 'http://127.0.0.1:8000/api/question/'
+        const chatEndpoint = 'https://api.thenexusbattles2.cloud/chatbot/api/question/'
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+        });
+        const requestData = { question: newMessage.text}
+        this.http.post(chatEndpoint,requestData, {headers}).subscribe(
+            (response: any)=>{
+                const answer: Message = {
+                    text: response.Respuesta,
+                    type: 'bot'
+                };
+                console.log(response.Respuesta)
+                this.messages.push(answer);
+                this.localStorage.store(this.messagesKey,{
+                    messages: this.messages,
+                    timestamp: new Date().getTime()
+                })
+            }
+        )
         const time = new Date().getTime();
         this.localStorage.store(this.messagesKey,{
             messages: this.messages,

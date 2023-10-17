@@ -12,17 +12,25 @@
         <div class="card-body overflow-y-auto" style="max-height: 90%;">
 
             <div class="d-flex justify-content-start">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
                 alt="avatar 1" style="width: 45px; height: 45px;">
                 <div>
-                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hi</p>
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hola</p>
                 </div>
             </div>
 
-            <div *ngFor="let message of messages" class="d-flex justify-content-end">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 1" style="width: 45px; height: 45px;">
-                <div>
-                  <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">{{ message.text }}</p>
+            <div *ngFor="let message of messages">
+                <div *ngIf="message.type === 'bot'">
+                    <div class="d-flex justify-content-start">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp" alt="avatar 1" style="width: 45px; height: 45px;">
+                        <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">{{ message.text }}</p>
+                    </div>
+                </div>
+                <div *ngIf="message.type === 'user'">
+                    <div class="d-flex justify-content-end">
+                        <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #dee7f0;">{{ message.text }}</p>
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" alt="avatar 1" style="width: 45px; height: 45px;">
+                    </div>
                 </div>
             </div>
 
