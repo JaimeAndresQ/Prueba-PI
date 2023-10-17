@@ -35,8 +35,8 @@ export class SolicitudComponent implements OnInit{
         return;
     }
 
-    //const cartEndpoint ='https://api.thenexusbattles2.cloud/login-api/api/getrequests/'
-    const cartEndpoint = 'http://127.0.0.1:8000/api/getrequests/';
+    const cartEndpoint ='https://api.thenexusbattles2.cloud/login-api/api/getrequests/'
+    //const cartEndpoint = 'http://127.0.0.1:8000/api/getrequests/';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
