@@ -90,4 +90,32 @@ export class ProfilePageComponent implements OnInit {
             }
         );
     }
+
+    deleteUser(user: string): void{
+        const accessToken = this.cookieService.get('access_token');
+    
+        if (!accessToken) {
+            console.error('No se ha encontrado el token de acceso.');
+            return;
+        }
+    
+        const cartEndpoint ='https://api.thenexusbattles2.cloud/login-api/api/requests/'
+        //const cartEndpoint = 'http://127.0.0.1:8000/api/requests/';
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accessToken}`
+        });
+    
+        const requestData = { user:user };
+      
+          this.http.post(cartEndpoint, requestData, { headers }).subscribe(
+              (response: any) => {
+                  // Manejar la respuesta del servicio de carrito si es necesario
+                  console.log('delete response:', response);
+              },
+              (error) => {
+                  console.error('Error delete user:', error);
+              }
+          );
+      }
 }

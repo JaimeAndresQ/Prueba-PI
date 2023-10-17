@@ -11,6 +11,12 @@ interface Users{
   is_active: boolean;
 }
 
+interface Users2{
+  user_id: number;
+  id: number;
+  request: boolean;
+}
+
 @Component({
   selector: 'app-administracion',
   templateUrl: './administracion.component.html',
@@ -20,6 +26,8 @@ interface Users{
 export class AdministracionComponent implements OnInit{
 
   users: Users[] = [];
+
+  users2: Users2[] = [];
 
   constructor(
     private cookieService: CookieService,

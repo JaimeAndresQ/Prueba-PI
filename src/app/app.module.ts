@@ -24,6 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { CookieService } from 'ngx-cookie-service';
 import { RecoveryComponent } from './pages/login/recovery-page/recovery.component';
 import { EliminacionComponent } from './pages/eliminacion/eliminacion.component';
+import { SolicitudComponent } from './pages/administracion/solicitud.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { EliminacionComponent } from './pages/eliminacion/eliminacion.component'
     AdministracionComponent,
     ActivateComponent,
     RecoveryComponent,
-    EliminacionComponent
+    EliminacionComponent,
+    SolicitudComponent
 
   ],
   imports: [
