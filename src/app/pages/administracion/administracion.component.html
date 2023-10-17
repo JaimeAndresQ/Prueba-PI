@@ -22,7 +22,7 @@
                     <div class="columna ">{{ user.name }}</div>
                     <div class="columna ">{{ user.last_name }}</div>
                     <div class="columna ">{{ user.email }}</div>
-                    <div class="columna self-center"><button>Activo</button></div>
+                    <div class="columna self-center"><button (click)="changeActiveUser(user.username)">{{ user.is_active }}</button></div>
                   </div>
                 </div>
 
