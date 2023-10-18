@@ -14,7 +14,7 @@
 }
 
 .modal-tre {
-  z-index: 3;
+  z-index: 10;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -28,6 +28,7 @@
 }
 
 .modal-header-tre {
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   font-size: 18px;
@@ -35,14 +36,17 @@
 }
 
 .modal-content-tre {
+  z-index: 10;
   margin-bottom: 20px;
 }
 
 .modal-footer-tre {
+  z-index: 10;
   display: flex;
   justify-content: flex-end;
 }
 
 .modal-close-tre {
+  z-index: 10;
   cursor: pointer;
 }
