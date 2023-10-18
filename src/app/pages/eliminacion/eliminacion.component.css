@@ -16,16 +16,7 @@
   overflow: hidden;
 }
 
-.container {
-  position: relative;
-  top: 9%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-
-}
 
 .box {
   background-color: rgba(240, 240, 240, 0.8); /* Ajustar el valor alfa aquí */
@@ -59,6 +50,7 @@
 
 }
 
+
 .inc{
 
   font-size: 2;
@@ -71,13 +63,7 @@ p{
 }
 /* Alinea los elementos label y los campos de entrada uno debajo del otro */
 
-.BTN{
 
-  text-align: center;
-  margin-right: 50px;
-
-
-}
 form{
   display: flex;
   flex-direction: column;
@@ -89,33 +75,49 @@ form{
 
 }
 #razon{
-  width: 400px;
-  height: 25px;
+  width: 900px;
+  height: 325px;
   border-radius: 10px;
   font-size: 16px;
 
 }
-#password{
-  width: 400px;
-  height: 25px;
-  border-radius: 10px;
-}
+
 .btnenter{
+
+  border-radius: 10px;
+  border: solid 2px;
+  background-color: #ceb25d00;
+  height: 32px;
+  font-size: 18px;
+  width: 100px;
+  cursor: pointer;
+  transition: transform.5s;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btnenter:hover{
+
+  transform: scale(1.2);
+}
+
+.btnenter2{
 
   border-radius: 10px;
   border: solid 2px;
   background-color: #CEB25D;
   height: 32px;
   font-size: 18px;
-  width: 45%;
+  width: 170px;
   cursor: pointer;
   transition: transform.5s;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.btnenter:hover{
 
-  transform: scale(1.2);
+.btnenter2:hover{
+
+  transform: scale(1.15);
 }
 
 #linkRecovery{
@@ -127,19 +129,13 @@ form{
 }
 
 
-.imglogo{
-
-  position:absolute;top:2px;right:0px;bottom:0;left:540px;
-  width: 240px;
-  transition: transform.5s;
-  cursor: pointer;
-}
 
 
 .imglogo2{
 
-  position:absolute;top:312px;right:0px;bottom:0px;left:567px;
+  position:absolute;top:259px;right:0px;bottom:0px;left:759px;
   width: 240px;
   opacity: 0.4;
+  transform: scaleX(-1);
 }
 
