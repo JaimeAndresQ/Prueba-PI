@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 interface Carta {
     id_carta: string;
     activo: boolean;
-    urlImagen: string;
+    imagen: string;
     price: number;
     quantity: number;
     nombre_carta: string;
