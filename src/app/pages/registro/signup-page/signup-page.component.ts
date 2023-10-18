@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild, TemplateRef } from '@angular/
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ModalService } from '../../../shared/services/modal.service';
+import { ModalEjemploService } from 'src/app/shared/services/modal-ejemplo.service';
 
 // Importa jQuery y Select2
 declare var $: any;
@@ -61,7 +62,7 @@ export class SignupPageComponent implements OnInit {
     { value: 'siblings', label: '¿Cuántos hermanos tienes?' }
   ];
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private modalService: ModalService) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private modalService: ModalService, private modalServiceEjemplo: ModalEjemploService) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       name: ['', Validators.required],
@@ -85,6 +86,13 @@ export class SignupPageComponent implements OnInit {
 
   openModal(modalTemplate:TemplateRef<any>){
     this.modalService.open(modalTemplate, {size: 'lg', title:'Términos y Condiciones The Nexus Battles II'})
+    .subscribe((action) => {
+      console.log('ModalAction', action)
+    })
+  }
+
+  openModalEjemplo(modalEjemplo:TemplateRef<any>){
+    this.modalServiceEjemplo.open(modalEjemplo, {size: 'lg', title:'Modal de ejemplo'})
     .subscribe((action) => {
       console.log('ModalAction', action)
     })
