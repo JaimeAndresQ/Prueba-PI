@@ -4,6 +4,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal/public_api';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 //interface de la carta
 interface Perfil {
@@ -29,7 +30,7 @@ export class ProfilePageComponent implements OnInit {
     perfil: any = {};
     informacionUsuario: any = {}
 
-    constructor(private http: HttpClient,private cookieService: CookieService,) {
+    constructor(private http: HttpClient,private cookieService: CookieService,private router: Router) {
         this.perfil = {};
         this.informacionUsuario = {}
     }
@@ -98,7 +99,7 @@ export class ProfilePageComponent implements OnInit {
             console.error('No se ha encontrado el token de acceso.');
             return;
         }
-    
+        this.router.navigate(['/eliminacion'])
         const cartEndpoint ='https://api.thenexusbattles2.cloud/login-api/api/requests/'
         //const cartEndpoint = 'http://127.0.0.1:8000/api/requests/';
         const headers = new HttpHeaders({
