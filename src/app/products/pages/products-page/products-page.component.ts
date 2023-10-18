@@ -222,7 +222,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       return;
     }
 
-    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/enviar-token'
+    const cartEndpoint ='https://webserver.thenexusbattles2.cloud/enviar-token'
     //const cartEndpoint = 'http://localhost:3000/enviar-token';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
