@@ -74,7 +74,7 @@ export class LoginPageComponent implements OnInit{
             //hacer la peticion al servidor para poder mandar los datos del login
             //y recibir los tokens
             //https://api.thenexusbattles2.cloud/login-api/api/token/ || http://127.0.0.1:8002/api/token/
-            this.http.post('https://api.thenexusbattles2.cloud/login-api/api/token/', loginData, { headers }).subscribe(
+            this.http.post('https://api.thenexusbattles2.cloud/ldap/api/token/', loginData, { headers }).subscribe(
                 (response: any) => {
                     //almacenamos los tokens de access y refresh
                     //this.cookieService.set('access_token', response.access,undefined,'/','.thenexusbattles2.cloud',true, 'Lax');
