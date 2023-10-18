@@ -25,6 +25,8 @@ interface Carta {
   icono: string
 }
 
+declare var navigator: any;
+
 @Component({
   selector: 'app-products-page',
   templateUrl: './products-page.component.html',
@@ -36,6 +38,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   //guardar cartas
   cartas: Carta[] = [];
   botonCarrito = document.getElementById('botonCarrito');
+  monedaUsuario: string = 'COP'; 
 
   ///paginacion
   public currentPage:number = 1;
@@ -148,7 +151,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   ngOnInit(): void {
     this.generateTotalPagesArray();
     this.getCartasByPage(this.currentPage);
-
+    this.obtenerUbicacionUsuario()
   }
 
 
@@ -209,6 +212,53 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       this.getCartasByPage(this.currentPage);
     }
   }
+
+  //Cambiar precio segun ubicacion
+  obtenerUbicacionUsuario() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position: any) => {
+          const latitud = position.coords.latitude;
+          const longitud = position.coords.longitude;
+
+          // Verifica las coordenadas para determinar la ubicación del usuario
+          if (latitud >= 0 && longitud >= 0) {
+            // Usuario en Europa
+            this.monedaUsuario = 'EUR';
+          } else if (latitud <= 0 && longitud <= 0) {
+            // Usuario en Colombia
+            this.monedaUsuario = 'COP';
+          } else {
+            // Usuario en otros lugares (por defecto, Dólares)
+            this.monedaUsuario = 'USD';
+          }
+        },
+        (error: any) => {
+          console.error('Error al obtener la ubicación del usuario: ', error);
+        }
+      );
+    } else {
+      console.error('Geolocalización no es compatible en este navegador.');
+    }
+  }
+
+  convertirPrecio(precio: number): number {
+    // Asumiremos tasas de cambio predefinidas
+    const tasaCOPtoUSD = 0.00026;
+    const tasaCOPtoEUR = 0.00028;
+
+    switch (this.monedaUsuario) {
+      case 'COP':
+        return precio; // El precio ya está en Pesos Colombianos
+      case 'EUR':
+        return precio * tasaCOPtoEUR;
+      case 'USD':
+        return precio * tasaCOPtoUSD;
+      default:
+        return precio;
+    }
+  }
+
 
   //boton para agregar al carrito de compras
   addToCart(Id: string, Precio: number,Nombre: string) {
