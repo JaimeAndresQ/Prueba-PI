@@ -140,7 +140,7 @@ export class NavbarComponent implements OnInit, OnDestroy  {
       return;
     }
 
-    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/obtener-carrito'
+    const cartEndpoint ='https://webserver.thenexusbattles2.cloud/obtener-carrito'
     //const cartEndpoint = 'http://localhost:3000/obtener-carrito';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
