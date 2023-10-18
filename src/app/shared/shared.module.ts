@@ -7,14 +7,16 @@ import { ModalComponent } from './components/modal/modal.component';
 import { FormsModule } from '@angular/forms';
 import { ChatbotComponent } from './components/chatbot/chatbot.components';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { ModalEjemploComponent } from './components/modal-ejemplo/modal-ejemplo.component';
 
 @NgModule({
   imports: [MatIconModule, CommonModule, FormsModule, NgxWebstorageModule.forRoot() ],
-  exports: [NavbarComponent, ChatbotComponent],
+  exports: [NavbarComponent, ChatbotComponent, ModalEjemploComponent],
   declarations: [
     NavbarComponent,
     ChatbotComponent,
-    ModalComponent
+    ModalComponent,
+    ModalEjemploComponent
   ],
 })
 export class SharedModule { }
