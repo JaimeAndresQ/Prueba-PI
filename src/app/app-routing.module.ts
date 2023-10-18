@@ -13,6 +13,7 @@ import { AdministracionComponent } from './pages/administracion/administracion.c
 import { ActivateComponent } from './pages/registro/signup-page/activate-page.component';
 import { RecoveryComponent } from './pages/login/recovery-page/recovery.component';
 import { EliminacionComponent } from './pages/eliminacion/eliminacion.component';
+import { SolicitudComponent } from './pages/administracion/solicitud.component';
 
 
 const routes: Routes = [
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path:'admin',
     component: AdministracionComponent
+  },
+  {
+    path:'solicitudes',
+    component: SolicitudComponent
   },
   {
     path:'recovery',

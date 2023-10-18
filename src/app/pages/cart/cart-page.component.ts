@@ -49,7 +49,7 @@ export class CartPageComponent implements OnInit {
         return;
       }
 
-      const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/obtener-carrito'
+      const cartEndpoint ='https://webserver.thenexusbattles2.cloud/obtener-carrito'
       //const cartEndpoint = 'http://localhost:3000/obtener-carrito';
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ export class CartPageComponent implements OnInit {
         return;
       }
 
-      const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/enviar-token'
+      const cartEndpoint ='https://webserver.thenexusbattles2.cloud/enviar-token'
       //const cartEndpoint = 'http://localhost:3000/enviar-token';
       const headers = new HttpHeaders({
           'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/remover-carta'
+    const cartEndpoint ='https://webserver.thenexusbattles2.cloud/remover-carta'
     //const cartEndpoint = 'http://localhost:3000/remover-carta';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/borrar-carta'
+    const cartEndpoint ='https://webserver.thenexusbattles2.cloud/borrar-carta'
     //const cartEndpoint = 'http://localhost:3000/borrar-carta';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
@@ -165,8 +165,8 @@ export class CartPageComponent implements OnInit {
       return;
     }
 
-    const cartEndpoint ='https://store.thenexusbattles2.cloud/webserver/crear-orden'
-    const cartEndpoint2 ='https://store.thenexusbattles2.cloud/webserver/vaciar-carrito'
+    const cartEndpoint ='https://webserver.thenexusbattles2.cloud/crear-orden'
+    const cartEndpoint2 ='https://webserver.thenexusbattles2.cloud/vaciar-carrito'
     //const cartEndpoint2 ='http://localhost:3000/vaciar-carrito'
     //const cartEndpoint = 'http://localhost:3000/crear-orden';
     const headers = new HttpHeaders({

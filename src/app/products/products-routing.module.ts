@@ -7,6 +7,7 @@ import { ArmorsPageComponent } from './pages/products-page/categorias/armaduras/
 import { GunsPageComponent } from './pages/products-page/categorias/armas/armas-page.component';
 import { ProductDetailComponent } from './pages/products-page/cardDetail/product-detail.component';
 import { EpicasPageComponent } from './pages/products-page/categorias/epicas/epicas-page.component';
+import { SearchProductsPageComponent } from './pages/products-page/search-card.components';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'items',
     component: ItemsPageComponent
+  },
+  {
+    path:'search',
+    component: SearchProductsPageComponent
   },
   {
     path:'carta/:Id',

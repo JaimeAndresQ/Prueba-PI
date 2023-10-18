@@ -6,6 +6,7 @@ import { ProductsPageComponent } from 'src/app/products/pages/products-page/prod
 import { CarritoService } from '../../../products/carrito-servicio.component';
 import { Subscription } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 //interface de la carta
 interface Carta {
@@ -28,6 +29,8 @@ export class NavbarComponent implements OnInit, OnDestroy  {
   title = 'custom icons';
   cantidadProductosEnCarrito: number = 0;
 
+  searchKeyword: string = '';
+
   usuarioHaIniciadoSesion: boolean = false;
   nombreUsuario: string = '';
   cartas: Carta[] = [];
@@ -42,7 +45,8 @@ export class NavbarComponent implements OnInit, OnDestroy  {
     private domSanitizer: DomSanitizer,
     private http: HttpClient,
     private carritoService: CarritoService,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private router: Router
 
 
     //private websocketService: WebsocketService
@@ -112,6 +116,12 @@ export class NavbarComponent implements OnInit, OnDestroy  {
       }
 
     });*/
+  }
+
+  search(){
+    this.router.navigate(['/search'],{
+      queryParams: {keyword: this.searchKeyword}
+    })
   }
 
   ngOnDestroy() {

@@ -5,6 +5,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import VanillaTilt from 'vanilla-tilt';
 import { CookieService } from 'ngx-cookie-service';
 import { CarritoService } from 'src/app/products/carrito-servicio.component';
+import { ActivatedRoute } from '@angular/router';
+
 
 //interface de la carta
 interface Carta {
@@ -31,7 +33,7 @@ interface Carta {
   styleUrls: ['./products-page.component.css']
 })
 
-export class ProductsPageComponent  implements OnInit, AfterViewChecked {
+export class SearchProductsPageComponent  implements OnInit, AfterViewChecked {
 
   //guardar cartas
   cartas: Carta[] = [];
@@ -39,7 +41,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   ///paginacion
   public currentPage:number = 1;
-  public totalPages:number = 7;
+  public totalPages:number = this.cartas.length;
   public totalPagesArray: number[] = [];
   public pagesToShow: number = 5;
 
@@ -51,6 +53,7 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
     private domSanitizer: DomSanitizer,
     private cookieService: CookieService,
     private carritoService: CarritoService,
+    private route: ActivatedRoute
     )  {
 
     this.matIconRegistry.addSvgIcon(
@@ -138,17 +141,18 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/indicador_descuento.svg')
 
     )
-
-
-
-
   }
-
 
   ngOnInit(): void {
     this.generateTotalPagesArray();
-    this.getCartasByPage(this.currentPage);
-
+    this.route.queryParams.subscribe(params => {
+      const searchKeyword = params['keyword'];
+      console.log('keyword:',searchKeyword)
+      if(searchKeyword){
+        this.getCartasByPage(this.currentPage, searchKeyword);
+      }
+    })
+  
   }
 
 
@@ -191,9 +195,9 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
   }
 
   //obtener las cartas de la API
-  getCartasByPage(pageNumber: number): void {
+  getCartasByPage(pageNumber: number, keyword: string): void {
     //const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
-    const apiUrl = `https://cards.thenexusbattles2.cloud/api/cartas/?size=6&page=${pageNumber}&coleccion=All&onlyActives=true`;
+    const apiUrl = `https://cards.thenexusbattles2.cloud/api/cartas/?size=6&page=${pageNumber}&keyword=${keyword}&coleccion=All&onlyActives=true`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
       this.cartas = data;
@@ -206,7 +210,12 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
     if (pageNumber >= 1 && pageNumber <= this.totalPages) {
       this.currentPage = pageNumber;
       this.generateTotalPagesArray(); // Actualiza las páginas visibles
-      this.getCartasByPage(this.currentPage);
+      this.route.paramMap.subscribe(params => {
+        const searchKeyword = params.get('keyword');
+        if (searchKeyword) {
+          this.getCartasByPage(this.currentPage, searchKeyword); // Pasa la palabra clave
+        }
+      });
     }
   }
 
