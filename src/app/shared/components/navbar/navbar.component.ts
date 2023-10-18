@@ -97,7 +97,7 @@ export class NavbarComponent implements OnInit, OnDestroy  {
     );
 
     // Comprobar si existe un token de acceso en el localStorage
-    const token = localStorage.getItem('access_token');
+    const token = this.cookieService.get('access_token');
     const username = localStorage.getItem('username')
 
     if (token) {
