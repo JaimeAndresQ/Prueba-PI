@@ -24,6 +24,8 @@ interface Carta {
   icono: string
 }
 
+declare var navigator: any;
+
 @Component({
   selector: 'app-personajes-page',
   templateUrl: '../../products-page.component.html',
@@ -34,6 +36,7 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
 
   //guardar cartas
   cartas: Carta[] = [];
+  monedaUsuario: string = 'COP'; 
 
   ///paginacion
   currentPage = 1;
@@ -133,6 +136,7 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     this.getCartasByPage(this.currentPage);
+    this.obtenerUbicacionUsuario()
   }
 
   ngAfterViewChecked(){
@@ -194,7 +198,51 @@ export class CharactersPageComponent  implements OnInit, AfterViewChecked {
     }
   }
 
+  //Cambiar precio segun ubicacion
+  obtenerUbicacionUsuario() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position: any) => {
+          const latitud = position.coords.latitude;
+          const longitud = position.coords.longitude;
 
+          // Verifica las coordenadas para determinar la ubicación del usuario
+          if (latitud >= 0 && longitud >= 0) {
+            // Usuario en Europa
+            this.monedaUsuario = 'EUR';
+          } else if (latitud <= 0 && longitud <= 0) {
+            // Usuario en Colombia
+            this.monedaUsuario = 'COP';
+          } else {
+            // Usuario en otros lugares (por defecto, Dólares)
+            this.monedaUsuario = 'USD';
+          }
+        },
+        (error: any) => {
+          console.error('Error al obtener la ubicación del usuario: ', error);
+        }
+      );
+    } else {
+      console.error('Geolocalización no es compatible en este navegador.');
+    }
+  }
+
+  convertirPrecio(precio: number): number {
+    // Asumiremos tasas de cambio predefinidas
+    const tasaCOPtoUSD = 0.00026;
+    const tasaCOPtoEUR = 0.00028;
+
+    switch (this.monedaUsuario) {
+      case 'COP':
+        return precio; // El precio ya está en Pesos Colombianos
+      case 'EUR':
+        return precio * tasaCOPtoEUR;
+      case 'USD':
+        return precio * tasaCOPtoUSD;
+      default:
+        return precio;
+    }
+  }
 
   //boton para agregar al carrito de compras
   addToCart(Id: string, Precio: number,Nombre: string) {
