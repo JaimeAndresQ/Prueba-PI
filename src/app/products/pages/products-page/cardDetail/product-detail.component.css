@@ -1,14 +1,16 @@
 /* Contenedor principal */
-#contenedor-vitrina {
-  /* background-image: url('../../../../../assets/images/fondo-inicio.jpg'); */
+#detalles {
+  background-image: url('../../../../../assets/images/fondo-inicio.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 20%;
+  overflow-x: auto;
+  height: calc(115vh - 100px);
+
 }
 
 
 /* Contenedor principal */
 .container {
+
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
