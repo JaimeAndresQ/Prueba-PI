@@ -6,6 +6,7 @@ import VanillaTilt from 'vanilla-tilt';
 import { CookieService } from 'ngx-cookie-service';
 import { CarritoService } from 'src/app/products/carrito-servicio.component';
 
+
 //interface de la carta
 interface Carta {
   _id: string;
@@ -198,8 +199,14 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
     //const apiUrl = `http://127.0.0.1:8000/api/cards/?page_number=${pageNumber}`;
     const apiUrl = `https://cards.thenexusbattles2.cloud/api/cartas/?size=6&page=${pageNumber}&coleccion=All&onlyActives=true`;
 
-    this.http.get<Carta[]>(apiUrl).subscribe(data => {
-      this.cartas = data;
+    this.http.get(apiUrl).subscribe((data: any) => { // Usamos 'any' para el tipo de la respuesta, ya que no coincide directamente con nuestra interfaz Carta.
+      this.cartas = data.map((item: any) => {
+        // Mapeamos 'daño' a 'dano' en cada elemento de la respuesta
+        return {
+          ...item,
+          dano: item.daño
+        };
+      });
     });
     console.log(this.cartas)
   }

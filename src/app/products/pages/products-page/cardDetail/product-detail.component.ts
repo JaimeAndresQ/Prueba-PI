@@ -53,23 +53,26 @@ export class ProductDetailComponent  implements OnInit{
 
 
     ngOnInit(): void {
-        this.route.paramMap.subscribe((params)=>{
-            const Id = params.get('Id');
-
-            //const apiUrl = `http://127.0.0.1:8000/api/cardDetail/${id_carta}`;
-            const apiUrl = `https://cards.thenexusbattles2.cloud/api/cartas/${Id}`;
-            this.http.get<Carta>(apiUrl).subscribe(
-                (data: any) => {
-                    this.carta = data
-                    console.log('Respuesta de la API:', data);
-                },
-                (error) => {
-                    console.error('Error al obtener el carrito de compras:', error);
-                }
-            );
-        })
-        this.getComments();
+      this.route.paramMap.subscribe((params) => {
+        const Id = params.get('Id');
+    
+        const apiUrl = `https://cards.thenexusbattles2.cloud/api/cartas/${Id}`;
+        this.http.get(apiUrl).subscribe((data: any) => { // Usamos 'any' para el tipo de la respuesta.
+          // Mapeamos 'daño' a 'dano' en la respuesta antes de asignarla a 'this.carta'
+          this.carta = {
+            ...data,
+            dano: data.daño
+          };
+          console.log('Respuesta de la API:', data);
+        },
+        (error) => {
+          console.error('Error al obtener la carta:', error);
+        });
+      });
+    
+      this.getComments();
     }
+    
 
     ngAfterViewChecked(){
       const elementosCarta = document.querySelectorAll('[data-tilt]');
