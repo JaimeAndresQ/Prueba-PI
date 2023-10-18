@@ -56,6 +56,8 @@ export class SignupPageComponent implements OnInit {
   // Controlar proceso del registro
   isSubmitting = false;
 
+  @ViewChild('modalEjemplo') modalTemplate!: TemplateRef<any>;
+
   securityQuestions = [
     { value: 'mother', label: '¿Cómo se llama tu madre?' },
     { value: 'father', label: '¿Cómo se llama tu padre?' },
@@ -92,7 +94,7 @@ export class SignupPageComponent implements OnInit {
   }
 
   openModalEjemplo(modalEjemplo:TemplateRef<any>){
-    this.modalServiceEjemplo.open(modalEjemplo, {size: 'lg', title:'Modal de ejemplo'})
+    this.modalServiceEjemplo.open(modalEjemplo, {size: 'lg', title:''})
     .subscribe((action) => {
       console.log('ModalAction', action)
     })
@@ -222,6 +224,9 @@ export class SignupPageComponent implements OnInit {
 
       const formData = this.registerForm.value;
 
+      // Abre el modal de confirmacion
+      this.openModalEjemplo(this.modalTemplate);
+
 
       const registerData = {
         username: formData.username,
@@ -241,6 +246,8 @@ export class SignupPageComponent implements OnInit {
       this.http.post('https://store.thenexusbattles2.cloud/login-api/api/create/', registerData, { headers }).subscribe(
         (response: any) => {
           console.log('Registro exitoso:', response);
+          
+
           // Aca falta la redireccion a la vitrina
           this.isSubmitting = false;
         },

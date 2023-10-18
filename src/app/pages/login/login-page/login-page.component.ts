@@ -1,9 +1,9 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { ModalService } from 'src/app/shared/services/modal.service';
+import { ModalEjemploService } from 'src/app/shared/services/modal-ejemplo.service';
 
 
 //componentes que se utilizaran como templates y estilos
@@ -23,9 +23,11 @@ export class LoginPageComponent implements OnInit{
     //Definimos el error custom
     showCustomError: boolean = false;
 
+    @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
+
 
     //este constructor define los metodos a usar
-    constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private cookieService: CookieService, private modalService: ModalService){
+    constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private cookieService: CookieService,  private modalServiceEjemplo: ModalEjemploService){
         //inicializamos el formulario
         this.loginForm = this.fb.group({
             username: ['', Validators.required],
@@ -34,12 +36,13 @@ export class LoginPageComponent implements OnInit{
     }
 
 
-    openModal(modalTemplate:TemplateRef<any>){
-      this.modalService.open(modalTemplate, {size: 'lg', title:''})
-      .subscribe((action) => {
-        console.log('ModalAction', action)
-      })
-    }
+    openModalEjemplo(modalEjemplo:TemplateRef<any>){
+        this.modalServiceEjemplo.open(modalEjemplo, {size: 'lg', title:''})
+        .subscribe((action) => {
+          console.log('ModalAction', action)
+        })
+      }
+    
 
     getErrorMessage() {
       const control = this.loginForm.get("username");
@@ -81,6 +84,8 @@ export class LoginPageComponent implements OnInit{
                     //this.cookieService.set('access_token', response.access,undefined,'/','localhost',true, 'Lax');
                     localStorage.setItem('refresh_token', response.refresh);
                     localStorage.setItem('username',formData.username);
+
+                    
 
                     //redirigir al usuario
                     this.router.navigate(['/productos-vitrina']);
