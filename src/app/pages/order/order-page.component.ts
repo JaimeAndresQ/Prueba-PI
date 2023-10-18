@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal/public_api';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
 let paypal;
@@ -35,7 +35,7 @@ export class OrderPageComponent implements OnInit {
     iva: number = 0;
     total: number = 0;
 
-    constructor(private http: HttpClient, private route: ActivatedRoute,private cookieService: CookieService,) {
+    constructor(private http: HttpClient, private route: ActivatedRoute,private cookieService: CookieService,private router: Router) {
         this.order= {}
     }
     
@@ -131,6 +131,7 @@ export class OrderPageComponent implements OnInit {
                 this.http.post(apiUrl, paymentDetails, { headers }).subscribe(
                     (response) => {
                         console.log('Respuesta del backend:', response);
+                        this.router.navigate(['/banco']);
                     },
                     (error) => {
                         console.error('Error al enviar los datos de pago al backend:', error);
