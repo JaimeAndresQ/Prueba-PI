@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { MatIconRegistry} from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
@@ -16,11 +16,14 @@ interface Message{
     styleUrls: ['./chatbot.components.css']
 })
 
-export class ChatbotComponent{
+export class ChatbotComponent implements AfterViewChecked{
 
     messageText: string = '';
     messages: Message[] = [];
     messagesKey: string = 'chatbotMessages';
+    waitingForResponse: boolean = false;
+
+    @ViewChild('messageContainer', { static: false }) private messageContainer!: ElementRef;
 
     constructor(private localStorage: LocalStorageService, private http: HttpClient){
         const saved = this.localStorage.retrieve(this.messagesKey);
@@ -36,11 +39,25 @@ export class ChatbotComponent{
         }
     }
 
+    ngAfterViewChecked() {
+        this.scrollMessagesToBottom();
+      }
+
+    private scrollMessagesToBottom() {
+      if (this.messageContainer) {
+        this.messageContainer.nativeElement.scrollTop = this.messageContainer.nativeElement.scrollHeight;
+      }
+    }
+    
+
     sendMessage() {
-        if (this.messageText.trim() === '') {
+        if (this.messageText.trim() === '' || this.waitingForResponse) {
           return; // Evitar mensajes en blanco
         }
     
+
+        this.waitingForResponse = true; // Habilitar el indicador de espera.
+
         const newMessage: Message ={
             text: this.messageText,
             type: 'user'
@@ -65,6 +82,7 @@ export class ChatbotComponent{
                     messages: this.messages,
                     timestamp: new Date().getTime()
                 })
+                this.waitingForResponse = false; // Deshabilitar el indicador de espera.
             }
         )
         const time = new Date().getTime();

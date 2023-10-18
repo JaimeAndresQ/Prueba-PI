@@ -9,7 +9,7 @@
     </div>
     <div class="offcanvas-body overflow-y-auto">
         <!-- inicio chat -->
-        <div class="card-body overflow-y-auto" style="max-height: 90%;">
+        <div class="card-body overflow-y-auto" style="max-height: 90%;" #messageContainer>
 
             <div class="d-flex justify-content-start">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
@@ -40,7 +40,7 @@
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
                 alt="avatar 3" style="width: 40px; height: 40px;">
                 <input type="text" class="form-control form-control-lg" [(ngModel)]="messageText" placeholder="Mensaje">
-                <button class="btn btn-primary" (click)="sendMessage()">Enviar</button>
+                <button class="btn btn-primary" (click)="sendMessage()" [disabled]="waitingForResponse">Enviar</button>
         </div>
         <!-- fin input texto -->
         <!-- fin del chat -->
