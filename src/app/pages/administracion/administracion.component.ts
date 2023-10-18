@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders,HttpParams  } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -32,10 +33,15 @@ export class AdministracionComponent implements OnInit{
   constructor(
     private cookieService: CookieService,
     private http: HttpClient,
+    private router: Router,
   ){}
 
   ngOnInit(): void {
     this.getUsers();
+  }
+
+  redirectTo(route: string) {
+    this.router.navigate([route]);
   }
 
   getUsers(): void {
@@ -80,7 +86,7 @@ export class AdministracionComponent implements OnInit{
     });
 
     const requestData = { user:user };
-  
+
       this.http.post(cartEndpoint, requestData, { headers }).subscribe(
           (response: any) => {
               // Manejar la respuesta del servicio de carrito si es necesario
