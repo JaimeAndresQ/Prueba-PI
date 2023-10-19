@@ -77,7 +77,7 @@ export class EliminacionComponent implements OnInit{
         console.error('No se ha encontrado el token de acceso.');
         return;
     }
-    const cartEndpoint ='https://api.thenexusbattles2.cloud/login-api/api/requests/'
+    const cartEndpoint ='https://api.thenexusbattles2.cloud/ldap/api/requests/'
     //const cartEndpoint = 'http://127.0.0.1:8000/api/requests/';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
