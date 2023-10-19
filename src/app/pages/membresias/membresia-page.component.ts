@@ -42,7 +42,7 @@ export class MembershipPageComponent  implements OnInit{
   //obtener las cartas de la API
     getCartas(): void {
     //const apiUrl = `http://127.0.0.1:8000/api/membership/`;
-    const apiUrl = `https://api.thenexusbattles2.cloud/cards/api/membership/`;
+    const apiUrl = `https://api.thenexusbattles2.cloud/cartas/api/membership/`;
 
     this.http.get<Carta[]>(apiUrl).subscribe(data => {
         this.cartas = data;
