@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, TemplateRef } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { ModalEjemploService } from 'src/app/shared/services/modal-ejemplo.service';
+
 
 //interface de la carta
 interface Perfil {
@@ -14,6 +16,7 @@ interface Perfil {
   img: string;
 }
 
+
 @Component({
   selector: 'app-eliminacion',
   templateUrl: './eliminacion.component.html',
@@ -24,15 +27,24 @@ export class EliminacionComponent implements OnInit{
 
   perfil: any = {};
 
+
   constructor(
-    private http: HttpClient,private cookieService: CookieService
+    private http: HttpClient,private cookieService: CookieService, private modalServiceEjemplo: ModalEjemploService
   ){}
 
   ngOnInit(): void {
     this.getUser()
   }
 
-  getUser(): void { 
+
+  openModalEjemplo(modalEjemplo:TemplateRef<any>){
+    this.modalServiceEjemplo.open(modalEjemplo, {size: 'lg', title:''})
+    .subscribe((action) => {
+      console.log('ModalAction', action)
+    })
+  }
+
+  getUser(): void {
     const accessToken = this.cookieService.get('access_token');
 
     if (!accessToken) {
@@ -73,7 +85,7 @@ export class EliminacionComponent implements OnInit{
     });
 
     const requestData = { user:user };
-  
+
       this.http.post(cartEndpoint, requestData, { headers }).subscribe(
           (response: any) => {
               // Manejar la respuesta del servicio de carrito si es necesario
