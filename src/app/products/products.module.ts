@@ -15,6 +15,7 @@ import { ProductDetailComponent  } from './pages/products-page/cardDetail/produc
 import { CardInventarioComponent } from './components/card-inventario/card-inventario.component';
 import { EpicasPageComponent } from './pages/products-page/categorias/epicas/epicas-page.component';
 import { SearchProductsPageComponent } from './pages/products-page/search-card.components';
+import { DiscountPageComponent } from './pages/products-page/categorias/descuento/personajes-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SearchProductsPageComponent } from './pages/products-page/search-card.c
     ArmorsPageComponent,
     GunsPageComponent,
     ProductDetailComponent,
-    SearchProductsPageComponent
+    SearchProductsPageComponent,
+    DiscountPageComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,7 @@ import { SearchProductsPageComponent } from './pages/products-page/search-card.c
     ProductsRoutingModule,
     MatIconModule,
   ],
-  exports: [CardProductsComponent, ProductsPageComponent, CharactersPageComponent, ItemsPageComponent,ArmorsPageComponent, GunsPageComponent,ProductDetailComponent, CardInventarioComponent, EpicasPageComponent,SearchProductsPageComponent],
+  exports: [CardProductsComponent, DiscountPageComponent,ProductsPageComponent, CharactersPageComponent, ItemsPageComponent,ArmorsPageComponent, GunsPageComponent,ProductDetailComponent, CardInventarioComponent, EpicasPageComponent,SearchProductsPageComponent],
   providers: [],
 })
 export class ProductsModule { }

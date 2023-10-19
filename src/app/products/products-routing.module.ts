@@ -8,6 +8,7 @@ import { GunsPageComponent } from './pages/products-page/categorias/armas/armas-
 import { ProductDetailComponent } from './pages/products-page/cardDetail/product-detail.component';
 import { EpicasPageComponent } from './pages/products-page/categorias/epicas/epicas-page.component';
 import { SearchProductsPageComponent } from './pages/products-page/search-card.components';
+import { DiscountPageComponent } from './pages/products-page/categorias/descuento/personajes-page.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'armas',
     component: GunsPageComponent
+  },
+  {
+    path:'descuento',
+    component: DiscountPageComponent
   },
   {
     path:'epicas',
