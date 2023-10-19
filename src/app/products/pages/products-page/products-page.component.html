@@ -101,8 +101,8 @@
 
         <div class="contenido 2xl:w-[165px] 2xl:h-[92px] md:sm:w-[165px] md:sm:h-[92px] 2xl:text-[12px] md:text-[12px] space-y-[2px]">
           <div class="grid grid-cols-2 grid-flow-row gap-[2px]">
-            <p>{{ monedaUsuario }} {{ convertirPrecio(carta.precio) }} </p>
-            <p *ngIf="carta.coleccion === 'Heroes'">Poder: {{ carta.poder }}</p>
+            <p>{{monedaUsuario}} {{ monedaUsuario === 'USD' ? (convertirPrecio(carta.precio).toFixed(2)) : convertirPrecio(carta.precio) }}</p>
+            <p *ngIf="carta.coleccion === 'Heroes'" >Poder: {{ carta.poder }}</p>
             <p *ngIf="carta.coleccion === 'Heroes'">Vida: {{ carta.vida }}</p>
             <p *ngIf="carta.coleccion === 'Heroes'">Defensa: {{ carta.defensa }}</p>
             <p *ngIf="carta.coleccion === 'Heroes'">Ataque: {{ carta.ataqueBase }}</p>
@@ -111,6 +111,7 @@
             <p *ngIf="carta.nombre === 'Armadura Mediana'">Tipo: Media</p>
             <p *ngIf="carta.nombre === 'Armadura de Tela'">Tipo: Tela</p>
             <p *ngIf="carta.nombre === 'Armadura Media Liviana'">Tipo: Media liviana</p>
+            <p *ngIf="carta.descuento > 0" class="text-yellow-300">Descuento: {{ carta.descuento }}%</p>
           </div>
           <div class="flex justify-between space-x-4 space-y-[2px]">
             <p *ngIf="carta.coleccion === 'Armaduras'">Descripcion: {{ carta.descripcion }}</p>

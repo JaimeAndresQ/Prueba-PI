@@ -82,6 +82,16 @@
       </form>
 
       <div class="carritocompras " id="enlace_menuv">
+        <!-- Icono Deseos -->
+          <a>
+            <button type="button" data-dropdown-toggle="deseos_flot" id="carrito-boton" class="flex flex-wrap items-center py-2.5 pr-3.5 pl-5">
+              <mat-icon class="icono-carrito" aria-hidden="false" aria-label="Carrito Compras" svgIcon="star">Stars</mat-icon>
+              <p class="px-2.5" id="texto-carrito">Deseos</p>
+            </button>
+          </a>
+      </div>
+
+      <div class="carritocompras " id="enlace_menuv">
         <!-- Icono Carrito -->
           <a>
             <button type="button" data-dropdown-toggle="resumen_flot" id="carrito-boton" class="flex flex-wrap items-center py-2.5 pr-3.5 pl-5">
@@ -105,7 +115,7 @@
           <!-- Contenido Producto - A Esto hacerle el ngFor -->
           <div *ngFor="let carta of cartas" class="space-y-2" id="productoContainer">
             <div class="flex items-center">
-              <img src="../../../../assets/images/carta.png" class="w-[27%] h-[27%]">
+              <img src="https://cards.thenexusbattles2.cloud/assets/{{ carta.urlImagen }}" class="w-[27%] h-[27%]">
               <ul class="space-y-5">
               <li for="nombreCarta" id="texsting" class="truncate ml-2 text-[16px] font-medium text-black">
                 {{ carta.nombre_carta }}
@@ -155,6 +165,49 @@
 
       </div>
 
+
+
+      <!-- Contenido Lista Deseos -->
+
+      <div id="deseos_flot" class="hidden w-[280px] max-h-[1080px] p-3 mr-20 bg-white rounded-lg shadow dark:bg-gray-700">
+
+        <!-- Lista de productos -->
+        <div class="space-y-2" id="Lista">
+
+          <!-- Contenido Producto - A Esto hacerle el ngFor -->
+          <div class="space-y-2" id="productoContainer">
+            <div class="flex items-center">
+              <img src="../../../../assets/images/carta.png" class="w-[27%] h-[27%]">
+              <ul class="space-y-5">
+              <li for="nombreCarta" id="texsting" class="truncate ml-2 text-[16px] font-medium text-black">
+                Guerrero Clandestino
+              </li>
+              <li for="precioCarta" class="ml-2 text-[16px] font-medium text-[#db5b29] ">
+                $10.000
+              </li>
+              <li for="cantidadCarta" class="ml-2 text-[16px] font-medium text-black flex justify-between items-center">
+                Disponible: Si
+              </li>
+            </ul>
+          </div>
+        <!-- Botones "Ir al carrito" y "Ir a comprar" -->
+          <div class="flex justify-between">
+            <button class="p-1 rounded w-24 h-10" id="btnIrCarro">
+              <p class="text-[15px] text-white font-medium"><a class="text-center">Quitar Favoritos</a></p>
+            </button>
+            <button class="p-1 rounded w-24 h-10" id="btnComprar">
+              <p class="text-[15px] text-white font-medium">Añadir al Carrito</p>
+            </button>
+          </div>
+          <hr class="border border-[#000000] w-[100%]">
+          </div>
+
+
+
+
+        </div>
+
+      </div>
 
 
 

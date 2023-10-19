@@ -76,11 +76,13 @@ export class NavbarComponent implements OnInit, OnDestroy  {
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/cuenta.svg'),
     )
 
-
-
     this.matIconRegistry.addSvgIcon(
       'trash',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/trash.svg'),
+    );
+    this.matIconRegistry.addSvgIcon(
+      'star',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/icons/stars.svg'),
     );
     this.cartas = []
   }

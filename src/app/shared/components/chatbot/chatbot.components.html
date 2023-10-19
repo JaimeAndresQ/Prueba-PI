@@ -39,7 +39,7 @@
         <div class="position-absolute bottom-0 text-muted d-flex p-3">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
                 alt="avatar 3" style="width: 40px; height: 40px;">
-                <input type="text" class="form-control form-control-lg" [(ngModel)]="messageText" placeholder="Mensaje">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="messageText" placeholder="Mensaje" (keydown.enter)="sendMessage()">
                 <button class="btn btn-primary" (click)="sendMessage()" [disabled]="waitingForResponse">Enviar</button>
         </div>
         <!-- fin input texto -->
