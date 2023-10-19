@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -107,5 +107,33 @@ export class ProductDetailComponent  implements OnInit{
         );
       })
     }
+
+    createComments(id_carta: string,) {
+      // Realizar una solicitud HTTP para agregar la carta al carrito
+      const accessToken = this.cookieService.get('access_token');
+  
+      if (!accessToken) {
+        console.error('No se ha encontrado el token de acceso.');
+        return;
+      }
+
+      const cartEndpoint ='https://webserver.thenexusbattles2.cloud/enviar-token'
+      //const cartEndpoint = 'http://localhost:3000/enviar-token';
+      const headers = new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
+      });
+      const requestData = { id_carta: id_carta};
+  
+      this.http.post(cartEndpoint, requestData, { headers }).subscribe(
+          (response: any) => {
+              // Manejar la respuesta del servicio de carrito si es necesario
+              console.log('Cart response:', response);
+          },
+          (error) => {
+              console.error('Error adding to cart:', error);
+          }
+      );
+  }
 
 }
