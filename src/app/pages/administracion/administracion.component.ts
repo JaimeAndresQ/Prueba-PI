@@ -52,7 +52,7 @@ export class AdministracionComponent implements OnInit{
         return;
     }
 
-    const cartEndpoint ='https://api.thenexusbattles2.cloud/login-api/api/getUsers/?page=1'
+    const cartEndpoint ='https://api.thenexusbattles2.cloud/ldap/api/getUsers/?page=1'
     //const cartEndpoint = 'http://127.0.0.1:8000/api/getUsers/?page=1';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
@@ -78,8 +78,8 @@ export class AdministracionComponent implements OnInit{
         return;
     }
 
-    //const cartEndpoint ='https://api.thenexusbattles2.cloud/login-api/api/banUser/'
-    const cartEndpoint = 'http://127.0.0.1:8000/api/banUser/';
+    const cartEndpoint ='https://api.thenexusbattles2.cloud/ldap/api/banUser/'
+    //const cartEndpoint = 'http://127.0.0.1:8000/api/banUser/';
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
