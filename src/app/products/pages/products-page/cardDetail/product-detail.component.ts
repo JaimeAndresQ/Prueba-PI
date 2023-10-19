@@ -30,6 +30,12 @@ interface Comment {
   comentariosFecha: Date;
 }
 
+interface Calificacion{
+  idCalificacionCarta: number;
+  idCarta: string;
+  puntaje: number;
+}
+
 @Component({
     selector: 'app-products-detail',
     templateUrl: './product-detail.component.html',
@@ -41,13 +47,15 @@ export class ProductDetailComponent  implements OnInit{
 
     comments: Comment[] = [];
 
+    calificaciones: Calificacion[] = [];
+
     constructor(private http: HttpClient,
       private route: ActivatedRoute,
       private cookieService: CookieService,
 ){
         this.carta = {};
         this.comments = [];
-
+        this.calificaciones = []
 
     }
 
@@ -71,6 +79,7 @@ export class ProductDetailComponent  implements OnInit{
       });
     
       this.getComments();
+      //this.getCalificaciones();
     }
     
 
@@ -107,6 +116,24 @@ export class ProductDetailComponent  implements OnInit{
         );
       })
     }
+
+  getCalificaciones(): void{
+      this.route.paramMap.subscribe((params)=>{
+        const Id = params.get('Id');
+        const apiUrl = `https://api.thenexusbattles2.cloud/comentarios/calificacionCartas/${Id}`;
+        //const apiUrl = `http://alpha.bucaramanga.upb.edu.co:3000/api/comentariosCartas/1`;
+        this.http.get<Calificacion[]>(apiUrl).subscribe(
+            (data) => {
+              this.calificaciones = data;
+                console.log('Respuesta de la API:', data);
+            },
+            (error) => {
+                console.error('Error al obtener el carrito de compras:', error);
+            }
+        );
+      })
+    }
+
 
     createComments(id_carta: string,) {
       // Realizar una solicitud HTTP para agregar la carta al carrito
