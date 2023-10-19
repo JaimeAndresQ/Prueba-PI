@@ -234,10 +234,10 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
             this.monedaUsuario = 'EUR';
           } else if (latitud <= 0 && longitud <= 0) {
             // Usuario en Colombia
-            this.monedaUsuario = 'COP';
+            this.monedaUsuario = 'USD';
           } else {
             // Usuario en otros lugares (por defecto, Dólares)
-            this.monedaUsuario = 'USD';
+            this.monedaUsuario = 'COP';
           }
         },
         (error: any) => {
@@ -251,12 +251,12 @@ export class ProductsPageComponent  implements OnInit, AfterViewChecked {
 
   convertirPrecio(precio: number): number {
     // Asumiremos tasas de cambio predefinidas
-    const tasaCOPtoUSD = 0.00026;
-    const tasaCOPtoEUR = 0.00028;
+    const tasaCOPtoUSD = 0.00020;
+    const tasaCOPtoEUR = 0.00025;
 
     switch (this.monedaUsuario) {
       case 'COP':
-        return precio; // El precio ya está en Pesos Colombianos
+        return precio;
       case 'EUR':
         return precio * tasaCOPtoEUR;
       case 'USD':
