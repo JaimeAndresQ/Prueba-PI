@@ -243,7 +243,7 @@ export class SignupPageComponent implements OnInit {
         'Content-Type': 'application/json'
       });
       //http://127.0.0.1:8002/api/create/ || http://20.25.34.123:8002/api/create/
-      this.http.post('https://store.thenexusbattles2.cloud/login-api/api/create/', registerData, { headers }).subscribe(
+      this.http.post('https://api.thenexusbattles2.cloud/ldap/api/create/', registerData, { headers }).subscribe(
         (response: any) => {
           console.log('Registro exitoso:', response);
           
