@@ -25,7 +25,7 @@ export class ActivateComponent implements OnInit {
   }
 
   activarCuenta(uid: string, token: string){
-    this.http.get(`http://127.0.0.1:8002/api/activate/${uid}/${token}/`).subscribe(
+    this.http.get(`https://api.thenexusbattles2.cloud/ldap/api/activate/${uid}/${token}/`).subscribe(
       (response) =>{
         console.log('Cuenta activada:',response)
       },
